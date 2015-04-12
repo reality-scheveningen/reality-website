@@ -1,0 +1,34 @@
+{{ partial "head.html" . }}
+
+<div class="wrapper header">
+    <div class="container">
+        <h1 class="title">{{ .Title }}</h1>
+    </div>
+</div>
+<div class="wrapper content">
+    <div class="container">
+        <div id="content">
+            {{ if .Params.aside }}
+            <div class="right">
+                <div id="block-block-7" class="block block-block">
+
+                    <div class="content">
+                        {{ .Params.aside | markdownify }}
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+
+            <div class="main twocol">
+                <div id="node-3" class="node clear-block">
+                    <div class="content">
+                        {{ .Content }}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ partial "footer.html" . }}

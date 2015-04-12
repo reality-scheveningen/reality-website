@@ -1,0 +1,21 @@
+---
+baseurl: "http://realitychurch.nl/"
+languageCode: "nl-nl"
+title: "Reality Scheveningen"
+
+params:
+  googleSiteVerification: "ysnjAJ0rO82D0X2XnLDn3XypI9UejYkL7qhwDgMK_84"
+  mainRss: "/index.xml"
+  googleAnalytics:
+    trackingCode: "UA-15243596-1"
+
+menu:
+  main:
+    - Name: Home
+      Identifier: home
+      Weight: 1
+      Url: "/"
+    - Name: Church
+      Identifier: church
+      Weight: 2
+      Url: "/church/over-ons"

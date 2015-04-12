@@ -1,0 +1,27 @@
+{{ $firstItem := index $.Site.Data.home.caroussel 1 }}
+<div id="frontpage_items_container">
+    <div id="frontpage_items" style="background: url('/images/home/{{ $firstItem.image }}') no-repeat;">
+        <div class="preview-area"></div>
+        <div class="item-list">
+            <ul>
+            {{ range $index, $element := sort $.Site.Data.home.caroussel }}
+                {{ $isFirst := eq $index 0 }}
+                {{ $isEven :=  not (modBool $index 2) }}
+                <li class="views-row views-row-{{ $index }} {{ if $isEven }}views-row-even{{ else }}views-row-odd{{ end }}{{ if $isFirst }} views-row-first active{{ end }}">
+                    <div class="field-content-title">
+                        <a href="{{ if $element.link }}{{ $element.link }}{{ else }}javascript:;{{ end }}">{{ $element.title }}</a>
+                    </div>
+                    <div class="field-content-field-fp-image-fid">
+                        /images/home/{{ $element.image }}
+                    </div>
+                    <div class="field-content-teaser">
+                        {{ if $element.subtitle }}
+                        {{ $element.subtitle | markdownify }}
+                        {{ end }}
+                    </div>
+                </li>
+            {{ end }}
+            </ul>
+        </div>
+    </div>
+</div>

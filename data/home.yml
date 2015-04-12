@@ -1,0 +1,39 @@
+content:
+  block1:
+    title: "Welkom!"
+    text: |
+      Welkom op de website van Reality Scheveningen!<br>
+      <br>
+      Reality is een jonge kerk in Scheveningen / Den Haag. We gaan en staan voor Jezus Christus. En willen ons inzetten om God's droom voor ons en de wereld om ons heen werkelijkheid te zien worden.<br>
+      <br>
+      Jezus is realiteit!<br>
+      <br>
+      Klik gerust eens rond op de site en ontdek meer ...
+caroussel:
+  1:
+    image: "Kranenburgweg204_tekening_plattegrond.png"
+    title: "10.30 uur | Zondagse Samenkomst"
+    subtitle: "Locatie: Kranenburgweg 204"
+  2:
+    image: "Visie_voorkant_zondertekst_website.jpg"
+    title: "Love | Kingdom | Live"
+    subtitle: "onze hart | onze focus | ons leven"
+    link: /church/love-kingdom-life
+  3:
+    image: "Moodbox_Joinus_0.jpg"
+    title: "Online community"
+    subtitle: |
+      Ontmoet ons online!<br>
+      En word lid van onze facebook
+    link: https://www.facebook.com/RealityScheveningen
+  4:
+    image: "moodbox_me2_2_Resized.png"
+    title: "Me2 mentoring"
+    subtitle: "Elke 1e vrijdag van de maand"
+    link: /connect/me2
+  5:
+    image: "goede vrijdag website.png"
+    title: "Vrijdag 3 april"
+    subtitle: |
+      Stilstaan bij wat hij deed voor ons.<br>
+      Iedereen welkom!

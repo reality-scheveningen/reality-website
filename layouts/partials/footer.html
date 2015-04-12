@@ -1,0 +1,52 @@
+<div class="wrapper footer">
+    <div class="container">
+        <div id="block-block-1" class="block block-block">
+            <h2>{{ $.Site.Data.contact.title }}</h2>
+
+            <div class="content">
+                {{ $.Site.Data.contact.text | markdownify }}
+            </div>
+        </div>
+        <div id="block-block-2" class="block block-block">
+
+            <div class="content">
+                <p>
+                    <a href="http://www.youtube.com/realitycotn" rel="external" title="Reality Scheveningen Youtube kanaal">
+                        <span class="inline inline-none">
+                            <img src="/images/logos/Youtube_48x48.png" alt="" title=""  class="image image-_original " width="48" height="48" />
+                        </span>
+                    </a>
+                    <a href="http://www.twitter.com/twitreality" rel="external" title="Volg Reatily Scheveningen op twitter">
+                        <span class="inline inline-none">
+                            <img src="/images/logos/Twitter_48x48.png" alt="" title=""  class="image image-_original " width="48" height="48" />
+                        </span>
+                    </a>
+                    <a href="{{ .Site.Params.mainRss }}" title="Laatste nieuws van Reality in RSS">
+                        <span class="inline inline-none">
+                            <img src="/images/logos/Feed_48x48.png" alt="" title=""  class="image image-_original " width="48" height="48" />
+                        </span>
+                    </a>
+                    <a href="http://www.facebook.com/pages/Reality-Scheveningen/230170919850" rel="external" title="Socialize met Reality Scheveningen via Facebook">
+                        <span class="inline inline-none">
+                            <img src="/images/logos/FaceBook_48x48.png" alt="" title=""  class="image image-_original " width="48" height="48" />
+                        </span>
+                    </a>
+                </p>
+                <div class="image-clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '{{ .Site.Params.googleAnalytics.trackingCode }}', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

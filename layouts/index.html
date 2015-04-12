@@ -1,0 +1,29 @@
+{{ partial "head.html" . }}
+
+<div class="wrapper header">
+    <div class="container">
+        {{ partial "caroussel.html" . }}
+    </div>
+</div>
+<div class="wrapper content">
+    <div class="container">
+        <div id="content">
+            <div class="left">
+                <div id="block-block-3" class="block block-block">
+                    <h2>{{ $.Site.Data.home.content.block1.title }}</h2>
+
+                    <div class="content">
+                        {{ $.Site.Data.home.content.block1.text | markdownify }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="main twocol">
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{{ partial "footer.html" . }}

@@ -1,0 +1,34 @@
+<div id="suckerfishmenu" class="container">
+    <div id="block-menu-primary-links" class="block block-menu">
+
+        <div class="content">
+            <ul class="menu">
+                {{ $currentNode := . }}
+                {{ range $index, $item := .Site.Menus.main }}
+                {{ if .HasChildren }}
+
+                <li class="expanded{{ if $currentNode.HasMenuCurrent "main" $item }} active-trail{{ end }}{{ if $currentNode.IsMenuCurrent "main" $item }} active-trail{{ end }}">
+                <a href="{{ $item.Url }}"{{ if $currentNode.IsMenuCurrent "main" $item }} class="active"{{ end }}>
+                    {{ $item.Pre }}{{ $item.Name }}{{ $item.Post }}
+                </a>
+                <ul class="menu">
+                    {{ range $item.Children }}
+                    <li class="leaf">
+                        <a href="{{ .Url }}"{{ if $currentNode.IsMenuCurrent "main" . }} class="active"{{ end }}>
+                            {{ .Pre }}{{ .Name }}{{ .Post }}
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
+                {{else}}
+                <li class="leaf{{ if eq $index 0 }} first{{end}}{{ if $currentNode.IsMenuCurrent "main" $item }} active-trail{{ end }}">
+                    <a href="{{ $item.Url }}"{{ if $currentNode.IsMenuCurrent "main" $item }} class="active"{{ end }}>
+                        {{ $item.Pre }}{{ $item.Name }}{{ $item.Post }}
+                    </a>
+                    {{end}}
+                </li>
+                {{end}}
+            </ul>
+        </div>
+    </div>
+</div>

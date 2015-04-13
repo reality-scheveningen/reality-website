@@ -5,6 +5,8 @@ build:
         version: 0.13
 deploy:
   steps:
-    - gh-pages:
-        token: $GIT_TOKEN
+    - git-push:
+        gh_token: $GIT_TOKEN
+        repo: reality-scheveningen/reality-scheveningen.github.io
+        branch: master
         basedir: public

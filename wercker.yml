@@ -5,7 +5,7 @@ build:
         version: 0.13
 deploy:
   steps:
-    - git-push:
+    - leipert/git-push:
         gh_token: $GIT_TOKEN
         repo: reality-scheveningen/reality-scheveningen.github.io
         branch: master

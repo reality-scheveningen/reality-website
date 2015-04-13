@@ -1,8 +1,12 @@
-box: wercker/default
+box: wercker/ruby
 build:
   steps:
     - arjen/hugo-build:
         version: 0.13
+    - mvanduijker/html-proofer-test:
+        version: "2.1.0"
+        basedir: public
+        arguments: --checks-to-ignore ImageCheck --disable-external true --verbose
 deploy:
   steps:
     - leipert/git-push:

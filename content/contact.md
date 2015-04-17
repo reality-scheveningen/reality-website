@@ -30,4 +30,4 @@ Vanzelfsprekend zijn we ook per email en post te bereiken.
 
 **Samenkomsten:**  
 Wanneer: wekelijks op zondag om 10:30 (zie ook [agenda](/agenda) )  
-Waar: Kranenburgweg 204, Scheveningen (zie ook [zondagse samenkomsten](/connect/zondagse-diensten))
+Waar: Kranenburgweg 204, Scheveningen (zie ook [zondagse samenkomsten](/connect/zondagse-samenkomsten))

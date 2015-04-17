@@ -3,14 +3,16 @@ build:
   steps:
     - arjen/hugo-build:
         version: 0.13
+        flags: $HUGO_FLAGS
     - kyleboyle/html-proofer-test:
         version: "2.1.0"
         basedir: public
-        arguments: --checks-to-ignore ImageCheck --disable-external true --verbose
+        arguments: --checks-to-ignore ImageCheck --verbose
 deploy:
   steps:
     - leipert/git-push:
-        gh_oauth: $GIT_TOKEN
-        repo: reality-scheveningen/reality-scheveningen.github.io
-        branch: master
+        gh_oauth: $GH_TOKEN
+        repo: $TARGET_REPO
+        branch: $TARGET_BRANCH
         basedir: public
+        discard_history: $TARGET_DISCARD_HISTORY

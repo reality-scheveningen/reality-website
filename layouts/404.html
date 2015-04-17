@@ -1,0 +1,23 @@
+{{ partial "head.html" . }}
+
+<div class="wrapper header">
+    <div class="container">
+        <h1 class="title">{{ .Site.Params.page_not_found.title }}</h1>
+    </div>
+</div>
+<div class="wrapper content">
+    <div class="container">
+        <div id="content">
+            <div class="main twocol">
+                <div id="node-3" class="node clear-block">
+                    <div class="content">
+                        {{ .Site.Params.page_not_found.text | markdownify }}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ partial "footer.html" . }}

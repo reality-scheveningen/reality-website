@@ -8,6 +8,12 @@ params:
   mainRss: "/index.xml"
   googleAnalytics:
     trackingCode: "UA-15243596-1"
+  page_not_found:
+    title: Pagina niet gevonden!
+    text: |
+      Whooops, deze pagina bestaat niet (meer).
+
+      Probeer de [homepage](/).
 
 menu:
   main:

@@ -16,3 +16,4 @@ deploy:
         branch: $TARGET_BRANCH
         basedir: public
         discard_history: $TARGET_DISCARD_HISTORY
+        gh_pages_domain: $MAIN_DOMAIN

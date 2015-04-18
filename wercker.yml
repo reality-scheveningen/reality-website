@@ -15,7 +15,7 @@ deploy:
     - script:
         code: >
           if [ "$WERCKER_DEPLOYTARGET_NAME" != "production" ]; then
-            echo "User-agent: *\nDisallow: /\n" > public/robots.txt;
+          echo "User-agent: *\nDisallow: /\n" > public/robots.txt;
           fi;
     - leipert/git-push:
         gh_oauth: $GH_TOKEN

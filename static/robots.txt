@@ -1,2 +1,7 @@
 User-agent: *
-Disallow: /
+Disallow: /404
+Disallow: /README.md
+Allow: /
+
+Sitemap:
+http://realityscheveningen.nl/sitemap.xml

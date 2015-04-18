@@ -3,13 +3,20 @@ build:
   steps:
     - arjen/hugo-build:
         version: 0.13
-        flags: $HUGO_FLAGS
     - kyleboyle/html-proofer-test:
         version: "2.1.0"
         basedir: public
         arguments: --checks-to-ignore ImageCheck --verbose
 deploy:
   steps:
+    - arjen/hugo-build:
+        version: 0.13
+        flags: $HUGO_FLAGS
+    - script:
+        code: >
+          if [ "$WERCKER_DEPLOYTARGET_NAME" != "production" ]; then
+            echo "User-agent: *\nDisallow: /\n" > public/robots.txt;
+          fi;
     - leipert/git-push:
         gh_oauth: $GH_TOKEN
         repo: $TARGET_REPO

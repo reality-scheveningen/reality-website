@@ -21,6 +21,12 @@ deploy:
         version: 0.13
         flags: $HUGO_FLAGS
     - script:
+        code: sudo npm install -g gulp
+    - script:
+        code: sudo chmod -R 777 /home/ubuntu/.npm
+    - script:
+        code: npm install
+    - script:
         code: gulp no-hugo
     - script:
         code: >

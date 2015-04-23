@@ -6,7 +6,7 @@ build:
     - script:
         code: rsync -avpr images public/
     - kyleboyle/html-proofer-test:
-        version: "2.1.0"
+        version: "2.2.0"
         basedir: public
         arguments: --checks-to-ignore ImageCheck --verbose
 deploy:

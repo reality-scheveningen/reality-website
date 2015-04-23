@@ -13,6 +13,8 @@
   },
   "author": "Mark van Duijker",
   "scripts": {
-    "build:no-hugo" : "node_modules/gulp/bin/gulp.js no-hugo"
+    "build:no-hugo" : "node_modules/gulp/bin/gulp.js no-hugo",
+    "html-check" : "htmlproof public --checks-to-ignore ImageCheck --verbose",
+    "html-check-strict" : "htmlproof public --check-html --verbose"
   }
 }

@@ -1,18 +1,12 @@
-box: simondelacourt/node-ruby-rvm@1.1.0
+box: wercker/ruby
 build:
   steps:
     - arjen/hugo-build:
         version: 0.13
     - script:
-        code: sudo npm install -g gulp
-    - script:
-        code: sudo chmod -R 777 /home/ubuntu/.npm
-    - script:
-        code: npm install
-    - script:
-        code: gulp no-hugo
+        code: rsync -avpr images public/
     - kyleboyle/html-proofer-test:
-        version: "2.1.0"
+        version: "2.2.0"
         basedir: public
         arguments: --checks-to-ignore ImageCheck --verbose
 deploy:
@@ -21,13 +15,7 @@ deploy:
         version: 0.13
         flags: $HUGO_FLAGS
     - script:
-        code: sudo npm install -g gulp
-    - script:
-        code: sudo chmod -R 777 /home/ubuntu/.npm
-    - script:
-        code: npm install
-    - script:
-        code: gulp no-hugo
+        code: rsync -avpr images public/
     - script:
         code: >
           if [ "$WERCKER_DEPLOYTARGET_NAME" != "production" ]; then

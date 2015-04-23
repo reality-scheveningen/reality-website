@@ -11,5 +11,8 @@
     "gulp-webserver": "^0.9.0",
     "run-sequence": "^1.0.2"
   },
-  "author": "Mark van Duijker"
+  "author": "Mark van Duijker",
+  "scripts": {
+    "build:no-hugo" : "node_modules/gulp/bin/gulp.js no-hugo"
+  }
 }

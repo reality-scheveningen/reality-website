@@ -4,13 +4,9 @@ build:
     - arjen/hugo-build:
         version: 0.13
     - script:
-        code: sudo npm install -g gulp
-    - script:
-        code: sudo chmod -R 777 /home/ubuntu/.npm
-    - script:
         code: npm install
     - script:
-        code: gulp no-hugo
+        code: npm run-script build:no-hugo
     - kyleboyle/html-proofer-test:
         version: "2.1.0"
         basedir: public
@@ -21,13 +17,9 @@ deploy:
         version: 0.13
         flags: $HUGO_FLAGS
     - script:
-        code: sudo npm install -g gulp
-    - script:
-        code: sudo chmod -R 777 /home/ubuntu/.npm
-    - script:
         code: npm install
     - script:
-        code: gulp no-hugo
+        code: npm run-script build:no-hugo
     - script:
         code: >
           if [ "$WERCKER_DEPLOYTARGET_NAME" != "production" ]; then

@@ -1,0 +1,20 @@
+prose:
+  media: 'images'
+  ignore:
+    - /static
+    - /layouts
+    - config.yml
+    - .gitignore
+    - Gemfile
+    - Gemfile.lock
+    - gulpfile.js
+    - package.json
+    - wercker.yml
+    - _prose.yml
+    - README.md
+  metadata:
+    content:
+       - name: "title"
+         field:
+           element: "text"
+           label: "title"

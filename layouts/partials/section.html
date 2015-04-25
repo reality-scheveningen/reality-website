@@ -1,0 +1,28 @@
+{{ partial "head.html" . }}
+
+<div class="wrapper header">
+    <div class="container">
+        <h1 class="title">{{ .Title }}</h1>
+    </div>
+</div>
+<div class="wrapper content">
+    <div class="container">
+        <div id="content">
+
+            <div class="main twocol">
+                <div id="node-3" class="node clear-block">
+                    <div class="content">
+                        {{ range .Data.Pages }}
+                        <h2>{{ .Title }}</h2>
+                        <p>
+                            <a href="{{ .Permalink }}">&gt;&gt; Lees meer &lt;&lt;</a>
+                        </p>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ partial "footer.html" . }}

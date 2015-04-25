@@ -9,7 +9,7 @@ Ook voor Reality de start van een nieuw seizoen.
 
 Even wat agendapunten op een rijtje:
 
-Zondag 29 augustus: Geen samenkomst in De Naald. Martijn spreekt in [Christ Centered Hattem](http://www.cotn-cccc.nl/) (10:00). Je bent van harte welkom mee te gaan.
+Zondag 29 augustus: Geen samenkomst in De Naald. Martijn spreekt in [Christ Centered Hattem](http://christcentered.nl/) (10:00). Je bent van harte welkom mee te gaan.
 
 Zondag 5 september: Aftrap van het nieuwe seizoen! 10:30 in De Naald. Aansluitend is er lunch.
 

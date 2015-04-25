@@ -4,7 +4,7 @@ aliases:
   - movement/weblog/mannenweekend-11-13-juni
 ---
 
-Zie voor foto’s bij dit verslag: [hier](http://cotn-cccc.nl/Christ_Centered_Christian_Church/Mannenweekend_2010.html) en [hier](http://www.flickr.com/photos/realityscheveningen/sets/72157624160076589/show/).
+Zie voor foto’s bij dit verslag: [hier](http://www.flickr.com/photos/realityscheveningen/sets/72157624160076589/show/).
 
 Een week geleden reisden de Scheveningse mannen af naar Nigtevecht voor een mannenweekend met de mannen van Passion for Life Abcoude en Christ Centered Christian Church Hattem. Ik mag best zeggen ‘het avontuur tegemoet’, omdat we geen idee hadden wat ons dat weekend te wachten stond.
 

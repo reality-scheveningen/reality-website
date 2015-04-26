@@ -9,6 +9,9 @@ build:
         version: "2.2.0"
         basedir: public
         arguments: --checks-to-ignore ImageCheck --verbose
+  after-steps:
+    - wantedly/pretty-slack-notify:
+        webhook_url: $SLACK_TOKEN
 deploy:
   steps:
     - arjen/hugo-build:
@@ -33,3 +36,6 @@ deploy:
         basedir: public
         discard_history: $TARGET_DISCARD_HISTORY
         gh_pages_domain: $MAIN_DOMAIN
+  after-steps:
+    - wantedly/pretty-slack-notify:
+        webhook_url: $SLACK_TOKEN

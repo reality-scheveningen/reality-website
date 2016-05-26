@@ -1,0 +1,18 @@
+body {
+    font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+header h1 {
+    text-align: center;
+}
+
+
+footer {
+    background-color: black;
+    color: white;
+    padding-top: 1rem;
+}

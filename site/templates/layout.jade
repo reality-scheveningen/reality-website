@@ -1,0 +1,44 @@
+doctype html
+html(lang="nl")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="x-ua-compatible",content="ie=edge")
+    title #{title}
+    meta(name="description",content=metaDescription)
+    meta(name="keywords",content=metaKeywords)
+    meta(name="viewport",content="width=device-width, initial-scale=1")
+
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans",rel="stylesheet",type="text/css")
+
+    link(rel="stylesheet",href="/assets/styles/main.css")
+
+  body
+
+    block header
+      header
+        .container
+          .row
+            .column
+              h1
+                img(src="/assets/images/logo.jpg",width="260",height="61",alt="Reality Scheveningen")
+
+    block content
+
+    block footer
+
+    block scripts
+      if env == 'dev'
+        script.
+            document.write(
+            '<script src="http://' + (location.host || 'localhost').split(':')[0] +
+            ':9091/livereload.js?snipver=1"></' + 'script>')
+
+            console.log(!{debugData})
+
+      script.
+        window.ga = function() {
+          ga.q.push(arguments)
+        };ga.q = [];ga.l = +new Date;
+        ga('create', 'UA-XXXXX-Y', 'auto');ga('send', 'pageview')
+
+      script(src="https://www.google-analytics.com/analytics.js",async,defer)

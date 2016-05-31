@@ -1,0 +1,38 @@
+
+@import "vars";
+
+$column-margin: 0%;
+
+@import "../../node_modules/skeleton-scss/scss/skeleton";
+
+header {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+header h1 {
+  text-align: center;
+}
+
+footer {
+  background-color: $dark-grey;
+  color: $white;
+  padding-top: 1rem;
+}
+
+.drieluik .column > a {
+  position: relative;
+  min-height: 660px;
+  padding: 1rem;
+  display: block;
+  color: $font-color;
+  text-decoration: none;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: -1;
+  }
+}

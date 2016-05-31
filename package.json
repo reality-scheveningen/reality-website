@@ -1,0 +1,31 @@
+{
+  "name": "reality-website",
+  "version": "1.0.0",
+  "description": "Reality website",
+  "dependencies": {
+    "skeleton-scss": "^2.0.4"
+  },
+  "devDependencies": {
+    "contentful": "^3.3.11",
+    "dotenv": "^2.0.0",
+    "fs-extra": "^0.30.0",
+    "http-server": "^0.9.0",
+    "jade": "^1.11.0",
+    "live-reload": "^1.1.0",
+    "marked": "^0.3.5",
+    "node-sass": "^3.7.0",
+    "parallelshell": "^2.0.0",
+    "watch": "^0.18.0"
+  },
+  "scripts": {
+    "build:site": "node build.js",
+    "build:css": "node-sass site/sass -o public/assets/styles",
+    "build": "npm run build:site && npm run build:css",
+    "sync-content": "node sync-contentful.js",
+    "watch": "watch 'npm run build' site",
+    "serve": "http-server -p 9090 public/",
+    "live-reload": "live-reload --port 9091 public/",
+    "dev": "parallelshell \"npm run live-reload -s\" \"npm run serve -s\" \"npm run watch -s\""
+  },
+  "author": "Mark van Duijker <mark@duyker.nl>"
+}

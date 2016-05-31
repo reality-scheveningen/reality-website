@@ -1,0 +1,21 @@
+extends layout
+
+block header
+  header
+    .container
+      .row
+        .column
+          a(href="/",class="u-pull-lef")
+            img(src="/assets/images/logo.jpg",width="260",height="61",alt="Reality Scheveningen")
+          h1= title
+
+block content
+  .container
+    .row
+      article.column!= md(body)
+
+block footer
+  footer
+    .container
+      .row
+        h3 Contact

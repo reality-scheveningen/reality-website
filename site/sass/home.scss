@@ -1,6 +1,8 @@
 @import "vars";
 
+$column-margin: 0%;
+
 @import "../../node_modules/skeleton-scss/scss/skeleton";
 
-@import "parts/footer";
 @import "parts/header";
+@import "parts/drieluik";

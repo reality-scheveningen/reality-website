@@ -1,0 +1,16 @@
+.drieluik .column > a {
+  position: relative;
+  min-height: 660px;
+  padding: 1rem;
+  display: block;
+  color: $font-color;
+  text-decoration: none;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: -1;
+  }
+}

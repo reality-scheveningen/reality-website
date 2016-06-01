@@ -1,18 +1,11 @@
 extends layout
 
-block header
-  header
-    .container
-      .row
-        .column
-          a(href="/",class="u-pull-lef")
-            img(src="/assets/images/logo.jpg",width="260",height="61",alt="Reality Scheveningen")
-          h1= title
-
 block content
   .container
     .row
-      article.column!= md(body)
+      article.column
+        h1= title
+        | !{md(body)}
 
 block footer
   footer

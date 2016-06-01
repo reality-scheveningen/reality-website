@@ -1,16 +1,46 @@
 .drieluik .column > a {
   position: relative;
-  min-height: 660px;
-  padding: 1rem;
+  height: 600px;
+  overflow: hidden;
+  padding: 3rem;
   display: block;
-  color: $font-color;
+  color: $light-brown;
   text-decoration: none;
+  background-color: black;
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 10rem;
+  transition: color 0.5s ease;
+  -webkit-transition: color 0.5s ease;
+
+  &:hover {
+    color: white;
+    img {
+      -webkit-filter: #{"opacity(.5)"} #{"sepia(.5)"};
+      filter: #{"opacity(.5)"} #{"sepia(.5)"};
+    }
+  }
+  * {
+    position: relative;
+    z-index: 2;
+  }
+  h2 {
+    padding-bottom: 4rem;
+  }
+  p {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+  }
   img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     box-sizing: border-box;
-    z-index: -1;
+    z-index: 1;
+    -webkit-filter: #{"opacity(.3)"} #{"sepia(1)"};
+    filter: #{"opacity(.3)"} #{"sepia(1)"};
+    -webkit-transition: -webkit-filter 0.5s ease;
+    transition: filter 0.5s ease;
   }
 }

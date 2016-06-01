@@ -4,5 +4,9 @@ $column-margin: 0%;
 
 @import "../../node_modules/skeleton-scss/scss/skeleton";
 
+body {
+  font-size: 2em;
+}
+
 @import "parts/header";
 @import "parts/drieluik";

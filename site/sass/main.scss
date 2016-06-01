@@ -4,9 +4,7 @@ $container-width: 700px;
 
 @import "../../node_modules/skeleton-scss/scss/skeleton";
 
-body {
-  font-size: 2em;
-}
+@import "base";
 
 @import "parts/footer";
 @import "parts/header";

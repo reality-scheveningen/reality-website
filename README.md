@@ -17,7 +17,7 @@ npm install
 Create .env file with atleast:
 
 ```
-APPLICATION_ENV=dev
+NODE_ENV=dev
 CONTENTFUL_SPACE=insert-space-id
 CONTENTFUL_API_KEY=insert-api-key
 ```

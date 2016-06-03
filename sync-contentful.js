@@ -1,5 +1,3 @@
-"use strict";
-
 require('dotenv').config();
 
 let contentful = require('contentful'),
@@ -22,5 +20,4 @@ client.sync({initial: true})
         throw err;
       }
     });
-    // fs.writeFile('db/synctoken.txt', response.nextSyncToken);
   });

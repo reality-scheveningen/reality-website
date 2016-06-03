@@ -1,5 +1,3 @@
-'use strict';
-
 require('dotenv').config({silent: true});
 
 console.log('Building...');

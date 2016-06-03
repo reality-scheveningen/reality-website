@@ -6,6 +6,7 @@
     "skeleton-scss": "^2.0.4"
   },
   "devDependencies": {
+    "autoprefixer": "^6.3.6",
     "contentful": "^3.3.11",
     "dotenv": "^2.0.0",
     "fs-extra": "^0.30.0",
@@ -16,11 +17,13 @@
     "marked": "^0.3.5",
     "node-sass": "^3.7.0",
     "parallelshell": "^2.0.0",
+    "postcss": "^5.0.21",
+    "postcss-cli": "^2.5.2",
     "watch": "^0.18.0"
   },
   "scripts": {
     "build:site": "node build.js",
-    "build:css": "node-sass site/sass -o public/assets/styles",
+    "build:css": "node-sass site/sass -o public/assets/styles && postcss --use autoprefixer public/assets/styles/*.css -r",
     "build": "npm run build:site && npm run build:css",
     "sync-content": "node sync-contentful.js",
     "watch": "watch 'npm run build' site",

@@ -21,6 +21,7 @@ NODE_ENV=dev
 BASE_URL=http://localhost
 CONTENTFUL_SPACE=insert-space-id
 CONTENTFUL_API_KEY=insert-api-key
+GA_TRACKING_CODE=UA-XXXXX-Y
 ```
 
 Sync contentful database

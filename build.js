@@ -8,7 +8,8 @@ let App = require('./lib/app'),
   db = require('./public/db/entries.json'),
   app = new App({
     env: process.env.NODE_ENV,
-    baseUrl: process.env.BASE_URL
+    baseUrl: process.env.BASE_URL,
+    gaTrackingCode: process.env.GA_TRACKING_CODE
   });
 
 db.forEach((entry) => {

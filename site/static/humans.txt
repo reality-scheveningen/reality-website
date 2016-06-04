@@ -1,0 +1,18 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Mark van Duijker -- Developer -- @mvandijker
+    Martin van Diggele -- Copywriter -- @MartinvDiggele
+    Erwin de Ruiter -- Design -- @erwinderuiternl
+
+# THANKS
+
+    Martijn van Loon
+    Reality Scheveningen
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Nodejs, Contentful, NPM, Skeleton css,

@@ -3,13 +3,14 @@ extends layout
 block styles
   link(rel="stylesheet",href="/assets/styles/home.css")
 
-header
-  .container
-    .row
-      .column
-        h1
-          a(href="/")
-            img(src="/assets/images/logo.jpg",width="260",height="61",alt="Reality Scheveningen")
+block header
+  header.home
+    .container
+      .row
+        .column
+          h1
+            a(href="/")
+              img(src="/assets/images/logo.jpg",width="260",height="61",alt="Reality Scheveningen")
 
 block content
   .container

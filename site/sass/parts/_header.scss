@@ -1,9 +1,31 @@
 header {
   padding-top: 3rem;
   padding-bottom: 3rem;
-}
 
-header a {
-  display: block;
-  text-align: center;
+  .container {
+    max-width: 1000px;
+  }
+
+  &.content a {
+    float: left;
+    display: block;
+    position: relative;
+    z-index: 10;
+  }
+
+  &.content h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  &.home .row {
+    text-align: center;
+  }
+
+  &.home h1 {
+    margin: 0;
+  }
 }

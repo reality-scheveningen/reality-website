@@ -1,17 +1,16 @@
-.drieluik .column > a {
+.triptych.container {
+  max-width: inherit;
+  width: 100% !important;
+}
+
+.triptych .column > a {
   position: relative;
-  height: 600px;
-  overflow: hidden;
-  padding: 3rem;
   display: block;
-  color: $light-brown;
   text-decoration: none;
   background-color: $black;
-  text-align: center;
-  box-sizing: border-box;
-  margin-bottom: 10rem;
   transition: color 0.5s ease;
   -webkit-transition: color 0.5s ease;
+  margin-bottom: 10rem;
 
   &:hover {
     color: white;
@@ -20,23 +19,27 @@
       filter: #{"opacity(.5)"} #{"sepia(.5)"};
     }
   }
-  * {
-    position: relative;
-    z-index: 2;
+
+  div {
+    padding: 3rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    box-sizing: border-box;
+    color: $light-brown;
   }
+
   h2 {
     padding-bottom: 4rem;
   }
+
   p {
     font-style: italic;
   }
+
   img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    box-sizing: border-box;
-    z-index: 1;
     -webkit-filter: #{"opacity(.3)"} #{"sepia(1)"};
     filter: #{"opacity(.3)"} #{"sepia(1)"};
     -webkit-transition: -webkit-filter 0.5s ease;

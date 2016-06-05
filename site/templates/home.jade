@@ -13,11 +13,13 @@ block header
               img(src="/assets/images/logo.jpg",width="260",height="61",alt="Reality Scheveningen")
 
 block content
-  .container
-      .row.drieluik
+  .container.triptych
+      .row
         each tych in triptych
           article.column.one-third
             a(href="/" + tych.link.path)
-              h2= tych.title
-              p= tych.summary
-              img(src=tych.image.file.url,width="330",height="600")
+              img(src=tych.image.file.url)
+              div
+                h2= tych.title
+                p= tych.summary
+

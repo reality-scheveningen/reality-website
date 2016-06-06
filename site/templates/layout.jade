@@ -29,6 +29,37 @@ html(lang="nl")
     block content
 
     block footer
+      footer
+        .container
+          .row
+            h1 Een keertje langs komen, bakkie doen of meer weten?
+
+        .container.squeezed
+          .row
+            .four.columns
+              p Iedere zondag komen wij samen 10.30 uur Kranenburgweg 204 in Scheveningen
+
+            .four.columns
+              p Dagelijks 9.00 - 17.00 uur op Harstenhoekstraat 29b in Scheveningen in onze Living
+
+            .four.columns
+              p
+                | Contact met ons opnemen kan digitaal naar #[a(href="mailto:contact@realityscheveningen.nl") contact@realityscheveningen.nl]
+                br
+                | of per post naar
+                br
+                | Postbus 84348
+                br
+                | 2508AH, Den Haag
+
+        .container.logos
+          .row
+            a(href="https://www.facebook.com/RealityScheveningen/",title="Reality Scheveningen Facebook pagina",target="_blank",class="facebook-logo")
+              include ../static/assets/images/facebook.svg
+
+          .row
+            img(src="/assets/images/logo-vert-black.jpg",width="192",height="112",alt="Reality Scheveningen")
+
 
     block scripts
       if env == 'dev'

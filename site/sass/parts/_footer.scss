@@ -1,6 +1,37 @@
 footer {
-  background-color: $dark-grey;
+  background-color: $black;
   color: $white;
-  margin-top: 3rem;
-  padding-top: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  .container {
+    text-align: center;
+  }
+
+  .row {
+    color: $white;
+    font-size: .6em;
+    font-family: $font-family-alternative;
+  }
+
+  .columns {
+    text-align: left;
+  }
+
+  .logos {
+    margin-top: 6rem;
+  }
+
+  h1 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: 3.6rem
+  }
+
+  .facebook-logo svg {
+    width: 160px;
+    path {
+      fill: $blue;
+    }
+  }
 }

@@ -1,13 +1,7 @@
 extends layout
 
 block content
-  .container
+  .container.squeezed
     .row
       article.column
         | !{md(body)}
-
-block footer
-  footer
-    .container
-      .row
-        h3 Contact

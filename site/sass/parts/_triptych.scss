@@ -10,7 +10,6 @@
   background-color: $black;
   transition: color 0.5s ease;
   -webkit-transition: color 0.5s ease;
-  margin-bottom: 10rem;
 
   &:hover {
     color: white;
@@ -44,5 +43,12 @@
     filter: #{"opacity(.3)"} #{"sepia(1)"};
     -webkit-transition: -webkit-filter 0.5s ease;
     transition: filter 0.5s ease;
+  }
+}
+
+@media (#{$bp-larger-than-phablet}) {
+  .triptych .one-third.column {
+    margin-left: 0;
+    width: 33.33334%;
   }
 }

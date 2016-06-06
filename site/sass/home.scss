@@ -1,10 +1,9 @@
 @import "vars";
 
-$column-margin: 0%;
-
 @import "../../node_modules/skeleton-scss/scss/skeleton";
 
 @import "base";
 
 @import "parts/header";
 @import "parts/triptych";
+@import "parts/footer";

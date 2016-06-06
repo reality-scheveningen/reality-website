@@ -14,12 +14,12 @@ block header
 
 block content
   .container.triptych
-      .row
-        each tych in triptych
-          article.column.one-third
-            a(href="/" + tych.link.path)
-              img(src=tych.image.file.url)
-              div
-                h2= tych.title
-                p= tych.summary
+    .row
+      each tych in triptych
+        article.one-third.column
+          a(href="/" + tych.link.path)
+            img(src=tych.image.file.url)
+            div
+              h2= tych.title
+              p= tych.summary
 

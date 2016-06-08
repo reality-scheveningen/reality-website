@@ -1,6 +1,10 @@
 image: node:6.2.1
 
 pages:
+  cache:
+    paths:
+      - node_modules/
+      
   script:
     - npm install
     - npm run sync-content

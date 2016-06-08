@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({silent: true});
 
 let contentful = require('contentful'),
   fs = require('fs-extra');

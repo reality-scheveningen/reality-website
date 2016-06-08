@@ -1,5 +1,7 @@
 # Reality Scheveningen website
 
+[![build status](https://gitlab.com/reality-scheveningen/realityscheveningen.nl/badges/master/build.svg)](https://gitlab.com/reality-scheveningen/realityscheveningen.nl/commits/master)
+
 Hybrid static site generator with ContentFul
 
 ## Todo

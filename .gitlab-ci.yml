@@ -9,6 +9,7 @@ pages:
     - npm install
     - npm run sync-content
     - npm run build
+    - npm run build:minify
   artifacts:
     paths:
       - public

@@ -22,9 +22,8 @@ html(lang="nl")
         .container
           .row
             .column
-              a(href="/")
-                img(src="/assets/images/logo.jpg",width="260",height="61",alt="Reality Scheveningen")
-              h1= title
+              a(href="/",title="Home")
+                img(src="/assets/images/logo-vert.jpg",width="192",height="107",alt="Reality Scheveningen")
 
     block content
 
@@ -36,21 +35,17 @@ html(lang="nl")
 
         .container.squeezed
           .row
-            .four.columns
-              p Iedere zondag komen wij samen 10.30 uur Kranenburgweg 204 in Scheveningen
+            .six.columns
+              a(href="https://www.google.nl/maps/place/Kranenburgweg+204,+2583+ER+Den+Haag/@52.0957914,4.2606684,17z/data=!3m1!4b1!4m2!3m1!1s0x47c5b092fe85fe99:0x1384c908ba3f7c8d",target="_blank",rel="opener",title="Open in Google Maps")
+                img(src="/assets/images/map.png",class="map")
 
-            .four.columns
-              p Dagelijks 9.00 - 17.00 uur op Harstenhoekstraat 29b in Scheveningen in onze Living
-
-            .four.columns
+            .six.columns
               p
-                | Contact met ons opnemen kan digitaal naar #[a(href="mailto:contact@realityscheveningen.nl") contact@realityscheveningen.nl]
+                | Iedere zondag komen wij samen
                 br
-                | of per post naar
+                | 10.30 uur Kranenburgweg 204
                 br
-                | Postbus 84348
-                br
-                | 2508AH, Den Haag
+                | in Scheveningen
 
         .container.logos
           .row
@@ -64,7 +59,7 @@ html(lang="nl")
           .row
             p
               small
-                | © Copyright 2016, Reality Scheveningen
+                | © Copyright 2016, Reality Scheveningen | #[a(href="mailto:contact@realityscheveningen.nl") contact@realityscheveningen.nl] | Postbus 84348 2508AH, Den Haag
                 br
                 a(href="http://realityscheveningen.nl/sites/default/files/ANBIinformatie-23-4-2016.pdf",target="_blank") ANBI gegevens
 

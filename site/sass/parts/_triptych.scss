@@ -20,21 +20,32 @@
   }
 
   div {
-    padding: 3rem;
+    padding: 3rem 9rem;
     position: absolute;
     left: 0;
-    top: 0;
+    top: 34%;
     text-align: center;
     box-sizing: border-box;
     color: $light-brown;
   }
 
   h2 {
-    padding-bottom: 4rem;
+    font-family: $font-family-alternative-to;
+    font-weight: normal;
+    font-size: 3rem;
+    margin-bottom: 0;
+    letter-spacing: .2rem;
+  }
+
+  hr {
+    margin: 1rem 45%;
+    border-color: $orange;
   }
 
   p {
-    font-style: italic;
+    font-family: $font-family-alternative;
+    font-size: 1.5rem;
+    font-weight: 300;
   }
 
   img {

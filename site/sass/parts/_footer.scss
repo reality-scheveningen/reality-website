@@ -1,8 +1,6 @@
 footer {
-  background-color: $black;
+  background-color: $dark-grey;
   color: $white;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
 
   .container {
     text-align: center;
@@ -23,7 +21,6 @@ footer {
   }
 
   h1 {
-    margin-top: 3rem;
     margin-bottom: 3rem;
     font-size: 3.6rem
   }
@@ -37,13 +34,29 @@ footer {
 
   .copyright {
     padding-top: 1.5rem;
+    background-image: linear-gradient($black, $dark-blue);
 
     a {
       color: $white;
     }
   }
 
+  .contact {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
   img.map {
     width: 100%;
+  }
+
+  // css triangle https://css-tricks.com/snippets/css/css-triangle/
+  .arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    border-bottom: 1rem solid $black;
+    margin: -2.5rem auto 2.5rem auto;
   }
 }

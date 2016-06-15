@@ -29,39 +29,38 @@ html(lang="nl")
 
     block footer
       footer
-        .container
-          .row
-            h1 Een keertje langs komen, bakkie doen of meer weten?
+        .contact
+          .container
+            .row
+              h1 Een keertje langs komen, bakkie doen of meer weten?
 
-        .container.squeezed
-          .row
-            .six.columns
-              a(href="https://www.google.nl/maps/place/Kranenburgweg+204,+2583+ER+Den+Haag/@52.0957914,4.2606684,17z/data=!3m1!4b1!4m2!3m1!1s0x47c5b092fe85fe99:0x1384c908ba3f7c8d",target="_blank",rel="noopener noreferrer",title="Open in Google Maps")
-                img(src="/assets/images/map.png",class="map")
+          .container.squeezed
+            .row
+              .six.columns
+                a(href="https://www.google.nl/maps/place/Kranenburgweg+204,+2583+ER+Den+Haag/@52.0957914,4.2606684,17z/data=!3m1!4b1!4m2!3m1!1s0x47c5b092fe85fe99:0x1384c908ba3f7c8d",target="_blank",rel="noopener noreferrer",title="Open in Google Maps")
+                  img(src="/assets/images/map.png",class="map")
 
-            .six.columns
+              .six.columns
+                p
+                  | Iedere zondag komen wij samen
+                  br
+                  | 10.30 uur Kranenburgweg 204
+                  br
+                  | in Scheveningen
+
+        .copyright
+          .container
+            .row
+              .arrow-up
+              img(src="/assets/images/logo-no-text-black.jpg",width="58",height="56",alt="Reality Scheveningen")
+            .row
               p
-                | Iedere zondag komen wij samen
-                br
-                | 10.30 uur Kranenburgweg 204
-                br
-                | in Scheveningen
-
-        .container.logos
-          .row
-            a(href="https://www.facebook.com/RealityScheveningen/",title="Reality Scheveningen Facebook pagina",target="_blank",class="facebook-logo",rel="noopener noreferrer")
-              include ../static/assets/images/facebook.svg
-
-          .row
-            img(src="/assets/images/logo-vert-black.jpg",width="192",height="112",alt="Reality Scheveningen")
-
-        .container.copyright
-          .row
-            p
-              small
-                | © Copyright 2016, Reality Scheveningen | #[a(href="mailto:contact@realityscheveningen.nl") contact@realityscheveningen.nl] | Postbus 84348 2508AH, Den Haag
-                br
-                a(href="http://realityscheveningen.nl/sites/default/files/ANBIinformatie-23-4-2016.pdf",target="_blank",rel="noopener noreferrer") ANBI gegevens
+                small
+                  | © Copyright 2016, Reality Scheveningen
+                  br
+                  a(href="mailto:contact@realityscheveningen.nl") contact@realityscheveningen.nl
+                  |  | Postbus 84348 2508AH, Den Haag |&nbsp;
+                  a(href="http://realityscheveningen.nl/sites/default/files/ANBIinformatie-23-4-2016.pdf",target="_blank",rel="noopener noreferrer") ANBI gegevens
 
 
     block scripts

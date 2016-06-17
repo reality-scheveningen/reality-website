@@ -2,62 +2,128 @@ require('dotenv').config({silent: true});
 
 let contentful = require('contentful'),
   _ = require('lodash'),
-  db = require('lowdb')('public/db/db-test.json', { writeOnChange: false }),
-  alwaysFullSync = process.env.CONTENTFUL_FULL_SYNC || false;
+  download = require('download'),
+  url = require('url'),
+  path = require('path'),
+  rimraf = require('rimraf'),
+  fs = require('fs-extra'),
+  alwaysFullSync = process.env.CONTENTFUL_FULL_SYNC || false,
+  assetFolder = 'public/content/assets/';
 
 let client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE,
   accessToken: process.env.CONTENTFUL_API_KEY
 });
 
-let updateItem = (type, item) => {
-  db.get(type).find({"sys" : {"id": item.sys.id}}).assign(item).value();
+fs.ensureFileSync('public/content/db.json');
+
+let db = require('lowdb')('public/content/db.json', { writeOnChange: false });
+
+let upsertItem = (type, item) => {
+  if (db.get(type).find({"sys" : {"id": item.sys.id}}).value()) {
+    db.get(type).find({"sys" : {"id": item.sys.id}}).assign(item).value();
+  } else {
+    db.get(type).push(item).value();
+  }
 };
 
 let deleteItem = (type, item) => {
   db.get(type).remove({"sys": {"id": item.sys.id}}).value();
 };
 
+let downloadAssets = (assets) => {
+  Promise.all(
+    _.flatten(
+      assets.map(
+        asset => {
+          const items = [];
+          _.forEach(asset.fields.file, file => {
+            const localPath = url.parse('https:' + file.url).pathname;
+
+            items.push(
+              download(
+                'https:' + file.url,
+                assetFolder + path.dirname(localPath)
+              )
+            )
+          });
+
+          return items;
+        }
+      )
+    )
+  ).then(
+    () => {
+      console.log('Download complete');
+    },
+    (err) => {
+      throw err;
+    }
+  );
+};
+
 const incrementalSync = (syncToken) => {
   client
     .sync({nextSyncToken: syncToken})
-    .then((response) => {
-      // update entries
-      _(response.entries).forEach((entry) => {
-        updateItem('entries', entry);
-      });
+    .then(
+      (response) => {
+        // update entries
+        _(response.entries).forEach((entry) => {
+          upsertItem('entries', entry);
+        });
 
-      // update assets
-      _(response.entries).forEach((asset) => {
-        updateItem('assets', asset);
-      });
+        // update assets
+        _(response.assets).forEach((asset) => {
+          upsertItem('assets', asset);
+        });
 
-      // deleted entries
-      _(response.deletedEntries).forEach((entry) => {
-        deleteItem('entries', entry);
-      });
+        // deleted entries
+        _(response.deletedEntries).forEach((entry) => {
+          deleteItem('entries', entry);
+        });
 
-      // deleted assets
-      _(response.deletedAssets).forEach((asset) => {
-        deleteItem('assets', asset);
-      });
+        // deleted assets
+        _(response.deletedAssets).forEach((asset) => {
+          deleteItem('assets', asset);
+        });
 
-      // write sync token
-      db.set('sync-token', response.nextSyncToken).value();
+        // write sync token
+        db.set('sync-token', response.nextSyncToken).value();
 
-      db.write();
-    })
+        db.write();
+
+        console.log(`Upserted ${response.entries.length} entries`);
+        console.log(`Upserted ${response.assets.length} assets`);
+        console.log(`Deleted ${response.deletedEntries.length} entries`);
+        console.log(`Deleted ${response.deletedAssets.length} assets`);
+      },
+      (err) => {
+        throw err;
+      }
+    )
 };
 
 const fullSync = () => {
   client.sync({initial: true})
-    .then((response) => {
-      db.set('entries', response.entries).value();
-      db.set('assets', response.assets).value();
-      db.set('sync-token', response.nextSyncToken).value();
+    .then(
+      (response) => {
+        db.set('entries', response.entries).value();
 
-      db.write();
-    });
+        rimraf.sync(assetFolder);
+        downloadAssets(response.assets);
+
+        db.set('assets', response.assets).value();
+        db.set('sync-token', response.nextSyncToken).value();
+
+        db.write();
+
+        console.log(`Inserted ${response.entries.length} entries`);
+        console.log(`Inserted and downloading ${response.assets.length} assets`);
+      },
+      (err) => {
+        throw err;
+      }
+    );
 };
 
 if (alwaysFullSync || !db.has('sync-token').value()) {

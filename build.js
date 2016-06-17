@@ -3,7 +3,7 @@ require('dotenv').config({silent: true});
 console.log('Building...');
 
 let App = require('./lib/app'),
-  db = require('lowdb')('public/db/db-test.json', { writeOnChange: false }),
+  db = require('lowdb')('public/content/db.json', { writeOnChange: false }),
   app = new App({
     env: process.env.NODE_ENV,
     baseUrl: process.env.BASE_URL,

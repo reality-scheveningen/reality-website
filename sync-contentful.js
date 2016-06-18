@@ -21,7 +21,7 @@ let db = require('lowdb')('public/content/db.json', { writeOnChange: false });
 
 let upsertItem = (type, item) => {
   if (db.get(type).find({"sys" : {"id": item.sys.id}}).value()) {
-    db.get(type).find({"sys" : {"id": item.sys.id}}).assign(item).value();
+    db.get(type).find({"sys" : {"id": item.sys.id}}).merge(item).value();
   } else {
     db.get(type).push(item).value();
   }

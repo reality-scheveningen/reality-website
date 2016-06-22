@@ -1,65 +1,56 @@
-.triptych.container {
-  max-width: inherit;
-  width: 100% !important;
-}
+.triptych {
+  overflow: hidden;
+  a {
+    display: block;
+    text-decoration: none;
+    color: $white;
 
-.triptych .column > a {
-  position: relative;
-  display: block;
-  text-decoration: none;
-  background-color: $black;
-  transition: color 0.5s ease;
-  -webkit-transition: color 0.5s ease;
+    article {
+      box-sizing: border-box;
+      padding: 15%;
+      text-align: center;
+    }
 
-  &:hover {
-    color: white;
-    img {
-      -webkit-filter: #{"opacity(.5)"} #{"sepia(.5)"};
-      filter: #{"opacity(.5)"} #{"sepia(.5)"};
+    h2 {
+      font-family: $font-family-alternative-to;
+      font-weight: normal;
+      font-size: 3rem;
+      margin-bottom: 0;
+      letter-spacing: .2rem;
+    }
+
+    hr {
+      margin: 1rem 45%;
+      border-color: $orange;
+    }
+
+    p {
+      font-family: $font-family-alternative;
+      font-size: 1.5rem;
+      font-weight: 300;
     }
   }
-
-  div {
-    padding: 3rem 9rem;
-    position: absolute;
-    left: 0;
-    top: 34%;
-    text-align: center;
-    box-sizing: border-box;
-    color: $light-brown;
-  }
-
-  h2 {
-    font-family: $font-family-alternative-to;
-    font-weight: normal;
-    font-size: 3rem;
-    margin-bottom: 0;
-    letter-spacing: .2rem;
-  }
-
-  hr {
-    margin: 1rem 45%;
-    border-color: $orange;
-  }
-
-  p {
-    font-family: $font-family-alternative;
-    font-size: 1.5rem;
-    font-weight: 300;
-  }
-
-  img {
-    width: 100%;
-    -webkit-filter: #{"opacity(.3)"} #{"sepia(1)"};
-    filter: #{"opacity(.3)"} #{"sepia(1)"};
-    -webkit-transition: -webkit-filter 0.5s ease;
-    transition: filter 0.5s ease;
-  }
 }
 
-@media (#{$bp-larger-than-phablet}) {
-  .triptych .one-third.column {
-    margin-left: 0;
-    width: 33.33334%;
+@media (#{$bp-larger-than-tablet}) {
+  .triptych > a {
+    float: left;
+    width: 33.333334%;
+
+    background: $white no-repeat center center;
+    background-size: cover;
+
+    min-height: 100vh;
+
+    article {
+      padding-top: 27rem;
+
+      background: linear-gradient(to bottom, rgba(183, 132, 99, 0.5) 0%, rgba(183, 132, 99, 0.1) 50%, rgba(29, 44, 49, .8) 100%);
+      min-height: inherit;
+    }
+
+    &:hover article {
+      background: none;
+    }
   }
 }

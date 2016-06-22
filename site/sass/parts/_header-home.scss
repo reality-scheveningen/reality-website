@@ -1,24 +1,39 @@
 header {
-  position: absolute;
-  width: 100%;
-  z-index: 10;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: $white;
 
-  .column {
-    width: 100%;
+  .container {
+    max-width: 1000px;
   }
+
   .row {
     text-align: center;
   }
+}
 
-  a {
-    padding-top: 1rem;
-    display: inline-block;
-    height: 200px;
-    width: 480px;
-    text-align: center;
-    background: url('/assets/images/triangle.svg') no-repeat top left;
-    background-size: contain;
-    text-decoration: none;
-    overflow: hidden;
+@media (#{$bp-larger-than-tablet}) {
+  header {
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    background: none;
+    z-index: 10;
+
+    .column {
+      width: 100%;
+    }
+
+    a {
+      padding-top: 1rem;
+      display: inline-block;
+      height: 200px;
+      width: 480px;
+      text-align: center;
+      background: url('/assets/images/triangle.svg') no-repeat top left;
+      background-size: contain;
+      text-decoration: none;
+      overflow: hidden;
+    }
   }
 }

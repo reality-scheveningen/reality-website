@@ -27,8 +27,16 @@ let upsertItem = (type, item) => {
   }
 };
 
+let upsertItems = (type, items) => {
+  items.forEach(item => { upsertItem(type, item); });
+};
+
 let deleteItem = (type, item) => {
   db.get(type).remove({"sys": {"id": item.sys.id}}).value();
+};
+
+let deleteItems = (type, items) => {
+  items.forEach(item => { deleteItem(type, item); })
 };
 
 let downloadAssets = (assets) => {
@@ -67,25 +75,15 @@ const incrementalSync = (syncToken) => {
     .sync({nextSyncToken: syncToken})
     .then(
       (response) => {
-        // update entries
-        _(response.entries).forEach((entry) => {
-          upsertItem('entries', entry);
-        });
 
-        // update assets
-        _(response.assets).forEach((asset) => {
-          upsertItem('assets', asset);
-        });
+        upsertItems('entries', response.entries);
 
-        // deleted entries
-        _(response.deletedEntries).forEach((entry) => {
-          deleteItem('entries', entry);
-        });
+        upsertItems('assets', response.assets);
+        downloadAssets(response.assets);
 
-        // deleted assets
-        _(response.deletedAssets).forEach((asset) => {
-          deleteItem('assets', asset);
-        });
+        deleteItems('entries', response.deletedEntries);
+
+        deleteItems('assets', response.deletedAssets);
 
         // write sync token
         db.set('sync-token', response.nextSyncToken).value();

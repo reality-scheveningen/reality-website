@@ -12,29 +12,13 @@ header {
 
   a {
     padding-top: 1rem;
-    position: relative;
     display: inline-block;
-    height: 0;
+    height: 200px;
     width: 480px;
     text-align: center;
-    background: $white;
-    line-height: 50px;
+    background: url('/assets/images/triangle.svg') no-repeat top left;
+    background-size: contain;
     text-decoration: none;
-    padding-bottom: 220px; // 23%
-    background-clip: content-box;
     overflow: hidden;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: inherit;
-      padding-bottom: 59%;
-      width: 80%;
-      z-index: -1;
-      transform-origin: 0 0;
-      transform: rotate(-18deg) skewX(30deg) skewY(-20deg);
-    }
   }
 }

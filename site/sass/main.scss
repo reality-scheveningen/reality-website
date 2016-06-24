@@ -18,3 +18,18 @@ article.page {
     margin-top: -1rem;
   }
 }
+
+
+.cover-full img {
+  display: block;
+  width: 100vw;
+  height: 30rem;
+  object-fit: cover;
+}
+
+@media (#{$bp-larger-than-tablet}) {
+  .cover-full img {
+    height: 45rem;
+  }
+}
+

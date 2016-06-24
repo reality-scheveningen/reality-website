@@ -12,26 +12,6 @@ footer {
     font-family: $font-family-alternative;
   }
 
-  .columns {
-    text-align: left;
-  }
-
-  .logos {
-    margin-top: 6rem;
-  }
-
-  h1 {
-    margin-bottom: 3rem;
-    font-size: 3.6rem
-  }
-
-  .facebook-logo svg {
-    width: 160px;
-    path {
-      fill: $blue;
-    }
-  }
-
   .copyright {
     padding-top: 1.5rem;
     background-image: linear-gradient($black, $dark-blue);
@@ -42,12 +22,69 @@ footer {
   }
 
   .contact {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
+    padding-top: 6rem;
+    padding-bottom: 9rem;
 
-  img.map {
-    width: 100%;
+    h1 {
+      font-family: $font-family-alternative-to;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 3rem;
+      letter-spacing: .2rem;
+    }
+
+    hr {
+      margin: 1rem 46%;
+      border-color: $orange;
+    }
+
+    p {
+      text-align: center;
+      font-weight: 300;
+    }
+
+    .info-box-container {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .info-box {
+      box-sizing: border-box;
+      flex: 1 50%;
+      padding: 6rem 3rem 1.5rem 3rem;
+
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+      }
+
+      a {
+        color: white;
+      }
+
+      &.service {
+        background-color: $green;
+      }
+
+      &.kids {
+        background-color: $blue;
+      }
+
+      &.contact-information {
+        background-color: $brown;
+      }
+
+      &.social-media {
+        background-color: $orange;
+
+        svg {
+          width: 50%;
+          path {
+            fill: $white;
+          }
+        }
+      }
+    }
   }
 
   // css triangle https://css-tricks.com/snippets/css/css-triangle/

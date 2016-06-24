@@ -28,9 +28,11 @@ html(lang="nl")
     block nav
       div
         nav.main-nav
-          a(href="/activiteiten") Activiteiten
-          a(href="/over-ons") Over ons
-          a(href="/stories") Stories
+          each menuTitle, menuPath in {'activiteiten':'Activiteiten', 'over-ons': 'Over ons', 'stories': 'Stories'}
+            if menuPath == path
+              div= menuTitle
+            else
+              a(href="/" + menuPath)= menuTitle
 
     block content
 

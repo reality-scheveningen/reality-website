@@ -1,6 +1,6 @@
 .main-nav {
   overflow: hidden;
-  a {
+  a, div {
     font-family: $font-family-alternative-to;
     text-align: center;
     text-decoration: none;
@@ -9,8 +9,10 @@
 }
 
 @media (#{$bp-larger-than-phablet}) {
-  .main-nav a {
-    width: 33.33334%;
-    float: left;
+  .main-nav {
+    a, div {
+      width: 33.33334%;
+      float: left;
+    }
   }
 }

@@ -24,6 +24,7 @@ footer {
   .contact {
     padding-top: 6rem;
     padding-bottom: 9rem;
+    position: relative;
 
     h1 {
       font-family: $font-family-alternative-to;
@@ -43,9 +44,17 @@ footer {
       font-weight: 300;
     }
 
+    .map-container {
+      img {
+        width: 100%;
+      }
+    }
+
     .info-box-container {
       display: flex;
       flex-flow: row wrap;
+      position: relative;
+      z-index: 1;
     }
 
     .info-box {
@@ -99,7 +108,20 @@ footer {
 }
 
 @media (#{$bp-larger-than-tablet}) {
-  footer .contact .info-box {
-    flex: 1 50%;
+  footer .contact {
+    .info-box {
+      flex: 1 50%;
+    }
+
+    .map-container {
+      width: 100%;
+      position: absolute;
+      left: -35%;
+      top: 0;
+
+      img {
+        width: 60%;
+      }
+    }
   }
 }

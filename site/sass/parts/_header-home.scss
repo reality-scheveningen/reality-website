@@ -30,7 +30,7 @@ header {
       height: 200px;
       width: 480px;
       text-align: center;
-      background: url('/assets/images/triangle.svg') no-repeat top left;
+      background: svg-load('../images/triangle.svg') no-repeat top left;
       background-size: contain;
       text-decoration: none;
       overflow: hidden;

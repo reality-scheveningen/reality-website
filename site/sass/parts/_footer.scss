@@ -50,7 +50,7 @@ footer {
 
     .info-box {
       box-sizing: border-box;
-      flex: 1 50%;
+      flex: 1 100%;
       padding: 6rem 3rem 1.5rem 3rem;
 
       p {
@@ -95,5 +95,11 @@ footer {
     border-right: 1rem solid transparent;
     border-bottom: 1rem solid $black;
     margin: -2.5rem auto 2.5rem auto;
+  }
+}
+
+@media (#{$bp-larger-than-tablet}) {
+  footer .contact .info-box {
+    flex: 1 50%;
   }
 }

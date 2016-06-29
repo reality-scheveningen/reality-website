@@ -100,11 +100,11 @@ html(lang="nl")
     block scripts
       if env == 'dev'
         script.
-            document.write(
-            '<script src="http://' + (location.host || 'localhost').split(':')[0] +
-            ':9091/livereload.js?snipver=1"></' + 'script>')
+          document.write(
+          '<script src="http://' + (location.host || 'localhost').split(':')[0] +
+          ':9091/livereload.js?snipver=1"></' + 'script>')
 
-            console.log(!{debugData})
+          console.log(!{debugData})
 
       script.
         window.ga = function() {

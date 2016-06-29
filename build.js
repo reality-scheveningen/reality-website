@@ -4,6 +4,7 @@ console.log('Building...');
 
 let App = require('./lib/app'),
   db = require('lowdb')('public/content/db.json', { writeOnChange: false }),
+  legacy = require('lowdb')('site/legacy.json', { writeOnChange: false }),
   app = new App({
     env: process.env.NODE_ENV,
     baseUrl: process.env.BASE_URL,
@@ -17,6 +18,17 @@ app.render('/', () => {
   entry.fields.template = 'home';
 
   return entry.fields;
+});
+
+// render legacy redirects (we should remove this somewhere in 2017)
+legacy.get('redirects').value().forEach(redirect => {
+  let path = redirect.source + '/';
+  app.render(path, () => {
+    return {
+      template: 'redirect',
+      redirect: app.options.baseUrl + redirect.target
+    };
+  })
 });
 
 // render pages

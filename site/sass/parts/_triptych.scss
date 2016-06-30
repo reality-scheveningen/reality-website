@@ -24,6 +24,14 @@
       border-color: $orange;
     }
 
+    &:nth-child(2) hr {
+      border-color: $green;
+    }
+
+    &:nth-child(3) hr {
+      border-color: $blue;
+    }
+
     p {
       font-family: $font-family-alternative;
       font-size: 1.5rem;

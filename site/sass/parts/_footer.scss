@@ -73,19 +73,22 @@ footer {
 
       &.service {
         background-color: $green;
+        background-image: linear-gradient(to bottom left, $green, darken($green, 10%));
       }
 
       &.kids {
         background-color: $blue;
+        background-image: linear-gradient(to bottom left, $blue, darken($blue, 10%));
       }
 
       &.contact-information {
         background-color: $brown;
+        background-image: linear-gradient(to bottom left, $brown, darken($brown, 10%));
       }
 
       &.social-media {
         background-color: $orange;
-
+        background-image: linear-gradient(to bottom left, $orange, darken($orange, 10%));
         svg {
           width: 50%;
           path {

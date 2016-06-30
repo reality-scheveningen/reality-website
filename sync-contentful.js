@@ -7,6 +7,8 @@ let contentful = require('contentful'),
   path = require('path'),
   rimraf = require('rimraf'),
   fs = require('fs-extra'),
+  imagemin = require('imagemin'),
+  imageminPlugins = ['gifsicle','jpegtran','optipng','svgo'].map(x => {return require(`imagemin-${x}`)();}),
   alwaysFullSync = process.env.CONTENTFUL_FULL_SYNC || false,
   assetFolder = 'public/content/assets/';
 
@@ -53,7 +55,7 @@ let downloadAssets = (assets) => {
                 'https:' + file.url,
                 assetFolder + path.dirname(localPath)
               )
-            )
+            );
           });
 
           return items;
@@ -61,7 +63,30 @@ let downloadAssets = (assets) => {
       )
     )
   ).then(
-    () => {
+    (items) => {
+
+      let minifyitems = _.flatten(
+        assets.map(asset => {
+          const files = [];
+
+          _.forEach(asset.fields.file, file => {
+            files.push(assetFolder + url.parse('https:' + file.url).pathname);
+          });
+
+          return files;
+        })
+      )
+      .filter(item => {
+        return ['.jpg', '.png', '.gif', '.jpeg', '.JPG', '.JPEG', '.svg', '.SVG'].indexOf(path.extname(item)) != -1;
+      });
+
+      console.log(`Compressing ${minifyitems.length} items`);
+      minifyitems.forEach(item => {
+        imagemin([item], path.dirname(item), {plugins: imageminPlugins}).then(file => {
+          console.log(`Compressing ${file[0].path}`);
+        }, err => {throw err;})
+      });
+
       console.log('Download complete');
     },
     (err) => {

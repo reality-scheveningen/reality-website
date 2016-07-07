@@ -76,7 +76,7 @@ footer {
         background-image: linear-gradient(to bottom left, $green, darken($green, 10%));
       }
 
-      &.kids {
+      &.events {
         background-color: $blue;
         background-image: linear-gradient(to bottom left, $blue, darken($blue, 10%));
       }
@@ -109,6 +109,30 @@ footer {
     margin: -2.5rem auto 2.5rem auto;
   }
 }
+
+#agenda-open {
+  display: none;
+
+  &:target {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: $white;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 6rem;
+    z-index: 20;
+    display: flex;
+  }
+
+  a {
+    position: absolute;
+    right: 6rem;
+    top: 3rem;
+  }
+}
+
 
 @media (#{$bp-larger-than-tablet}) {
   footer .contact {

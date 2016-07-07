@@ -67,10 +67,11 @@ html(lang="nl")
                       | 10.30 uur Kranenburgweg 204
                       br
                       | in Scheveningen
-                  .info-box.kids
+                  .info-box.events
                     p
-                      | Voor de kinderen hebben wij een apart programma. Wij leren de
-                      | kinderen d.m.v. bla bla bla
+                      | Kerk zijn doen we niet alleen op zondag. Zie onze&nbsp;
+                      a(id="agenda",href="#agenda-open") Agenda
+                      |  voor meer informatie.
                   .info-box.contact-information
                     p
                       a(href="mailto:contact@reality-scheveningen.nl") contact@reality-scheveningen.nl
@@ -97,6 +98,10 @@ html(lang="nl")
                   |  | Postbus 84348 2508AH, Den Haag |&nbsp;
                   a(href="/anbi") ANBI informatie
 
+    #agenda-open
+      a(href="#agenda") Sluiten
+      noscript
+        iframe(src="https://calendar.google.com/calendar/hosted/realityscheveningen.nl/embed?height=600&wkst=2&bgcolor=%23FFFFFF&src=realityscheveningen.nl_dt43iuoak13h4ioo00vi13g1bk@group.calendar.google.com&color=%23BE6D00&ctz=Europe/Amsterdam",style="border-width:0",width="100%",height="600",frameborder="0",scrolling="no")
     block scripts
       if env == 'dev'
         script.
@@ -105,6 +110,29 @@ html(lang="nl")
           ':9091/livereload.js?snipver=1"></' + 'script>')
 
           console.log(!{debugData})
+
+      script.
+        (function () {
+          var renderedAgenda = false;
+
+          var renderAgenda = function () {
+            if (renderedAgenda) return;
+
+            if (window.location.hash == '#agenda-open') {
+              var el = document.getElementById('agenda-open');
+              var html = el.querySelectorAll('noscript')[0].innerText;
+              el.innerHTML = el.innerHTML + html;
+
+              renderedAgenda = true;
+            }
+          };
+
+          renderAgenda();
+
+          window.onhashchange = function() {
+            renderAgenda();
+          }
+        })();
 
       script.
         window.ga = function() {

@@ -8,6 +8,7 @@ let contentful = require('contentful'),
   rimraf = require('rimraf'),
   fs = require('fs-extra'),
   imagemin = require('imagemin'),
+  jimp = require('jimp'),
   imageminPlugins = ['gifsicle','jpegtran','optipng','svgo'].map(x => {return require(`imagemin-${x}`)();}),
   alwaysFullSync = process.env.CONTENTFUL_FULL_SYNC || false,
   assetFolder = 'public/content/assets/';
@@ -63,9 +64,9 @@ let downloadAssets = (assets) => {
       )
     )
   ).then(
-    (items) => {
+    () => {
 
-      let minifyitems = _.flatten(
+      let items = _.flatten(
         assets.map(asset => {
           const files = [];
 
@@ -75,16 +76,39 @@ let downloadAssets = (assets) => {
 
           return files;
         })
-      )
-      .filter(item => {
-        return ['.jpg', '.png', '.gif', '.jpeg', '.JPG', '.JPEG', '.svg', '.SVG'].indexOf(path.extname(item)) != -1;
+      );
+
+      let retinaImages = items.filter(item => {
+        return ['.jpg', '.png', '.jpeg', '.JPG', '.JPEG'].indexOf(path.extname(item)) != -1;
       });
 
-      console.log(`Compressing ${minifyitems.length} items`);
-      minifyitems.forEach(item => {
-        imagemin([item], path.dirname(item), {plugins: imageminPlugins}).then(file => {
-          console.log(`Compressing ${file[0].path}`);
-        }, err => {throw err;})
+      retinaImages.forEach(image => {
+        // copy image with @2x
+        let parts = path.parse(image);
+        let target = path.normalize(`${parts.dir}/${parts.name}@2x${parts.ext}`);
+
+        fs.copySync(image, target);
+
+        items.push(target);
+      });
+
+
+      Promise.all(retinaImages.map(item => {
+        return jimp.read(item).then(imageBlob => {
+          imageBlob.scale(0.5).quality(80).write(item);
+        });
+      })).then(() => {
+        return Promise.all(
+          items.filter(item => {
+            return ['.jpg', '.png', '.gif', '.jpeg', '.JPG', '.JPEG', '.svg', '.SVG'].indexOf(path.extname(item)) != -1;
+          }).map(item => {
+            return imagemin([item], path.dirname(item), {plugins: imageminPlugins});
+          })
+        );
+      }).then(items => {
+        items.forEach(file => {
+          console.log(`Compressed ${file[0].path}`);
+        })
       });
 
       console.log('Download complete');

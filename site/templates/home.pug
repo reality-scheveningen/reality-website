@@ -8,7 +8,7 @@ block nav
 block content
   .triptych
     each tych in triptych
-      a(href="/" + tych.link.path,style="background-image: url('"+tych.image.file.url+"')")
+      a(href="/" + tych.link.path,style="background-image: url('"+tych.image.file.url.replace(/(\.\w+)$/i, '@2x$1')+"')")
         article
           div
             h2= tych.title

@@ -13,8 +13,11 @@ footer {
   }
 
   .copyright {
-    padding-top: 1.5rem;
-    background-image: linear-gradient($black, $dark-blue);
+    padding-top: 3rem;
+    background-image: svg-load('../images/triangle-footer.svg'), linear-gradient($black, $dark-blue);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center 0, left 10px;
+    background-size: 20px 10px, 100% 100%;
 
     a {
       color: $white;
@@ -97,16 +100,6 @@ footer {
         }
       }
     }
-  }
-
-  // css triangle https://css-tricks.com/snippets/css/css-triangle/
-  .arrow-up {
-    width: 0;
-    height: 0;
-    border-left: 1rem solid transparent;
-    border-right: 1rem solid transparent;
-    border-bottom: 1rem solid $black;
-    margin: -2.5rem auto 2.5rem auto;
   }
 }
 

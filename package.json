@@ -21,7 +21,6 @@
     "imagemin-jpegtran": "5.0.2",
     "imagemin-optipng": "5.1.0",
     "imagemin-svgo": "5.1.0",
-    "jade": "^1.11.0",
     "jshint": "^2.9.2",
     "linkify-it": "^1.2.4",
     "live-reload": "^1.1.0",
@@ -35,6 +34,7 @@
     "postcss": "^5.0.21",
     "postcss-cli": "^2.5.2",
     "postcss-inline-svg": "2.0.1",
+    "pug": "2.0.0-beta3",
     "rimraf": "^2.5.2",
     "watch": "^0.18.0"
   },

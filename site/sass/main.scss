@@ -9,9 +9,8 @@
 @import "parts/_main-nav";
 
 article.page {
-  outline: 3rem solid white;
-  margin-bottom: 3rem;
-  margin-top: -6rem;
+  padding: 3rem;
+  margin-top: -9rem;
   background: $white;
 
   &>h1 {

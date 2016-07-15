@@ -9,15 +9,9 @@
 @import "parts/_main-nav";
 
 article.page {
-  padding: 3rem;
-  margin-top: -9rem;
   background: $white;
-
-  &>h1 {
-    margin-top: -1rem;
-  }
+  padding: 3rem 0;
 }
-
 
 .cover-full img {
   display: block;
@@ -27,8 +21,21 @@ article.page {
 }
 
 @media (#{$bp-larger-than-tablet}) {
+  body {
+    background: $lightest-grey;
+  }
+
   .cover-full img {
     height: 45rem;
+  }
+
+  article.page {
+    padding: 3rem;
+    margin-top: -9rem;
+
+    &>h1 {
+      margin-top: -1rem;
+    }
   }
 }
 

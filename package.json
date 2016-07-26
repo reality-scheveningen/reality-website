@@ -29,6 +29,7 @@
     "markdown-it": "^7.0.0",
     "markdown-it-anchor": "2.5.0",
     "markdown-it-emoji": "^1.2.0",
+    "markdown-it-external-links": "^0.0.5",
     "node-sass": "^3.7.0",
     "parallelshell": "^2.0.0",
     "postcss": "^5.0.21",

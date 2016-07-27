@@ -1,0 +1,50 @@
+#!/usr/bin/env node
+
+'use strict';
+
+require('dotenv').config({silent: true});
+let fs = require('fs');
+
+let loadDatabase = require('../lib/build/load-database'),
+  retrieveLegacyRedirects = require('../lib/build/retrieve-legacy-redirects'),
+  retrieveHomePage = require('../lib/build/retrieve-home-page'),
+  retrieveContentPages = require('../lib/build/retrieve-content-pages'),
+  renderPages = require('../lib/build/render-pages')
+;
+
+function initConfig(e) {
+  const basePath = fs.realpathSync('./');
+
+  e.config = {
+    env: process.env.NODE_ENV,
+    baseUrl: process.env.BASE_URL,
+    gaTrackingCode: process.env.GA_TRACKING_CODE,
+    basePath: basePath,
+    publicPath: `${basePath}/public`,
+    sitePath: `${basePath}/site`
+  };
+
+  return e;
+}
+
+function report(e) {
+  console.log(`Build ${Object.keys(e.pages).length} pages`);
+
+  return e;
+}
+
+function build() {
+  return Promise.resolve({})
+    .then(initConfig)
+    .then(loadDatabase)
+    .then(retrieveLegacyRedirects)
+    .then(retrieveHomePage)
+    .then(retrieveContentPages)
+    .then(renderPages)
+    .then(report)
+    .catch(err => { console.log(err); process.exit(1); })
+  ;
+}
+
+build();
+

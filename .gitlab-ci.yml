@@ -7,6 +7,7 @@ pages:
       - public/content
   script:
     - npm install
+    - npm run lint
     - npm run sync-content
     - npm run build
     - npm run build:minify

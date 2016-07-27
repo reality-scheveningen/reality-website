@@ -47,7 +47,7 @@
   "scripts": {
     "clean": "rimraf public",
     "build:static": "copyfiles -u 2 'site/static/**/*' public",
-    "build:site": "node build.js",
+    "build:site": "./bin/build",
     "build:css": "node-sass site/sass -o public/assets/styles && postcss --use autoprefixer --use postcss-inline-svg public/assets/styles/*.css -r",
     "build:minify": "postcss --use cssnano public/assets/styles/*.css -r && html-minifier --input-dir public --output-dir public --minify-css --minify-js --case-sensitive --file-ext html",
     "build": "npm run build:static && npm run build:site && npm run build:css",
@@ -56,7 +56,7 @@
     "serve": "http-server -p 9090 public/",
     "live-reload": "live-reload --port 9091 public/",
     "dev": "parallelshell \"npm run live-reload -s\" \"npm run serve -s\" \"npm run watch -s\"",
-    "lint": "jshint *.js lib/*.js",
+    "lint": "jshint *.js lib/**",
     "deploy:test": "NODE_ENV=prod BASE_URL='https://reality-new.surge.sh' npm run build && npm run build:minify && echo \"User-agent: *\nDisallow: /\n\" > public/robots.txt && surge public reality-new.surge.sh"
   },
   "author": "Mark van Duijker <mark@duyker.nl>"

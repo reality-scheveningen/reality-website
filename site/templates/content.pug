@@ -3,7 +3,7 @@ extends layout
 block content
   if heroImage && heroImage.file.url
     .cover-full
-      img(src=heroImage.file.url,srcset=heroImage.file.url.replace(/(\.\w+)$/i, '@2x$1') + " 2x",class="u-full-width")
+      img(src=heroImage.file.url,class="u-full-width")
   .container.squeezed-with-room-padding
     .row
       article.column.page

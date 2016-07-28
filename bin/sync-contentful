@@ -1,0 +1,63 @@
+#!/usr/bin/env node
+
+require('dotenv').config({silent: true});
+
+let
+  fs = require('fs'),
+  loadDatabase = require('../lib/sync/load-database'),
+  cleanup = require('../lib/sync/cleanup'),
+  determineSyncStrategy = require('../lib/sync/determine-sync-strategy'),
+  syncFromContentFul = require('../lib/sync/sync-from-contentful'),
+  storeSyncedData = require('../lib/sync/store-synced-data'),
+  downloadSyncedAssets = require('../lib/sync/download-synced-assets'),
+  filterImagesFromSyncedAssetsList = require('../lib/sync/filter-images-from-synced-assets-list'),
+  makeNoneRetinaImages = require('../lib/sync/make-none-retina-images'),
+  optimizeAssets = require('../lib/sync/optimize-assets')
+;
+
+function initConfig(e) {
+  const basePath = fs.realpathSync('./');
+
+  e.config = {
+    env: process.env.NODE_ENV,
+    baseUrl: process.env.BASE_URL,
+    basePath: basePath,
+    publicPath: `${basePath}/public`,
+    assetPath: `${basePath}/public/content/assets/`,
+    contentfulSpace: process.env.CONTENTFUL_SPACE,
+    contentfulAccessToken: process.env.CONTENTFUL_API_KEY,
+    fullSync: process.env.CONTENTFUL_FULL_SYNC || false
+  };
+
+  return e;
+}
+
+function report(e) {
+  console.log(e.config.fullSync ? 'Performed full sync' : 'Performed incremental sync');
+  console.log(`Synced ${e.sync.entries.length} entries`);
+  console.log(`Synced ${e.sync.assets.length} assets`);
+  console.log(`Removed ${e.sync.deletedEntries.length} entries`);
+  console.log(`Removed ${e.sync.deletedAssets.length} assets`);
+  console.log(`Optimized ${e.images.length} images`);
+
+  return e;
+}
+
+function sync() {
+  return Promise.resolve({})
+    .then(initConfig)
+    .then(loadDatabase)
+    .then(determineSyncStrategy)
+    .then(cleanup)
+    .then(syncFromContentFul)
+    .then(storeSyncedData)
+    .then(downloadSyncedAssets)
+    .then(filterImagesFromSyncedAssetsList)
+    // .then(makeNoneRetinaImages)
+    .then(optimizeAssets)
+    .then(report)
+    .catch(err => { console.log(err); process.exit(1); })
+  ;
+}
+
+sync();

@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-'use strict';
-
 require('dotenv').config({silent: true});
+
 let fs = require('fs');
 
 let loadDatabase = require('../lib/build/load-database'),

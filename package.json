@@ -4,7 +4,6 @@
   "description": "Reality website",
   "dependencies": {
     "es6-promisify": "4.1.0",
-    "imagemin-optipng": "5.1.1",
     "lodash": "4.14.0",
     "postcss": "5.1.1",
     "pug": "2.0.0-beta4",

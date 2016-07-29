@@ -1,0 +1,12 @@
+{
+  "redirects": [
+    {
+      "source": "/some-legacy-page-1",
+      "target": "/new-page"
+    },
+    {
+      "source": "/some-legacy-page-2",
+      "target": "/new-page"
+    }
+  ]
+}

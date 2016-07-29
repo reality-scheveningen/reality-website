@@ -43,9 +43,11 @@
     "postcss-inline-svg": "^2.0.1",
     "pug": "^2.0.0-beta3",
     "rimraf": "^2.5.2",
+    "tape": "4.6.0",
     "watch": "^0.19.1"
   },
   "scripts": {
+    "test": "npm run lint && tape test/lib/**/*",
     "clean": "rimraf public",
     "build:static": "copyfiles -u 2 'site/static/**/*' public",
     "build:site": "./bin/build",
@@ -57,7 +59,7 @@
     "serve": "http-server -p 9090 public/",
     "live-reload": "live-reload --port 9091 public/",
     "dev": "parallelshell \"npm run live-reload -s\" \"npm run serve -s\" \"npm run watch -s\"",
-    "lint": "jshint lib/**",
+    "lint": "jshint lib/** test/**",
     "deploy:test": "NODE_ENV=prod BASE_URL='https://reality-new.surge.sh' npm run build && npm run build:minify && echo \"User-agent: *\nDisallow: /\n\" > public/robots.txt && surge public reality-new.surge.sh"
   },
   "author": "Mark van Duijker <mark@duyker.nl>"

@@ -1,18 +1,13 @@
 image: node:6.2.2
 
-test:
-  cache:
-    paths:
-      - node_modules/
-  script:
-    - npm install
-    - npm test
-
 pages:
   cache:
     paths:
+      - node_modules/
       - public/content
   script:
+    - npm install
+    - npm test
     - npm run sync-content
     - npm run build
     - npm run build:minify

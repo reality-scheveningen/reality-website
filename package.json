@@ -43,11 +43,12 @@
     "postcss-inline-svg": "^2.0.1",
     "pug": "^2.0.0-beta3",
     "rimraf": "^2.5.2",
+    "tap-spec": "4.1.1",
     "tape": "4.6.0",
     "watch": "^0.19.1"
   },
   "scripts": {
-    "test": "npm run lint && tape test/lib/**/*",
+    "test": "npm run lint && tape 'test/**/*.js' | tap-spec",
     "clean": "rimraf public",
     "build:static": "copyfiles -u 2 'site/static/**/*' public",
     "build:site": "./bin/build",

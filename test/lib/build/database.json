@@ -1,0 +1,52 @@
+{
+  "entries": [
+    {
+      "sys": {
+        "contentType": {
+          "sys": {
+            "id": "homepage"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "nl-NL": "Example homepage title"
+        }
+      }
+    },
+    {
+      "sys": {
+        "contentType": {
+          "sys": {
+            "id": "page"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "nl-NL": "Page 1"
+        },
+        "path": {
+          "nl-NL": "page-1"
+        }
+      }
+    },
+    {
+      "sys": {
+        "contentType": {
+          "sys": {
+            "id": "page"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "nl-NL": "Page 2"
+        },
+        "path": {
+          "nl-NL": "page-2"
+        }
+      }
+    }
+  ]
+}

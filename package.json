@@ -2,6 +2,7 @@
   "name": "reality-website",
   "version": "1.0.0",
   "description": "Reality website",
+  "author": "Mark van Duijker <mark@duyker.nl>",
   "dependencies": {
     "es6-promisify": "4.1.0",
     "lodash": "4.14.0",
@@ -37,6 +38,7 @@
     "markdown-it-emoji": "^1.2.0",
     "markdown-it-external-links": "^0.0.5",
     "node-sass": "^3.7.0",
+    "nyc": "7.1.0",
     "parallelshell": "^2.0.0",
     "postcss": "^5.0.21",
     "postcss-cli": "^2.5.2",
@@ -49,6 +51,7 @@
   },
   "scripts": {
     "test": "npm run lint && tape 'test/**/*.js' | tap-spec",
+    "coverage": "nyc npm test",
     "clean": "rimraf public",
     "build:static": "copyfiles -u 2 'site/static/**/*' public",
     "build:site": "./bin/build",
@@ -63,5 +66,15 @@
     "lint": "jshint lib/** test/**",
     "deploy:test": "NODE_ENV=prod BASE_URL='https://reality-new.surge.sh' npm run build && npm run build:minify && echo \"User-agent: *\nDisallow: /\n\" > public/robots.txt && surge public reality-new.surge.sh"
   },
-  "author": "Mark van Duijker <mark@duyker.nl>"
+  "nyc": {
+    "include": [
+      "lib/**/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "all": true,
+    "check-coverage": false
+  }
 }

@@ -12,7 +12,9 @@ let loadDatabase = require('../lib/build/load-database'),
 ;
 
 function initConfig(e) {
-  const basePath = fs.realpathSync('./');
+  const basePath = fs.realpathSync('./'),
+    publicPath = `${basePath}/public`,
+    databasePath = `${publicPath}/content/db.json`;
 
   e.config = {
     env: process.env.NODE_ENV,
@@ -20,7 +22,8 @@ function initConfig(e) {
     gaTrackingCode: process.env.GA_TRACKING_CODE,
     basePath: basePath,
     publicPath: `${basePath}/public`,
-    sitePath: `${basePath}/site`
+    sitePath: `${basePath}/site`,
+    databasePath: databasePath
   };
 
   return e;

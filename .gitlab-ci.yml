@@ -8,7 +8,7 @@ cache:
 test:
   script:
     - npm install
-    - npm test-with-coverage
+    - npm run test-with-coverage
 
 pages:
   script:

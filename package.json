@@ -43,6 +43,7 @@
     "postcss": "^5.0.21",
     "postcss-cli": "^2.5.2",
     "postcss-inline-svg": "^2.0.1",
+    "proxyquire": "1.7.10",
     "pug": "^2.0.0-beta3",
     "rimraf": "^2.5.2",
     "tap-spec": "4.1.1",

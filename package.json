@@ -51,7 +51,7 @@
   },
   "scripts": {
     "test": "npm run lint && tape 'test/**/*.js' | tap-spec",
-    "coverage": "nyc npm test",
+    "test-with-coverage": "nyc npm test",
     "clean": "rimraf public",
     "build:static": "copyfiles -u 2 'site/static/**/*' public",
     "build:site": "./bin/build",

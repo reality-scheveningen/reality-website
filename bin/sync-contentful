@@ -16,14 +16,17 @@ let
 ;
 
 function initConfig(e) {
-  const basePath = fs.realpathSync('./');
+  const basePath = fs.realpathSync('./'),
+    publicPath = `${basePath}/public`,
+    databasePath = `${publicPath}/content/db.json`;
 
   e.config = {
     env: process.env.NODE_ENV,
     baseUrl: process.env.BASE_URL,
     basePath: basePath,
-    publicPath: `${basePath}/public`,
-    assetPath: `${basePath}/public/content/assets/`,
+    publicPath: publicPath,
+    databasePath: databasePath,
+    assetPath: `${publicPath}/content/assets/`,
     contentfulSpace: process.env.CONTENTFUL_SPACE,
     contentfulAccessToken: process.env.CONTENTFUL_API_KEY,
     fullSync: process.env.CONTENTFUL_FULL_SYNC || false

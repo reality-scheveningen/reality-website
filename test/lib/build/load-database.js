@@ -1,16 +1,16 @@
-let test = require('tape'),
-  loadDatabase = require('../../../lib/build/load-database');
+let test = require('tape')
+let loadDatabase = require('../../../lib/build/load-database')
 
 test('loads database', assert => {
   const e = {
     config: {
       databasePath: `${__dirname}/database.json`
     }
-  };
+  }
 
-  loadDatabase(e);
+  loadDatabase(e)
 
-  assert.equal(true, e.db.entries instanceof Array, 'Database is loaded');
+  assert.equal(true, e.db.entries instanceof Array, 'Database is loaded')
 
-  assert.end();
-});
+  assert.end()
+})

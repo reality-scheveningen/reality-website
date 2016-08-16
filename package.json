@@ -28,7 +28,6 @@
     "imagemin-optipng": "^5.1.0",
     "imagemin-svgo": "^5.1.0",
     "jimp": "^0.2.24",
-    "jshint": "^2.9.2",
     "linkify-it": "^2.0.0",
     "live-reload": "^1.1.0",
     "lodash": "^4.13.1",
@@ -46,6 +45,7 @@
     "proxyquire": "1.7.10",
     "pug": "^2.0.0-beta3",
     "rimraf": "^2.5.2",
+    "standard": "7.1.2",
     "tap-spec": "4.1.1",
     "tape": "4.6.0",
     "watch": "^0.19.1"
@@ -64,7 +64,7 @@
     "serve": "http-server -p 9090 public/",
     "live-reload": "live-reload --port 9091 public/",
     "dev": "parallelshell \"npm run live-reload -s\" \"npm run serve -s\" \"npm run watch -s\"",
-    "lint": "jshint lib/** test/**",
+    "lint": "standard",
     "deploy:test": "NODE_ENV=prod BASE_URL='https://reality-new.surge.sh' npm run build && npm run build:minify && echo \"User-agent: *\nDisallow: /\n\" > public/robots.txt && surge public reality-new.surge.sh"
   },
   "nyc": {

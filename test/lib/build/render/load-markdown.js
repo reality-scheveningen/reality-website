@@ -1,5 +1,5 @@
-let test = require('tape'),
-  filterHtml = require('../../../../lib/build/render/load-markdown');
+let test = require('tape')
+let filterHtml = require('../../../../lib/build/render/load-markdown')
 
 test('loads markdown', assert => {
   const e = {
@@ -7,28 +7,28 @@ test('loads markdown', assert => {
       template: 'page',
       baseUrl: 'http://example.com'
     }
-  };
+  }
 
-  filterHtml(e);
+  filterHtml(e)
 
   assert.equal(
     e.page.md('# Test'),
-    '<h1 id="test">Test</h1>' + "\n",
+    '<h1 id="test">Test</h1>' + '\n',
     'markdown transformed to html'
-  );
+  )
 
-  assert.end();
-});
+  assert.end()
+})
 
 test('not load markdown on redirect pages', assert => {
   const e = {
     page: {
       template: 'redirect'
     }
-  };
+  }
 
-  filterHtml(e);
+  filterHtml(e)
 
-  assert.equal(undefined, e.page.md, 'Nope, no markdown loaded');
-  assert.end();
-});
+  assert.equal(undefined, e.page.md, 'Nope, no markdown loaded')
+  assert.end()
+})

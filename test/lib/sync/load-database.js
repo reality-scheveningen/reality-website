@@ -1,30 +1,30 @@
-let test = require('tape'),
-  loadDatabase = require('../../../lib/sync/load-database');
+let test = require('tape')
+let loadDatabase = require('../../../lib/sync/load-database')
 
 test('loads database', assert => {
   const e = {
     config: {
       databasePath: `${__dirname}/database.json`
     }
-  };
+  }
 
-  loadDatabase(e);
+  loadDatabase(e)
 
-  assert.equal(true, e.db.entries instanceof Array, 'Database is loaded');
+  assert.equal(true, e.db.entries instanceof Array, 'Database is loaded')
 
-  assert.end();
-});
+  assert.end()
+})
 
 test('empty object when database file not yet exists', assert => {
   const e = {
     config: {
       databasePath: `${__dirname}/not-exists.json`
     }
-  };
+  }
 
-  loadDatabase(e);
+  loadDatabase(e)
 
-  assert.same({}, e.db, 'Empty database fallback');
+  assert.same({}, e.db, 'Empty database fallback')
 
-  assert.end();
-});
+  assert.end()
+})

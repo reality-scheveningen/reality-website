@@ -1,5 +1,5 @@
-let test = require('tape'),
-  filterHtml = require('../../../../lib/build/render/filter-html');
+let test = require('tape')
+let filterHtml = require('../../../../lib/build/render/filter-html')
 
 test('filters html', assert => {
   const e = {
@@ -7,17 +7,17 @@ test('filters html', assert => {
     page: {
       template: 'page'
     }
-  };
+  }
 
-  filterHtml(e);
+  filterHtml(e)
 
   assert.equal(
     '<a href="/content/assets/images/example.jpg">Example<a>',
     e.html,
     'replaced contful.com assets links to local ones'
-  );
-  assert.end();
-});
+  )
+  assert.end()
+})
 
 test('does not filter html on redirect html pages', assert => {
   const e = {
@@ -25,14 +25,14 @@ test('does not filter html on redirect html pages', assert => {
     page: {
       template: 'redirect'
     }
-  };
+  }
 
-  filterHtml(e);
+  filterHtml(e)
 
   assert.equal(
     '<a href="//assets.contentful.com/images/example.jpg">Example<a>',
     e.html,
     'not replaced contenful.com links'
-  );
-  assert.end();
-});
+  )
+  assert.end()
+})

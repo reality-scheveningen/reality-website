@@ -1,39 +1,38 @@
-let test = require('tape'),
-  proxyquire = require('proxyquire').noCallThru();
+let test = require('tape')
+let proxyquire = require('proxyquire').noCallThru()
 
 test('renders the html templates', assert => {
-
   let e = {
     page: {
       sitePath: 'site/path',
       template: 'some-template'
     }
-  };
+  }
 
-  let called = false;
+  let called = false
   const renderHtml = proxyquire('../../../../lib/build/render/render-html', {
-    "pug": {
+    'pug': {
       renderFile: (path, data, cb) => {
-        assert.equal('site/path/templates/some-template.pug', path);
-        assert.same(e.page, data);
+        assert.equal('site/path/templates/some-template.pug', path)
+        assert.same(e.page, data)
 
-        called = true;
+        called = true
 
-        cb();
+        cb()
       }
     }
-  });
+  })
 
-  const result = renderHtml(e);
+  const result = renderHtml(e)
 
   result.then(res => {
-    assert.equal(true, called, 'Pug render file has been called');
-    assert.equal(true, res.hasOwnProperty('html'), 'Html has been set');
+    assert.equal(true, called, 'Pug render file has been called')
+    assert.equal(true, res.hasOwnProperty('html'), 'Html has been set')
 
-    assert.end();
+    assert.end()
   }).catch(err => {
-    assert.fail('Promise failed with: ' + err);
+    assert.fail('Promise failed with: ' + err)
 
-    assert.end();
-  });
-});
+    assert.end()
+  })
+})

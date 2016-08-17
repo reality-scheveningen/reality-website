@@ -1,20 +1,18 @@
 #!/usr/bin/env node
 
-require('dotenv').config({silent: true});
+require('dotenv').config({silent: true})
 
-let fs = require('fs');
+const fs = require('fs')
+const loadDatabase = require('../lib/build/load-database')
+const retrieveLegacyRedirects = require('../lib/build/retrieve-legacy-redirects')
+const retrieveHomePage = require('../lib/build/retrieve-home-page')
+const retrieveContentPages = require('../lib/build/retrieve-content-pages')
+const renderPages = require('../lib/build/render-pages')
 
-let loadDatabase = require('../lib/build/load-database'),
-  retrieveLegacyRedirects = require('../lib/build/retrieve-legacy-redirects'),
-  retrieveHomePage = require('../lib/build/retrieve-home-page'),
-  retrieveContentPages = require('../lib/build/retrieve-content-pages'),
-  renderPages = require('../lib/build/render-pages')
-;
-
-function initConfig(e) {
-  const basePath = fs.realpathSync('./'),
-    publicPath = `${basePath}/public`,
-    databasePath = `${publicPath}/content/db.json`;
+function initConfig (e) {
+  const basePath = fs.realpathSync('./')
+  const publicPath = `${basePath}/public`
+  const databasePath = `${publicPath}/content/db.json`
 
   e.config = {
     env: process.env.NODE_ENV,
@@ -24,18 +22,18 @@ function initConfig(e) {
     publicPath: `${basePath}/public`,
     sitePath: `${basePath}/site`,
     databasePath: databasePath
-  };
+  }
 
-  return e;
+  return e
 }
 
-function report(e) {
-  console.log(`Build ${Object.keys(e.pages).length} pages`);
+function report (e) {
+  console.log(`Build ${Object.keys(e.pages).length} pages`)
 
-  return e;
+  return e
 }
 
-function build() {
+function build () {
   return Promise.resolve({})
     .then(initConfig)
     .then(loadDatabase)
@@ -44,9 +42,7 @@ function build() {
     .then(retrieveContentPages)
     .then(renderPages)
     .then(report)
-    .catch(err => { console.log(err); process.exit(1); })
-  ;
+    .catch(err => { console.log(err); process.exit(1) })
 }
 
-build();
-
+build()

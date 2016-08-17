@@ -1,24 +1,22 @@
 #!/usr/bin/env node
 
-require('dotenv').config({silent: true});
+require('dotenv').config({silent: true})
 
-let
-  fs = require('fs'),
-  loadDatabase = require('../lib/sync/load-database'),
-  cleanup = require('../lib/sync/cleanup'),
-  determineSyncStrategy = require('../lib/sync/determine-sync-strategy'),
-  syncFromContentFul = require('../lib/sync/sync-from-contentful'),
-  storeSyncedData = require('../lib/sync/store-synced-data'),
-  downloadSyncedAssets = require('../lib/sync/download-synced-assets'),
-  filterImagesFromSyncedAssetsList = require('../lib/sync/filter-images-from-synced-assets-list'),
-  makeNoneRetinaImages = require('../lib/sync/make-none-retina-images'),
-  optimizeAssets = require('../lib/sync/optimize-assets')
-;
+const fs = require('fs')
+const loadDatabase = require('../lib/sync/load-database')
+const cleanup = require('../lib/sync/cleanup')
+const determineSyncStrategy = require('../lib/sync/determine-sync-strategy')
+const syncFromContentFul = require('../lib/sync/sync-from-contentful')
+const storeSyncedData = require('../lib/sync/store-synced-data')
+const downloadSyncedAssets = require('../lib/sync/download-synced-assets')
+const filterImagesFromSyncedAssetsList = require('../lib/sync/filter-images-from-synced-assets-list')
+// const makeNoneRetinaImages = require('../lib/sync/make-none-retina-images')
+const optimizeAssets = require('../lib/sync/optimize-assets')
 
-function initConfig(e) {
-  const basePath = fs.realpathSync('./'),
-    publicPath = `${basePath}/public`,
-    databasePath = `${publicPath}/content/db.json`;
+function initConfig (e) {
+  const basePath = fs.realpathSync('./')
+  const publicPath = `${basePath}/public`
+  const databasePath = `${publicPath}/content/db.json`
 
   e.config = {
     env: process.env.NODE_ENV,
@@ -30,23 +28,23 @@ function initConfig(e) {
     contentfulSpace: process.env.CONTENTFUL_SPACE,
     contentfulAccessToken: process.env.CONTENTFUL_API_KEY,
     fullSync: process.env.CONTENTFUL_FULL_SYNC || false
-  };
+  }
 
-  return e;
+  return e
 }
 
-function report(e) {
-  console.log(e.config.fullSync ? 'Performed full sync' : 'Performed incremental sync');
-  console.log(`Synced ${e.sync.entries.length} entries`);
-  console.log(`Synced ${e.sync.assets.length} assets`);
-  console.log(`Removed ${e.sync.deletedEntries.length} entries`);
-  console.log(`Removed ${e.sync.deletedAssets.length} assets`);
-  console.log(`Optimized ${e.images.length} images`);
+function report (e) {
+  console.log(e.config.fullSync ? 'Performed full sync' : 'Performed incremental sync')
+  console.log(`Synced ${e.sync.entries.length} entries`)
+  console.log(`Synced ${e.sync.assets.length} assets`)
+  console.log(`Removed ${e.sync.deletedEntries.length} entries`)
+  console.log(`Removed ${e.sync.deletedAssets.length} assets`)
+  console.log(`Optimized ${e.images.length} images`)
 
-  return e;
+  return e
 }
 
-function sync() {
+function sync () {
   return Promise.resolve({})
     .then(initConfig)
     .then(loadDatabase)
@@ -59,8 +57,7 @@ function sync() {
     // .then(makeNoneRetinaImages)
     .then(optimizeAssets)
     .then(report)
-    .catch(err => { console.log(err); process.exit(1); })
-  ;
+    .catch(err => { console.log(err); process.exit(1) })
 }
 
-sync();
+sync()

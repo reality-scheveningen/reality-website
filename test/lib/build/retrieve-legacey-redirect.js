@@ -1,5 +1,5 @@
-let test = require('tape')
-let legacyRedirects = require('../../../lib/build/retrieve-legacy-redirects')
+const test = require('tape')
+const legacyRedirects = require('../../../lib/build/retrieve-legacy-redirects')
 
 test('retrieve legacy redirects as pages', assert => {
   const obj = {

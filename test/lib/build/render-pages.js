@@ -1,5 +1,5 @@
-let test = require('tape')
-let proxyquire = require('proxyquire')
+const test = require('tape')
+const proxyquire = require('proxyquire')
 
 test('rendering pages', assert => {
   const e = {
@@ -16,7 +16,7 @@ test('rendering pages', assert => {
   }
 
   // create stubs
-  let called = {
+  const called = {
     'load-markdown': false,
     'render-html': false,
     'filter-html': false,

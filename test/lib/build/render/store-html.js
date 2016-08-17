@@ -1,8 +1,8 @@
-let test = require('tape')
-let proxyquire = require('proxyquire').noCallThru()
+const test = require('tape')
+const proxyquire = require('proxyquire').noCallThru()
 
 test('stores the rendered html', assert => {
-  let e = {
+  const e = {
     page: {
       publicPath: 'public/path'
     },
@@ -11,6 +11,7 @@ test('stores the rendered html', assert => {
   }
 
   let called = false
+
   const storeHtml = proxyquire('../../../../lib/build/render/store-html', {
     'fs-extra': {
       outputFile: (path, data, cb) => {

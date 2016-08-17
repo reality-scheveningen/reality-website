@@ -1,5 +1,5 @@
-let test = require('tape')
-let filterHtml = require('../../../../lib/build/render/load-markdown')
+const test = require('tape')
+const filterHtml = require('../../../../lib/build/render/load-markdown')
 
 test('loads markdown', assert => {
   const e = {

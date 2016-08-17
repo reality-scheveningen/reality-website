@@ -1,5 +1,5 @@
-let test = require('tape')
-let filterHtml = require('../../../../lib/build/render/filter-html')
+const test = require('tape')
+const filterHtml = require('../../../../lib/build/render/filter-html')
 
 test('filters html', assert => {
   const e = {

@@ -1,5 +1,5 @@
-let test = require('tape')
-let proxyquire = require('proxyquire')
+const test = require('tape')
+const proxyquire = require('proxyquire')
 
 test('sync data from contentful', assert => {
   let called = false
@@ -12,7 +12,7 @@ test('sync data from contentful', assert => {
     }
   }
 
-  let contentfulSyncRequestResult = {
+  const contentfulSyncRequestResult = {
     entries: ['an entry'],
     assets: ['an asset'],
     deletedEntries: [],
@@ -20,7 +20,7 @@ test('sync data from contentful', assert => {
     nextSyncToken: 'next-token'
   }
 
-  let syncFromContentFul = proxyquire('../../../lib/sync/sync-from-contentful', {
+  const syncFromContentFul = proxyquire('../../../lib/sync/sync-from-contentful', {
     'contentful': {
       'createClient': clientConfig => {
         assert.same({space: e.config.contentfulSpace, accessToken: e.config.contentfulAccessToken}, clientConfig)

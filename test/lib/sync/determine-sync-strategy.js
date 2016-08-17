@@ -1,5 +1,5 @@
-let test = require('tape')
-let determineSyncStrategy = require('../../../lib/sync/determine-sync-strategy')
+const test = require('tape')
+const determineSyncStrategy = require('../../../lib/sync/determine-sync-strategy')
 
 test('ensure full sync when no sync token', assert => {
   const e = {

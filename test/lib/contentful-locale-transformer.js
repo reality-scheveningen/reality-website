@@ -1,5 +1,5 @@
-let test = require('tape')
-let transformer = require('../../lib/contentful-locale-transformer')
+const test = require('tape')
+const transformer = require('../../lib/contentful-locale-transformer')
 
 test('transform contentful locale properties to parent scalar values', assert => {
   const example = {

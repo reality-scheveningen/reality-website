@@ -1,8 +1,8 @@
-let test = require('tape')
-let proxyquire = require('proxyquire').noCallThru()
+const test = require('tape')
+const proxyquire = require('proxyquire').noCallThru()
 
 test('renders the html templates', assert => {
-  let e = {
+  const e = {
     page: {
       sitePath: 'site/path',
       template: 'some-template'

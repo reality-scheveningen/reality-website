@@ -1,5 +1,5 @@
-let test = require('tape')
-let retrieveContentPages = require('../../../lib/build/retrieve-content-pages')
+const test = require('tape')
+const retrieveContentPages = require('../../../lib/build/retrieve-content-pages')
 
 test('retrieves content pages from database and creates page objects', assert => {
   const e = {}

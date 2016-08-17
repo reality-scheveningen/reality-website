@@ -1,9 +1,7 @@
-let test = require('tape')
-let proxyquire = require('proxyquire')
+const test = require('tape')
+const proxyquire = require('proxyquire')
 
 test('cleans up on full sync', assert => {
-  let called = false
-
   const e = {
     config: {
       fullSync: true,
@@ -11,7 +9,9 @@ test('cleans up on full sync', assert => {
     }
   }
 
-  let cleanup = proxyquire('../../../lib/sync/cleanup', {
+  let called = false
+
+  const cleanup = proxyquire('../../../lib/sync/cleanup', {
     rimraf: (path, cb) => {
       assert.equal(e.config.assetPath, path)
       called = true
@@ -33,8 +33,6 @@ test('cleans up on full sync', assert => {
 })
 
 test('no cleanup when partial sync', assert => {
-  let called = false
-
   const e = {
     config: {
       fullSync: false,
@@ -42,7 +40,9 @@ test('no cleanup when partial sync', assert => {
     }
   }
 
-  let cleanup = proxyquire('../../../lib/sync/cleanup', {
+  let called = false
+
+  const cleanup = proxyquire('../../../lib/sync/cleanup', {
     rimraf: (path, cb) => {
       called = true
       cb()

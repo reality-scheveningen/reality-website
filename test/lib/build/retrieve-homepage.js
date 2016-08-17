@@ -1,5 +1,5 @@
-let test = require('tape')
-let retrieveHomepage = require('../../../lib/build/retrieve-home-page')
+const test = require('tape')
+const retrieveHomepage = require('../../../lib/build/retrieve-home-page')
 
 test('retrieves homepage from database and creates page object', assert => {
   const e = {}

@@ -1,7 +1,7 @@
 let test = require('tape')
 let proxyquire = require('proxyquire')
 
-test('sync data from contentful to local database', assert => {
+test('sync data from contentful', assert => {
   let called = false
 
   const e = {

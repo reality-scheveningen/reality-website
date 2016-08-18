@@ -1,38 +1,34 @@
 const test = require('tape')
 const filterHtml = require('../../../../lib/build/render/filter-html')
 
-test('filters html', assert => {
-  const e = {
-    html: '<a href="//assets.contentful.com/images/example.jpg">Example<a>',
-    page: {
-      template: 'page'
+testFilterHtml(
+  'filters html',
+  'page',
+  '<a href="//assets.contentful.com/images/example.jpg">Example<a>',
+  '<a href="/content/assets/images/example.jpg">Example<a>',
+  'replaced contful.com assets links to local ones'
+)
+
+testFilterHtml(
+  'does not filter html on redirect html pages',
+  'redirect',
+  '<a href="//assets.contentful.com/images/example.jpg">Example<a>',
+  '<a href="//assets.contentful.com/images/example.jpg">Example<a>',
+  'not replaced contenful.com links'
+)
+
+function testFilterHtml (description, template, input, output, assertDescription) {
+  test(description, assert => {
+    const e = {
+      html: input,
+      page: {
+        template: template
+      }
     }
-  }
 
-  filterHtml(e)
+    filterHtml(e)
 
-  assert.equal(
-    '<a href="/content/assets/images/example.jpg">Example<a>',
-    e.html,
-    'replaced contful.com assets links to local ones'
-  )
-  assert.end()
-})
-
-test('does not filter html on redirect html pages', assert => {
-  const e = {
-    html: '<a href="//assets.contentful.com/images/example.jpg">Example<a>',
-    page: {
-      template: 'redirect'
-    }
-  }
-
-  filterHtml(e)
-
-  assert.equal(
-    '<a href="//assets.contentful.com/images/example.jpg">Example<a>',
-    e.html,
-    'not replaced contenful.com links'
-  )
-  assert.end()
-})
+    assert.equal(output, e.html, assertDescription)
+    assert.end()
+  })
+}

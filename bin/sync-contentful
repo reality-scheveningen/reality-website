@@ -3,7 +3,7 @@
 require('dotenv').config({silent: true})
 
 const fs = require('fs')
-const loadDatabase = require('../lib/sync/load-database')
+const loadDatabase = require('../lib/load-database')
 const cleanup = require('../lib/sync/cleanup')
 const determineSyncStrategy = require('../lib/sync/determine-sync-strategy')
 const syncFromContentFul = require('../lib/sync/sync-from-contentful')
@@ -13,24 +13,24 @@ const filterImagesFromSyncedAssetsList = require('../lib/sync/filter-images-from
 // const makeNoneRetinaImages = require('../lib/sync/make-none-retina-images')
 const optimizeAssets = require('../lib/sync/optimize-assets')
 
-function initConfig (e) {
+function initConfig () {
   const basePath = fs.realpathSync('./')
   const publicPath = `${basePath}/public`
   const databasePath = `${publicPath}/content/db.json`
 
-  e.config = {
-    env: process.env.NODE_ENV,
-    baseUrl: process.env.BASE_URL,
-    basePath: basePath,
-    publicPath: publicPath,
-    databasePath: databasePath,
-    assetPath: `${publicPath}/content/assets/`,
-    contentfulSpace: process.env.CONTENTFUL_SPACE,
-    contentfulAccessToken: process.env.CONTENTFUL_API_KEY,
-    fullSync: process.env.CONTENTFUL_FULL_SYNC || false
+  return {
+    config: {
+      env: process.env.NODE_ENV,
+      baseUrl: process.env.BASE_URL,
+      basePath: basePath,
+      publicPath: publicPath,
+      databasePath: databasePath,
+      assetPath: `${publicPath}/content/assets/`,
+      contentfulSpace: process.env.CONTENTFUL_SPACE,
+      contentfulAccessToken: process.env.CONTENTFUL_API_KEY,
+      fullSync: process.env.CONTENTFUL_FULL_SYNC || false
+    }
   }
-
-  return e
 }
 
 function report (e) {
@@ -45,7 +45,7 @@ function report (e) {
 }
 
 function sync () {
-  return Promise.resolve({})
+  return Promise.resolve()
     .then(initConfig)
     .then(loadDatabase)
     .then(determineSyncStrategy)

@@ -3,28 +3,28 @@
 require('dotenv').config({silent: true})
 
 const fs = require('fs')
-const loadDatabase = require('../lib/build/load-database')
+const loadDatabase = require('../lib/load-database')
 const retrieveLegacyRedirects = require('../lib/build/retrieve-legacy-redirects')
 const retrieveHomePage = require('../lib/build/retrieve-home-page')
 const retrieveContentPages = require('../lib/build/retrieve-content-pages')
 const renderPages = require('../lib/build/render-pages')
 
-function initConfig (e) {
+function initConfig () {
   const basePath = fs.realpathSync('./')
   const publicPath = `${basePath}/public`
   const databasePath = `${publicPath}/content/db.json`
 
-  e.config = {
-    env: process.env.NODE_ENV,
-    baseUrl: process.env.BASE_URL,
-    gaTrackingCode: process.env.GA_TRACKING_CODE,
-    basePath: basePath,
-    publicPath: `${basePath}/public`,
-    sitePath: `${basePath}/site`,
-    databasePath: databasePath
+  return {
+    config: {
+      env: process.env.NODE_ENV,
+      baseUrl: process.env.BASE_URL,
+      gaTrackingCode: process.env.GA_TRACKING_CODE,
+      basePath: basePath,
+      publicPath: `${basePath}/public`,
+      sitePath: `${basePath}/site`,
+      databasePath: databasePath
+    }
   }
-
-  return e
 }
 
 function report (e) {
@@ -34,7 +34,7 @@ function report (e) {
 }
 
 function build () {
-  return Promise.resolve({})
+  return Promise.resolve()
     .then(initConfig)
     .then(loadDatabase)
     .then(retrieveLegacyRedirects)

@@ -4,7 +4,7 @@ const retrieveHomepage = require('../../../lib/build/retrieve-home-page')
 test('retrieves homepage from database and creates page object', assert => {
   const e = {}
 
-  e.db = require('./database.json')
+  e.db = require('../database.json')
 
   retrieveHomepage(e)
 

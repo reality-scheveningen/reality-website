@@ -1,5 +1,5 @@
 const test = require('tape')
-const loadDatabase = require('../../../lib/sync/load-database')
+const loadDatabase = require('../../lib/load-database')
 
 test('loads database', assert => {
   const e = {

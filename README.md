@@ -1,6 +1,7 @@
 # Reality Scheveningen website
 
-[![build status](https://gitlab.com/reality-scheveningen/realityscheveningen.nl/badges/master/build.svg)](https://gitlab.com/reality-scheveningen/realityscheveningen.nl/commits/master) 
+[![build status](https://gitlab.com/reality-scheveningen/realityscheveningen.nl/badges/master/build.svg)](https://gitlab.com/reality-scheveningen/realityscheveningen.nl/commits/master)
+[![coverage report](https://gitlab.com/reality-scheveningen/realityscheveningen.nl/badges/master/coverage.svg)](https://gitlab.com/reality-scheveningen/realityscheveningen.nl/commits/master)
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 Hybrid static site generator with ContentFul
@@ -38,4 +39,16 @@ Start developing
 ```
 npm run dev
 open http://localhost:9090
+```
+
+Run test suite
+
+```
+npm test
+```
+
+or with coverage
+
+```
+npm run test-with-coverage && open coverage/lcov-report/index.html
 ```

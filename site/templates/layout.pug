@@ -136,6 +136,16 @@ html(lang="nl")
           window.onhashchange = function() {
             renderAgenda();
           }
+
+          window.onkeyup = function(event) {
+            if (window.location.hash == '#agenda-open') {
+              var key = event.key;
+
+              if (key == 'Escape') {
+                window.location = '#agenda';
+              }
+            }
+          }
         })();
 
         function initMap() {

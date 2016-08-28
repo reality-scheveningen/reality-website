@@ -51,6 +51,10 @@ footer {
     }
 
     .map-container {
+      #contact-map {
+        width: 100%;
+        height: 330px;
+      }
       img {
         width: 100%;
       }
@@ -136,7 +140,6 @@ footer {
   }
 }
 
-
 @media (#{$bp-larger-than-tablet}) {
   footer .contact {
     .info-box {
@@ -144,14 +147,10 @@ footer {
     }
 
     .map-container {
-      width: 100%;
+      width: 60%;
       position: absolute;
-      left: -35%;
+      right: 55%;
       top: 0;
-
-      img {
-        width: 60%;
-      }
     }
   }
 }

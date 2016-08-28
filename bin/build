@@ -19,6 +19,7 @@ function initConfig () {
       env: process.env.NODE_ENV,
       baseUrl: process.env.BASE_URL,
       gaTrackingCode: process.env.GA_TRACKING_CODE,
+      googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
       basePath: basePath,
       publicPath: `${basePath}/public`,
       sitePath: `${basePath}/site`,

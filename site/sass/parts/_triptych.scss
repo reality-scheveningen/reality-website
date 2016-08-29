@@ -21,15 +21,33 @@
 
     hr {
       margin: 1rem 45%;
-      border-color: $orange;
     }
 
-    &:nth-child(2) hr {
-      border-color: $green;
+    &.activiteiten {
+      hr {
+        border-color: $orange;
+      }
+      article {
+        background: linear-gradient(to bottom, rgba(183, 132, 99, .5) 0%, rgba(29, 44, 49, .8) 100%);
+      }
     }
 
-    &:nth-child(3) hr {
-      border-color: $blue;
+    &.over-ons {
+      hr {
+        border-color: $green;
+      }
+      article {
+        background: linear-gradient(to bottom, rgba(154, 182, 172, .5) 0%, rgba(29, 44, 49, .8) 100%);
+      }
+    }
+
+    &.stories {
+      hr {
+        border-color: $blue;
+      }
+      article {
+        background: linear-gradient(to bottom, rgba(95, 97, 108, .5) 0%, rgba(29, 44, 49, .8) 100%);
+      }
     }
 
     p {
@@ -56,20 +74,15 @@
       min-height: inherit;
     }
 
-    &.activiteiten article {
-      background: linear-gradient(to bottom, rgba(183, 132, 99, 0.5) 0%, rgba(29, 44, 49, .8) 100%);
-    }
-
-    &.over-ons article {
-      background: linear-gradient(to bottom, rgba(154, 182, 172, 0.5) 0%, rgba(29, 44, 49, .8) 100%);
-    }
-
-    &.stories article {
-      background: linear-gradient(to bottom, rgba(95, 97, 108, 0.5) 0%, rgba(29, 44, 49, .8) 100%);
-    }
-
     &:hover article {
       background: none;
     }
+  }
+}
+
+// hide images when we start wrapping (tablet or smaller)
+@media ("max-width: 750px") {
+  .triptych > a {
+    background-image: none !important;
   }
 }

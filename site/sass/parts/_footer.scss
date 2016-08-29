@@ -28,9 +28,6 @@ footer {
     padding-top: 6rem;
     padding-bottom: 9rem;
     position: relative;
-    background-image: url('../images/bg-footer.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
 
     h1 {
       font-family: $font-family-alternative-to;
@@ -142,6 +139,10 @@ footer {
 
 @media (#{$bp-larger-than-tablet}) {
   footer .contact {
+    background-image: url('../images/bg-footer.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
     .info-box {
       flex: 1 50%;
     }

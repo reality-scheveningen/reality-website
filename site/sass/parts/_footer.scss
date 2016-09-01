@@ -100,7 +100,7 @@ footer {
         background-color: $orange;
         background-image: linear-gradient(to bottom left, $orange, darken($orange, 10%));
         .facebook svg {
-          width: 50%;
+          height: 4rem;
           path {
             fill: $white;
           }

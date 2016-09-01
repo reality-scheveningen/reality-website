@@ -11,6 +11,8 @@ footer {
     background-repeat: no-repeat, no-repeat;
     background-position: center 0, left 10px;
     background-size: 20px 10px, 100% 100%;
+    position: relative;
+    z-index: 2;
 
     a {
       color: $white;
@@ -19,7 +21,7 @@ footer {
 
   .contact {
     padding-top: 6rem;
-    padding-bottom: 9rem;
+    margin-bottom: -1rem;
 
     h1 {
       font-family: $font-family-alternative-to;
@@ -159,6 +161,7 @@ footer {
       max-width: 96rem;
       margin: 0 auto;
       overflow: hidden;
+      padding-bottom: 9rem;
     }
 
     .contact-leader, .info-box-container{

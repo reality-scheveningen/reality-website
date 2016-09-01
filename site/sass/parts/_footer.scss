@@ -59,7 +59,18 @@ footer {
     .info-box {
       box-sizing: border-box;
       flex: 1 100%;
-      padding: 6rem 3rem 1.5rem 3rem;
+      padding: 3rem 3rem 1.5rem 3rem;
+
+      i {
+        margin-top: -1rem;
+        margin-bottom: 1rem;
+        display: inline-block;
+
+        svg {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
 
       p {
         font-size: 1.2rem;
@@ -88,7 +99,7 @@ footer {
       &.social-media {
         background-color: $orange;
         background-image: linear-gradient(to bottom left, $orange, darken($orange, 10%));
-        svg {
+        .facebook svg {
           width: 50%;
           path {
             fill: $white;

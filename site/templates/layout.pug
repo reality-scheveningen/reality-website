@@ -84,6 +84,8 @@ html(lang="nl")
                     img(src="/assets/images/map-footer.png")
             .info-box-container
               .info-box.service
+                i
+                  include ../static/assets/images/icon-time.svg
                 p
                   | Iedere zondag komen wij samen
                   br
@@ -93,11 +95,15 @@ html(lang="nl")
                   br
                   | in Scheveningen
               .info-box.events
+                i
+                  include ../static/assets/images/icon-contact.svg
                 p
                   | Kerk zijn doen we niet alleen op zondag. Zie onze&nbsp;
                   a(id="agenda",href="#agenda-open") Agenda
                   |  voor meer informatie.
               .info-box.contact-information
+                i
+                  include ../static/assets/images/icon-kids.svg
                 p
                   a(href="mailto:contact@reality-scheveningen.nl") contact@reality-scheveningen.nl
                   br
@@ -105,9 +111,12 @@ html(lang="nl")
                   br
                   | 2508AH, Den Haag
               .info-box.social-media
+                i
+                  include ../static/assets/images/icon-share.svg
                 p
                   a(href="https://www.facebook.com/RealityScheveningen/",title="Reality Scheveningen Facebook pagina",target="_blank",class="facebook-logo",rel="noopener noreferrer")
-                    include ../static/assets/images/facebook.svg
+                    span.facebook
+                      include ../static/assets/images/facebook.svg
 
         .copyright
           .container

@@ -3,6 +3,10 @@ html(lang="nl")
   head
     meta(charset="utf-8")
     meta(http-equiv="x-ua-compatible",content="ie=edge")
+
+    link(rel="preconnect",href="https://www.google-analytics.com")
+    link(rel="preconnect",href="https://maps.googleapis.com")
+
     title #{title}
     meta(name="description",content=metaDescription)
     meta(name="keywords",content=metaKeywords)
@@ -21,10 +25,28 @@ html(lang="nl")
     link(rel="icon",href="/assets/images/favicons/apple-touch-icon-152.png",sizes="152x152",type="image/png")
     link(rel="icon",href="/assets/images/favicons/apple-touch-icon-180.png",sizes="180x180",type="image/png")
 
+    link(type="text/plain",rel="author",href="/humans.txt")
+
     link(href="https://fonts.googleapis.com/css?family=EB+Garamond|Open+Sans:400,300",rel="stylesheet",type="text/css")
 
     block styles
       link(rel="stylesheet",href="/assets/styles/main.css")
+
+    script(type="application/ld+json").
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Reality Scheveningen",
+        "url": "https://realityscheveningen.nl",
+        "logo": "https://realityscheveningen.nl/assets/images/logo-reality-scheveningen.svg",
+        "sameAs": [
+          "https://www.facebook.com/RealityScheveningen/"
+        ],
+        "contactPoint" : [{
+          "@type" : "ContactPoint",
+          "email" : "contact@realityscheveningen.nl"
+        }]
+      }
 
   body
 

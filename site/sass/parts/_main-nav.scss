@@ -1,19 +1,100 @@
 .main-nav {
+  box-sizing: border-box;
   overflow: hidden;
-  background: $lightest-grey;
-  a, div {
-    font-family: $font-family-alternative-to;
-    text-align: center;
-    text-decoration: none;
-    display: block;
+  background: $dark-grey;
+  color: $white;
+  text-align: center;
+
+  .home-shortcut {
+    display: none;
+  }
+
+  nav {
+    padding: 0 3rem;
+
+    a, span {
+      font-family: $font-family-alternative-to;
+      text-decoration: none;
+      font-size: 1.5rem;
+      letter-spacing: 0.15rem;
+      display: block;
+      line-height: 4.5rem;
+      vertical-align: middle;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    a {
+      color: $grey;
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    a:hover, span {
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 37.5%;
+        width: 25%;
+        height: 2px;
+      }
+
+      &.activiteiten:after {
+        background: $orange;
+      }
+      &.over-ons:after {
+        background: $green;
+      }
+      &.stories:after {
+        background: $blue;
+      }
+    }
   }
 }
 
 @media (#{$bp-larger-than-phablet}) {
+  .main-nav nav {
+    a, span {
+      display: inline-block;
+      margin-right: 3rem;
+    }
+  }
+}
+
+@media (#{$bp-larger-than-tablet}) {
   .main-nav {
-    a, div {
-      width: 33.33334%;
-      float: left;
+    text-align: right;
+    position: relative;
+
+    .home-shortcut {
+      position: absolute;
+      display: block;
+      fill: white;
+      width: 3rem;
+      height: 3rem;
+      left: 0;
+      margin: .75rem;
+    }
+
+    nav a, nav span {
+      margin-right: 0;
+      margin-left: 3rem;
+    }
+  }
+}
+
+@media (#{$bp-larger-than-desktophd}) {
+  .main-nav {
+    background: none;
+    position: absolute;
+    width: 100%;
+    top: 0;
+
+    nav a {
+      color: rgba(255, 255, 255, 0.6);
     }
   }
 }

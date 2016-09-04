@@ -53,84 +53,27 @@ html(lang="nl")
 
     block header
       header
-        .container
-          .row
-            .column
-              a(href="/",title="Home")
-                img(src="/assets/images/logo-reality-scheveningen.svg",width="192",height="107",alt="Reality Scheveningen")
+        .title-logo
+          a(href="/",title="Home")
+            img(src="/assets/images/logo-reality-scheveningen.svg",width="192",height="107",alt="Reality Scheveningen")
+        block nav
+          .main-nav
+            a(href="/",class="home-shortcut",title="Home")
+              include ../static/assets/images/logo-reality-icon-simple.svg
+            nav
+              each menuTitle, menuPath in {'activiteiten':'Activiteiten', 'over-ons': 'Over ons', 'stories': 'Stories'}
+                if menuPath == path
+                  span(class=menuPath)= menuTitle + " "
+                else
+                  a(href="/" + menuPath,class=menuPath)= menuTitle + " "
 
-    block nav
-      div
-        nav.main-nav
-          each menuTitle, menuPath in {'activiteiten':'Activiteiten', 'over-ons': 'Over ons', 'stories': 'Stories'}
-            if menuPath == path
-              div= menuTitle
-            else
-              a(href="/" + menuPath)= menuTitle
 
     block content
 
     block footer
       footer
-        .contact-container
-          .contact
-            .contact-leader
-              h1 Contact
-              hr
-              p Een keertje langs komen, bakkie doen of meer weten?
-            .map-container
-              #contact-map
-                noscript
-                  a(href="https://www.google.nl/maps/place/Kranenburgweg+204,+2583+ER+Den+Haag/@52.0957914,4.2606684,17z/data=!3m1!4b1!4m2!3m1!1s0x47c5b092fe85fe99:0x1384c908ba3f7c8d",target="_blank",rel="noopener noreferrer",title="Open kaart in Google Maps")
-                    img(src="/assets/images/map-footer.png")
-            .info-box-container
-              .info-box.service
-                i
-                  include ../static/assets/images/icon-time.svg
-                p
-                  | Iedere zondag komen wij samen
-                  br
-                  | 10.30 uur&nbsp;
-                  a(href="https://www.google.nl/maps/place/Kranenburgweg+204,+2583+ER+Den+Haag/@52.0957914,4.2606684,17z/data=!3m1!4b1!4m2!3m1!1s0x47c5b092fe85fe99:0x1384c908ba3f7c8d",target="_blank",rel="noopener noreferrer",title="Open kaart in Google Maps")
-                    | Kranenburgweg 204
-                  br
-                  | in Scheveningen
-              .info-box.events
-                i
-                  include ../static/assets/images/icon-contact.svg
-                p
-                  | Kerk zijn doen we niet alleen op zondag. Zie onze&nbsp;
-                  a(id="agenda",href="#agenda-open") Agenda
-                  |  voor meer informatie.
-              .info-box.contact-information
-                i
-                  include ../static/assets/images/icon-kids.svg
-                p
-                  a(href="mailto:contact@reality-scheveningen.nl") contact@reality-scheveningen.nl
-                  br
-                  |  Postbus 84348
-                  br
-                  | 2508AH, Den Haag
-              .info-box.social-media
-                i
-                  include ../static/assets/images/icon-share.svg
-                p
-                  a(href="https://www.facebook.com/RealityScheveningen/",title="Reality Scheveningen Facebook pagina",target="_blank",class="facebook-logo",rel="noopener noreferrer")
-                    span.facebook
-                      include ../static/assets/images/facebook.svg
-
-        .copyright
-          .container
-            .row
-              img(src="/assets/images/logo-reality-icon.svg",width="40",height="40",alt="Reality Scheveningen")
-            .row
-              p
-                small
-                  | © Copyright #{(new Date()).getFullYear()}, Reality Scheveningen
-                  br
-                  a(href="mailto:contact@realityscheveningen.nl") contact@realityscheveningen.nl
-                  |  | Postbus 84348 2508AH, Den Haag |&nbsp;
-                  a(href="/anbi") ANBI informatie
+        include footer/contact
+        include footer/copyright
 
     #agenda-open
       a(href="#agenda") Sluiten

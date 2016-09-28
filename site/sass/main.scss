@@ -22,11 +22,16 @@ article.page {
 
 @media (#{$bp-larger-than-tablet}) {
   body {
-    background: $lightest-grey;
+    background: $dark-grey;
   }
 
-  .cover-full img {
-    height: 75rem;
+  .cover-full {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, .0) 50%, rgba(49, 49, 49, 1) 100%);
+    img {
+      position: relative;
+      z-index: -1; // set image behind background gradient
+      height: 75rem;
+    }
   }
 
   article.page {

@@ -1,4 +1,4 @@
-header {
+body>header {
   background: $white;
 
   .title-logo {
@@ -9,7 +9,7 @@ header {
 }
 
 @media (#{$bp-larger-than-tablet}) {
-  header {
+  body>header {
     position: absolute;
     width: 100%;
     background: none;

@@ -8,16 +8,36 @@
 @import "parts/header";
 @import "parts/main-nav";
 
-article.page {
-  background: $white;
-  padding: 3rem 0;
-}
-
 .cover-full img {
   display: block;
   width: 100vw;
   height: 30rem;
   object-fit: cover;
+}
+
+article {
+  font-family: $font-family-alternative;
+  font-size: 1.5rem;
+  font-weight: 300;
+
+  header {
+    box-sizing: border-box;
+    padding: 0 3rem;
+    margin-top: 1.5rem;
+
+    hr {
+      display: none;
+    }
+  }
+
+  .content {
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 120rem;
+    padding: 0 3rem;
+  }
+
 }
 
 @media (#{$bp-larger-than-tablet}) {
@@ -26,6 +46,7 @@ article.page {
   }
 
   .cover-full {
+    position: relative;
     background: linear-gradient(to bottom, rgba(255, 255, 255, .0) 50%, rgba(49, 49, 49, 1) 100%);
     img {
       position: relative;
@@ -34,13 +55,133 @@ article.page {
     }
   }
 
-  article.page {
-    padding: 3rem;
-    margin-top: -9rem;
+  article {
+    header {
+      top: 42rem;
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      color: white;
 
-    &>h1 {
-      margin-top: -1rem;
+      h1 {
+        font-family: $font-family-alternative-to;
+        font-size: 6rem;
+        font-weight: normal;
+        letter-spacing: .2rem;
+        margin-bottom: 0.75rem;
+      }
+
+      hr {
+        display: block;
+        width: 4.5rem;
+        margin: 0 auto;
+        margin-bottom: 3rem;
+        border: none;
+        height: 2px;
+        color: $blue;
+        background-color: $blue;
+      }
+
+      .subtitle {
+        margin: 0 auto;
+        width: 80%;
+        max-width: 72rem;
+      }
+    }
+
+    .content {
+      h1, h2, h3 {
+        font-family: $font-family-alternative-to;
+        font-size: 3rem;
+        font-weight: normal;
+        letter-spacing: .2rem;
+        color: $dark-grey;
+      }
+
+      h1, h2 {
+        font-size: 3.75rem;
+      }
+
+      h1, h2, h3, h4, h5 {
+        break-inside: avoid;
+      }
+    }
+
+    .intro-text {
+      background-image: svg-load('../images/triangle-intro-text.svg');
+      background-repeat: no-repeat;
+      background-position: center 0;
+      background-size: 20px 10px;
+      padding-top: 1rem;
+
+      .text-container {
+        background: $white;
+        padding: 4.5rem;
+
+        column-count: 3;
+        column-gap: 6rem;
+      }
+    }
+
+    .body-text {
+      background: $white;
+      padding: 4.5rem;
+
+      column-count: 2;
+      column-gap: 6rem;
+      h1, h2 {
+        column-span: all;
+      }
+    }
+
+    .footer-text {
+      margin-top: 3rem;
+      margin-bottom: 9rem;
+      background: $black;
+      color: $white;
+      padding: 4.5rem;
+
+      column-count: 2;
+      column-gap: 6rem;
+
+      h1, h2, h3 {
+        color: $white;
+      }
+
+      h1, h2 {
+        column-span: all;
+      }
     }
   }
-}
 
+  body.over-ons article header hr {
+    color: $green;
+    background-color: $green;
+  }
+
+  body.activiteiten article header hr {
+    color: $orange;
+    background-color: $orange;
+  }
+
+  body.over-ons article .body-text {
+    background: $green;
+  }
+
+  body.over-ons article #love-god-love-people {
+    width: 23rem;
+  }
+
+  body.over-ons article #live-life {
+    width: 3rem;
+  }
+
+  body.activiteiten article .body-text {
+    background: $orange;
+  }
+
+  article .content {
+    margin-top: -9rem;
+    position: relative;
+  }
+}

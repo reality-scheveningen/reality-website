@@ -63,7 +63,7 @@
     "serve": "http-server -p 9090 public/",
     "live-reload": "live-reload --port 9091 public/",
     "dev": "parallelshell \"npm run live-reload -s\" \"npm run serve -s\" \"npm run watch -s\"",
-    "lint": "standard \"bin/*\" \"lib/**/*.js\" \"test/**/*.js\"",
+    "lint": "standard \"bin/*\" \"lib/**/*.js\" \"test/**/*.js\" \"site/static/assets/js/**/*.js\"",
     "deploy:test": "NODE_ENV=prod BASE_URL='https://reality-new.surge.sh' npm run build && npm run build:minify && echo \"User-agent: *\nDisallow: /\n\" > public/robots.txt && surge public reality-new.surge.sh"
   },
   "nyc": {

@@ -33,21 +33,9 @@ html(lang="nl")
     block styles
       link(rel="stylesheet",href="/assets/styles/main.css")
 
-    script(type="application/ld+json").
-      {
-        "@context": "http://schema.org",
-        "@type": "Organization",
-        "name": "Reality Scheveningen",
-        "url": "https://realityscheveningen.nl",
-        "logo": "https://realityscheveningen.nl/assets/images/logo-reality-scheveningen.svg",
-        "sameAs": [
-          "https://www.facebook.com/RealityScheveningen/"
-        ],
-        "contactPoint" : [{
-          "@type" : "ContactPoint",
-          "email" : "contact@realityscheveningen.nl"
-        }]
-      }
+    if jsonLd
+      each jsonLdContent in jsonLd
+        script(type="application/ld+json")!= JSON.stringify(jsonLdContent, null, pretty ? 2 : 0)
 
   body(class=styleClass)
 

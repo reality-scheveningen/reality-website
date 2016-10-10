@@ -10,7 +10,8 @@ test('rendering pages', assert => {
     },
     pages: {
       '/': {
-        data: 'some data'
+        data: 'some data',
+        jsonLd: {some: 'data'}
       }
     }
   }
@@ -40,6 +41,7 @@ test('rendering pages', assert => {
     assert.equal('http://localhost/', page.canonicalUrl, 'Canonical url is set')
     assert.equal(false, page.pretty, 'Only pretty print in dev env')
     assert.equal(true, typeof page.debugData === 'string', 'There is some debug data')
+    assert.same([{some: 'data'}], page.jsonLd, 'Ensure JSON+LD data to be collection (array)')
 
     assert.equal(true, called['load-markdown'], 'Markdown loaded')
     assert.equal(true, called['render-html'], 'Html rendered')

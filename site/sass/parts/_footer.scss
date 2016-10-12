@@ -6,7 +6,7 @@ footer {
 
   .copyright {
     padding-top: 3rem;
-    background-image: svg-load('../images/triangle-footer.svg'), linear-gradient($black, $dark-blue);
+    background-image: svg-load('../images/triangle-footer.svg'), linear-gradient($black, $black);
     background-repeat: no-repeat, no-repeat;
     background-position: center 0, left 10px;
     background-size: 20px 10px, 100% 100%;

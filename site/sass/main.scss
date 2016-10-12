@@ -134,7 +134,7 @@ article {
 
     .footer-text {
       margin-top: 3rem;
-      background: $black;
+      background: $light-black;
       color: $white;
       padding: 4.5rem;
 
@@ -151,11 +151,6 @@ article {
     }
   }
 
-  body.activiteiten article header hr {
-    color: $orange;
-    background-color: $orange;
-  }
-
   body.over-ons article {
     header hr {
       color: $green;
@@ -168,9 +163,10 @@ article {
 
     .body-text {
       background: $green;
+      color: $white;
 
-      a {
-        color: $black;
+      a, h1, h2, h3 {
+        color: $white;
       }
 
       column-count: 2;
@@ -185,10 +181,17 @@ article {
   }
 
   body.activiteiten article {
+    header hr {
+      color: $orange;
+      background-color: $orange;
+    }
+
     .body-text {
       background: $orange;
-      a {
-        color: $dark-grey;
+      color: $white;
+
+      a, h1, h2, h3 {
+        color: $white;
       }
     }
   }

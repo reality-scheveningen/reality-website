@@ -28,6 +28,7 @@ article {
 
     hr {
       display: none;
+      background-color: $brown;
     }
   }
 
@@ -38,7 +39,6 @@ article {
     max-width: 120rem;
     padding: 0 3rem;
   }
-
 }
 
 @media (#{$bp-larger-than-tablet}) {
@@ -60,7 +60,7 @@ article {
       position: absolute;
       width: 100%;
       text-align: center;
-      color: white;
+      color: $white;
 
       h1 {
         font-family: $font-family-alternative-to;
@@ -76,8 +76,6 @@ article {
         margin: 0 auto 3rem auto;
         border: none;
         height: 2px;
-        color: $blue;
-        background-color: $blue;
       }
 
       .subtitle {
@@ -153,7 +151,6 @@ article {
 
   body.over-ons article {
     header hr {
-      color: $green;
       background-color: $green;
     }
 
@@ -182,7 +179,6 @@ article {
 
   body.activiteiten article {
     header hr {
-      color: $orange;
       background-color: $orange;
     }
 
@@ -193,6 +189,12 @@ article {
       a, h1, h2, h3 {
         color: $white;
       }
+    }
+  }
+
+  body.stories article {
+    header hr {
+      background-color: $blue;
     }
   }
 

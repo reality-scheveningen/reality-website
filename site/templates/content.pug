@@ -4,31 +4,27 @@ block content
   if heroImage && heroImage.file.url
     .cover-full
       img(src=heroImage.file.url,class="u-full-width")
-  article
-    header
-      h1= title
-      hr
-      if subtitle
-        .subtitle
-          | !{md(subtitle)}
-    .content
-      if introText
-        .intro-text
-          .text-container
-            | !{md(introText)}
-      if bodyText
-        .body-text
-          .text-container
-            | !{md(bodyText)}
-      if footerText
-        .footer-text
-          .text-container
-            | !{md(footerText)}
-
-    //.container.squeezed-with-room-padding
-    //  .row
-    //    .column.page
-    //      | !{md(body)}
+  .page-container
+    article
+      header
+        h1= title
+        hr
+        if subtitle
+          .subtitle
+            | !{md(subtitle)}
+      .content
+        if introText
+          .intro-text
+            .text-container
+              | !{md(introText)}
+        if bodyText
+          .body-text
+            .text-container
+              | !{md(bodyText)}
+        if footerText
+          .footer-text
+            .text-container
+              | !{md(footerText)}
 
 block scripts-extra
   script(src="//cdn.embedly.com/widgets/platform.js",charset="UTF-8",async)

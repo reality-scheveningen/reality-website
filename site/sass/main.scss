@@ -8,23 +8,47 @@
 @import "parts/header";
 @import "parts/main-nav";
 
-.cover-full img {
-  display: block;
-  width: 100vw;
-  height: 30rem;
-  object-fit: cover;
+.cover-full {
+  position: relative;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, .0) 50%, rgba(49, 49, 49, 1) 100%);
+  img {
+    display: block;
+    width: 100vw;
+    height: 30rem;
+    object-fit: cover;
+    position: relative;
+    z-index: -1; // set image behind background gradient
+  }
+}
+
+.page-container {
+  padding: 0 1rem;
+  background: $dark-grey;
+  margin-bottom: 9rem;
 }
 
 article {
   font-family: $font-family-alternative;
   font-size: 1.5rem;
   font-weight: 300;
-  margin-bottom: 3rem;
+
+  .intro-text, .body-text, .footer-text, header {
+    padding: 1rem 1.5rem;
+    background-color: $white;
+  }
+
+  .footer-text {
+    margin-top: 3rem;
+    background: $light-black;
+    color: $white;
+
+    h1, h2, h3 {
+      color: $white;
+    }
+  }
 
   header {
     box-sizing: border-box;
-    padding: 0 3rem;
-    margin-top: 1.5rem;
 
     hr {
       display: none;
@@ -37,23 +61,64 @@ article {
     margin: 0 auto;
     width: 100%;
     max-width: 120rem;
-    padding: 0 3rem;
+  }
+}
+
+body.over-ons article {
+  header hr {
+    background-color: $green;
+  }
+
+  .body-text {
+    background: $green;
+    color: $white;
+
+    a, h1, h2, h3 {
+      color: $white;
+    }
+  }
+}
+
+body.activiteiten article {
+  header hr {
+    background-color: $orange;
+  }
+
+  .body-text {
+    background: $orange;
+    color: $white;
+
+    a, h1, h2, h3 {
+      color: $white;
+    }
+  }
+}
+
+body.stories article {
+  header hr {
+    background-color: $blue;
   }
 }
 
 @media (#{$bp-larger-than-tablet}) {
-  .cover-full {
-    position: relative;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, .0) 50%, rgba(49, 49, 49, 1) 100%);
-    img {
-      position: relative;
-      z-index: -1; // set image behind background gradient
-      height: 75rem;
-    }
+  .cover-full img {
+    height: 75rem;
+  }
+
+  .page-container {
+    padding: 0;
+    background: none;
+    margin-bottom: 0;
   }
 
   article {
     margin-bottom: 9rem;
+    background: none;
+
+    .intro-text, .body-text, .footer-text, header {
+      margin: 0 1.5rem;
+      padding: 0;
+    }
 
     header {
       top: 42rem;
@@ -61,6 +126,8 @@ article {
       width: 100%;
       text-align: center;
       color: $white;
+      background: none;
+      margin: 0;
 
       h1 {
         font-family: $font-family-alternative-to;
@@ -91,7 +158,6 @@ article {
         font-size: 3rem;
         font-weight: normal;
         letter-spacing: .2rem;
-        color: $dark-grey;
       }
 
       h1, h2 {
@@ -103,28 +169,30 @@ article {
       }
     }
 
+    .intro-text .text-container, .body-text, .footer-text  {
+      padding: 4.5rem;
+      column-gap: 6rem;
+    }
+
     .intro-text {
-      background-image: svg-load('../images/triangle-intro-text.svg');
-      background-repeat: no-repeat;
-      background-position: center 0;
+      background: transparent svg-load('../images/triangle-intro-text.svg') no-repeat center 0;
       background-size: 20px 10px;
       padding-top: 1rem;
 
+      h1, h2, h3 {
+        color: $dark-grey;
+      }
+
       .text-container {
         background: $white;
-        padding: 4.5rem;
-
         column-count: 1;
-        column-gap: 6rem;
       }
     }
 
     .body-text {
       background: $white;
-      padding: 4.5rem;
-
       column-count: 2;
-      column-gap: 6rem;
+
       h1, h2 {
         column-span: all;
       }
@@ -132,16 +200,7 @@ article {
 
     .footer-text {
       margin-top: 3rem;
-      background: $light-black;
-      color: $white;
-      padding: 4.5rem;
-
       column-count: 2;
-      column-gap: 6rem;
-
-      h1, h2, h3 {
-        color: $white;
-      }
 
       h1, h2 {
         column-span: all;
@@ -150,51 +209,20 @@ article {
   }
 
   body.over-ons article {
-    header hr {
-      background-color: $green;
-    }
-
     .intro-text .text-container {
       column-count: 3;
     }
 
     .body-text {
-      background: $green;
-      color: $white;
-
-      a, h1, h2, h3 {
-        color: $white;
-      }
-
       column-count: 2;
     }
 
     #love-god-love-people {
       width: 23rem;
     }
+
     #live-life {
       width: 3rem;
-    }
-  }
-
-  body.activiteiten article {
-    header hr {
-      background-color: $orange;
-    }
-
-    .body-text {
-      background: $orange;
-      color: $white;
-
-      a, h1, h2, h3 {
-        color: $white;
-      }
-    }
-  }
-
-  body.stories article {
-    header hr {
-      background-color: $blue;
     }
   }
 

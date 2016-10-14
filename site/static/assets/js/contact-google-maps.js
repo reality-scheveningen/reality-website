@@ -12,6 +12,7 @@ function initMap() { // eslint-disable-line
     draggable: !('ontouchend' in document),
     center: {lat: 52.0957914, lng: 4.2584797},
     zoom: 14,
+    backgroundColor: 'none',
     styles: [{
       'featureType': 'all',
       'elementType': 'labels.text.fill',

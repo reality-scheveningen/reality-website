@@ -42,7 +42,7 @@ footer {
     }
 
     .contact-leader {
-      margin: 0 3rem;
+      margin: 0 3rem 6rem 0;
     }
 
     .map-container {
@@ -79,7 +79,7 @@ footer {
       }
 
       p {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         margin-bottom: 0;
       }
 
@@ -106,7 +106,7 @@ footer {
         background-color: $orange;
         background-image: linear-gradient(to bottom left, $orange, darken($orange, 10%));
         .facebook svg {
-          height: 4rem;
+          height: 6rem;
           path {
             fill: $white;
           }
@@ -167,6 +167,10 @@ footer {
       margin: 0 auto;
       overflow: hidden;
       padding-bottom: 6rem;
+
+      .contact-leader {
+        margin-bottom: 0;
+      }
     }
 
     .contact-leader, .info-box-container {
@@ -180,6 +184,19 @@ footer {
       position: absolute;
       right: calc(50% + 4rem);
       top: 6rem;
+    }
+  }
+}
+
+@media (#{$bp-larger-than-desktophd}) {
+  footer .contact-container {
+
+    .contact {
+      max-width: 120rem;
+    }
+
+    .map-container {
+      max-width: 63rem;
     }
   }
 }

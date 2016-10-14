@@ -66,7 +66,17 @@
     background: $white no-repeat center center;
     background-size: cover;
 
+    transition: all 0.1s ease-in-out;
+
     min-height: 100vh;
+
+    &:hover {
+      transform: scale(1.1);
+
+      article {
+        background: none;
+      }
+    }
 
     article {
       min-height: inherit;
@@ -74,10 +84,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    &:hover article {
-      background: none;
     }
   }
 }

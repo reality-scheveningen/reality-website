@@ -80,7 +80,7 @@ function initMap() { // eslint-disable-line
     url: 'https://www.google.nl/maps/place/Kranenburgweg+204,+2583+ER+Den+Haag/@52.0957914,4.2606684,17z/data=!3m1!4b1!4m2!3m1!1s0x47c5b092fe85fe99:0x1384c908ba3f7c8d'
   })
 
-  google.maps.event.addListener(marker, 'click', function() {
+  google.maps.event.addListener(marker, 'click', function () {
     window.open(this.url, '_blank')
   })
 }

@@ -27,12 +27,12 @@
     a {
       color: $grey;
 
-      &:hover {
+      .no-touch &:hover {
         color: $white;
       }
     }
 
-    a:hover, span {
+    .no-touch & a:hover, span {
       &:after {
         content: "";
         position: absolute;

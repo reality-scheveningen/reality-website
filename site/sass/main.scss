@@ -42,6 +42,7 @@ article {
     margin-top: 3rem;
     background: $light-black;
     color: $white;
+    -webkit-font-smoothing: antialiased;
 
     h1, h2, h3 {
       color: $white;
@@ -73,6 +74,7 @@ body.over-ons article {
   .body-text {
     background: $green;
     color: $white;
+    -webkit-font-smoothing: antialiased;
 
     a, h1, h2, h3 {
       color: $white;
@@ -88,6 +90,7 @@ body.activiteiten article {
   .body-text {
     background: $orange;
     color: $white;
+    -webkit-font-smoothing: antialiased;
 
     a, h1, h2, h3 {
       color: $white;
@@ -129,6 +132,7 @@ body.stories article {
       color: $white;
       background: none;
       margin: 0;
+      -webkit-font-smoothing: antialiased;
 
       h1 {
         font-family: $font-family-alternative-to;

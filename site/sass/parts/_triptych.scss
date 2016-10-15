@@ -1,5 +1,7 @@
 .triptych {
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+
   a {
     display: block;
     text-decoration: none;

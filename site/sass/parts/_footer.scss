@@ -3,6 +3,7 @@ footer {
   font-size: 1.5rem;
   font-family: $font-family-alternative;
   text-align: center;
+  -webkit-font-smoothing: antialiased;
 
   .copyright {
     padding-top: 3rem;

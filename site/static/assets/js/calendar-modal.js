@@ -1,4 +1,4 @@
-(function (window) {
+;(function (window) {
   var renderedAgenda = false
 
   var renderAgenda = function () {

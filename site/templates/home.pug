@@ -8,12 +8,13 @@ block nav
 block content
   .triptych
     each tych in triptych
-      a(href="/" + tych.link.path,style="background-image: url('"+tych.image.file.url+"')",class=tych.link.path)
-        article
-          div
-            h2= tych.title
-            hr
-            p= tych.summary
+      a(href="/" + tych.link.path,class=tych.link.path)
+        div(class="article-container",style="background-image: url('"+tych.image.file.url+"')")
+          article
+            div
+              h2= tych.title
+              hr
+              p= tych.summary
 
 block footer
   footer

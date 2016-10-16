@@ -64,20 +64,24 @@
   .triptych > a {
     float: left;
     width: 33.333334%;
-
-    background: $white no-repeat center center;
-    background-size: cover;
-
-    transition: all 0.1s ease-in-out;
-
+    overflow: hidden;
     min-height: 100vh;
 
-    &:hover {
-      transform: scale(1.1);
+    .article-container {
+      min-height: inherit;
+      transition: all 0.3s ease-in-out;
 
-      article {
-        background: none;
+      background: $white no-repeat center center;
+      background-size: cover;
+
+      &:hover {
+        transform: scale(1.1);
+
+        article {
+          background: none;
+        }
       }
+
     }
 
     article {
@@ -92,7 +96,7 @@
 
 // hide images when we start wrapping (tablet or smaller)
 @media ("max-width: 750px") {
-  .triptych > a {
+  .triptych .article-container {
     background-image: none !important;
   }
 }

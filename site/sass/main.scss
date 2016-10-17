@@ -91,6 +91,11 @@ body.activiteiten article {
     background: $orange;
     color: $white;
     -webkit-font-smoothing: antialiased;
+    column-count: 1;
+
+    .media-container {
+      display: none;
+    }
 
     a, h1, h2, h3 {
       color: $white;
@@ -228,6 +233,71 @@ body.stories article {
 
     #live-life {
       width: 3rem;
+    }
+  }
+
+  body.activiteiten article {
+    .body-text {
+      padding: 0;
+    }
+
+    .body-text-row {
+      overflow: hidden;
+      clear: both;
+
+      .text-container {
+        box-sizing: border-box;
+        padding: 4.5rem;
+        width: 50%;
+      }
+
+      .media-container {
+        width: 50%;
+        display: block;
+        position: relative;
+
+        &:after {
+          content: "";
+          display: block;
+          width: 1rem;
+          height: 2rem;
+          background-size: 1rem 2rem;
+          position: absolute;
+          top: 50%;
+          z-index: 2;
+        }
+
+        img {
+          display: block;
+          object-fit: cover;
+          height: 50rem;
+          width: 100%;
+        }
+      }
+
+      &:nth-child(odd) {
+        & > * {
+          float: left;
+          overflow: hidden;
+        }
+
+        & .media-container:after {
+          background: transparent svg-load('../images/triangle-orange-right.svg') no-repeat;
+          left: 0;
+        }
+      }
+
+      &:nth-child(even) {
+        & > * {
+          float: right;
+          overflow: hidden;
+        }
+
+        & .media-container:after {
+          background: transparent svg-load('../images/triangle-orange-left.svg') no-repeat;
+          right: 0;
+        }
+      }
     }
   }
 

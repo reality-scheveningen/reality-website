@@ -6,7 +6,7 @@ test('retrieves content pages from database and creates page objects', assert =>
 
   e.db = require('../database.json')
 
-  retrieveContentPages(e)
+  retrieveContentPages('page', 'content')(e)
 
   assert.same(
     {

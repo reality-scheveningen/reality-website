@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  if heroImage && heroImage.file.url
+    .cover-full
+      img(src=heroImage.file.url,class="u-full-width")
+  .page-container
+    article
+      header
+        h1= title
+        hr
+        if subtitle
+          .subtitle
+            | !{md(subtitle)}
+      .content
+        if introText
+          .intro-text
+            .text-container
+              | !{md(introText)}
+          .body-text
+            each text, key in bodyText
+              .body-text-row
+                .text-container
+                  | !{md(text)}
+                .media-container
+                  if bodyTextMedia && bodyTextMedia[key]
+                    img(src=bodyTextMedia[key].file.url)
+        if footerText
+          .footer-text
+            .text-container
+              | !{md(footerText)}
+
+block scripts-extra
+  script(src="//cdn.embedly.com/widgets/platform.js",charset="UTF-8",async)

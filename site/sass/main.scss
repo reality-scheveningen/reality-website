@@ -279,7 +279,7 @@ body.stories article {
         img {
           display: block;
           object-fit: cover;
-          height: 50rem;
+          height: 66rem;
           width: 100%;
         }
       }
@@ -313,5 +313,19 @@ body.stories article {
   article .content {
     margin-top: -9rem;
     position: relative;
+  }
+}
+
+
+@media (#{$bp-larger-than-desktop}) {
+  body.activiteiten article .body-text-row .media-container img {
+    height: 60rem;
+  }
+}
+
+
+@media (#{$bp-larger-than-desktophd}) {
+  body.activiteiten article .body-text-row .media-container img {
+    height: 50rem;
   }
 }

@@ -88,6 +88,14 @@ body.activiteiten article {
     background-color: $orange;
   }
 
+  .intro-text strong {
+    background: transparent svg-load('../images/icon-time-grey.svg') no-repeat;
+    background-size: 3rem 3rem;
+    padding-left: 3.5rem;
+    display: inline-block;
+    line-height: 2;
+  }
+
   .body-text {
     background: $orange;
     color: $white;

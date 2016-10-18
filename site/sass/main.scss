@@ -36,12 +36,13 @@ article {
   .intro-text, .body-text, .footer-text, header {
     padding: 1rem 1.5rem;
     background-color: $white;
+    color: $grey;
   }
 
   .footer-text {
     margin-top: 3rem;
     background: $light-black;
-    color: $white;
+    color: $grey;
     -webkit-font-smoothing: antialiased;
 
     h1, h2, h3 {

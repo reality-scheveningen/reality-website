@@ -101,9 +101,19 @@ body.activiteiten article {
     color: $white;
     -webkit-font-smoothing: antialiased;
     column-count: 1;
+    padding: 0;
+
+    .text-container {
+      padding: 1rem 1.5rem;
+    }
 
     .media-container {
-      display: none;
+      img {
+        display: block;
+        object-fit: cover;
+        height: 30rem;
+        width: 100%;
+      }
     }
 
     a, h1, h2, h3 {
@@ -246,10 +256,6 @@ body.stories article {
   }
 
   body.activiteiten article {
-    .body-text {
-      padding: 0;
-    }
-
     .body-text-row {
       overflow: hidden;
       clear: both;
@@ -277,10 +283,7 @@ body.stories article {
         }
 
         img {
-          display: block;
-          object-fit: cover;
           height: 66rem;
-          width: 100%;
         }
       }
 

@@ -272,7 +272,7 @@ body.stories article {
           height: 2rem;
           background-size: 1rem 2rem;
           position: absolute;
-          top: 50%;
+          top: calc(50% - 1rem);
           z-index: 2;
         }
 

@@ -1,0 +1,35 @@
+body.over-ons article {
+  header hr {
+    background-color: $green;
+  }
+
+  .body-text {
+    background: $green;
+    color: $white;
+    -webkit-font-smoothing: antialiased;
+
+    a, h1, h2, h3 {
+      color: $white;
+    }
+  }
+}
+
+@media (#{$bp-larger-than-tablet}) {
+  body.over-ons article {
+    .intro-text .text-container {
+      column-count: 3;
+    }
+
+    .body-text {
+      column-count: 2;
+    }
+
+    #love-god-love-people {
+      width: 23rem;
+    }
+
+    #live-life {
+      width: 3rem;
+    }
+  }
+}

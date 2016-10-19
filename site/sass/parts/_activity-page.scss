@@ -1,0 +1,110 @@
+body.activiteiten article {
+  header hr {
+    background-color: $orange;
+  }
+
+  .intro-text strong {
+    background: transparent svg-load('../images/icon-time-grey.svg') no-repeat;
+    background-size: 3rem 3rem;
+    padding-left: 3.5rem;
+    display: inline-block;
+    line-height: 2;
+  }
+
+  .body-text {
+    background: $orange;
+    color: $white;
+    -webkit-font-smoothing: antialiased;
+    column-count: 1;
+    padding: 0;
+
+    .text-container {
+      padding: 1rem 1.5rem;
+    }
+
+    .media-container {
+      img {
+        display: block;
+        object-fit: cover;
+        height: 30rem;
+        width: 100%;
+      }
+    }
+
+    a, h1, h2, h3 {
+      color: $white;
+    }
+  }
+}
+
+@media (#{$bp-larger-than-tablet}) {
+  body.activiteiten article {
+    .body-text-row {
+      overflow: hidden;
+      clear: both;
+
+      .text-container {
+        box-sizing: border-box;
+        padding: 4.5rem;
+        width: 50%;
+      }
+
+      .media-container {
+        width: 50%;
+        display: block;
+        position: relative;
+
+        &:after {
+          content: "";
+          display: block;
+          width: 1rem;
+          height: 2rem;
+          background-size: 1rem 2rem;
+          position: absolute;
+          top: calc(50% - 1rem);
+          z-index: 2;
+        }
+
+        img {
+          height: 66rem;
+        }
+      }
+
+      &:nth-child(odd) {
+        & > * {
+          float: left;
+          overflow: hidden;
+        }
+
+        & .media-container:after {
+          background: transparent svg-load('../images/triangle-orange-right.svg') no-repeat;
+          left: 0;
+        }
+      }
+
+      &:nth-child(even) {
+        & > * {
+          float: right;
+          overflow: hidden;
+        }
+
+        & .media-container:after {
+          background: transparent svg-load('../images/triangle-orange-left.svg') no-repeat;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (#{$bp-larger-than-desktop}) {
+  body.activiteiten article .body-text-row .media-container img {
+    height: 60rem;
+  }
+}
+
+@media (#{$bp-larger-than-desktophd}) {
+  body.activiteiten article .body-text-row .media-container img {
+    height: 50rem;
+  }
+}

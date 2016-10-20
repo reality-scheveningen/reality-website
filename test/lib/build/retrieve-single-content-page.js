@@ -1,12 +1,12 @@
 const test = require('tape')
-const retrieveHomepage = require('../../../lib/build/retrieve-home-page')
+const retrieveSingleContentPage = require('../../../lib/build/retrieve-single-content-page')
 
-test('retrieves homepage from database and creates page object', assert => {
+test('retrieves single content page from database and creates page object', assert => {
   const e = {}
 
   e.db = require('../database.json')
 
-  retrieveHomepage(e)
+  retrieveSingleContentPage('homepage', 'home', '/')(e)
 
   assert.same(
     {

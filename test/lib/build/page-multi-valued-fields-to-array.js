@@ -20,7 +20,7 @@ test('Map multi valued fields to arrays in page properties', assert => {
         '/some-route/': {
           'Key1': 'some val',
           'Key2': 'some other val',
-          'SomeKey': 'Some val',
+          'someKey': 'Some val',
           'Key': [
             'some val',
             'some other val'

@@ -29,10 +29,12 @@
   }
 
   .info {
-    background-color: $lightest-grey;
+    color: $grey;
+    background-color: $lighter-grey;
     box-sizing: border-box;
     padding: .5rem 3rem;
     font-family: $font-family-alternative-to;
+    position: relative;
     overflow: hidden;
 
     time {
@@ -48,6 +50,12 @@
     box-sizing: border-box;
     padding: 2rem 3rem 3rem 3rem;
     color: $dark-grey;
+    background: svg-load('../images/triangle-down-lighter-grey.svg') no-repeat top center;
+    background-size: 2rem 1rem;
+
+    h1 {
+      color: $dark-grey;
+    }
   }
 
   h1 {

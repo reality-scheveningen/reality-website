@@ -1,5 +1,5 @@
 const test = require('tape')
-const filterHtml = require('../../../../lib/build/render/load-markdown')
+const loadMarkdown = require('../../../../lib/build/render/load-markdown')
 
 test('loads markdown', assert => {
   const e = {
@@ -9,7 +9,7 @@ test('loads markdown', assert => {
     }
   }
 
-  filterHtml(e)
+  loadMarkdown(e)
 
   assert.equal(
     e.page.md('# Test'),
@@ -27,7 +27,7 @@ test('not load markdown on redirect pages', assert => {
     }
   }
 
-  filterHtml(e)
+  loadMarkdown(e)
 
   assert.equal(undefined, e.page.md, 'Nope, no markdown loaded')
   assert.end()

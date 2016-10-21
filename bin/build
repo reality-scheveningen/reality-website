@@ -9,6 +9,8 @@ const retrieveHomePage = require('../lib/build/retrieve-single-content-page')('h
 const retrieveActivityContentPage = require('../lib/build/retrieve-single-content-page')('activityPage', 'activity-content')
 const retrieveStoriesContentPage = require('../lib/build/retrieve-single-content-page')('storiesPage', 'stories-content')
 const retrieveBasicContentPages = require('../lib/build/retrieve-content-pages')('page', 'content')
+const retrieveStoryPages = require('../lib/build/retrieve-content-pages')('story', 'story', 'stories')
+const addStoryPagesToStoriesPage = require('../lib/build/add-story-pages-to-stories-page')
 const mapPageMultiValuedFieldsToArrays = require('../lib/build/page-multi-valued-fields-to-array')
 const renderPages = require('../lib/build/render-pages')
 
@@ -46,7 +48,9 @@ function build () {
     .then(retrieveActivityContentPage)
     .then(retrieveStoriesContentPage)
     .then(retrieveBasicContentPages)
+    .then(retrieveStoryPages)
     .then(mapPageMultiValuedFieldsToArrays)
+    .then(addStoryPagesToStoriesPage)
     .then(renderPages)
     .then(report)
     .catch(err => { console.log(err); process.exit(1) })

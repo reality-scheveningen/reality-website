@@ -1,0 +1,130 @@
+.story-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.story-item {
+  background: $white;
+  box-sizing: border-box;
+
+  article {
+    margin: 0;
+  }
+
+  .image-container {
+    height: 30rem;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: $blue;
+
+    img {
+      object-fit: cover;
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .info {
+    background-color: $lightest-grey;
+    box-sizing: border-box;
+    padding: .5rem 3rem;
+    font-family: $font-family-alternative-to;
+    overflow: hidden;
+
+    time {
+      float: left;
+    }
+
+    .reading-time {
+      float: right;
+    }
+  }
+
+  .article-content {
+    box-sizing: border-box;
+    padding: 2rem 3rem 3rem 3rem;
+    color: $dark-grey;
+  }
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  .author {
+    font-weight: bold;
+    margin-top: -0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta {
+    margin-top: 3rem;
+    text-align: right;
+
+    a {
+      padding: .5rem 3rem;
+      color: $blue;
+      text-decoration: none;
+      border: 2px solid $blue;
+      border-radius: 2rem;
+      display: inline-block;
+      font-family: $font-family-alternative-to;
+
+      &:hover {
+        background-color: $blue;
+        color: $white;
+      }
+
+    }
+  }
+}
+
+
+@media (#{$bp-larger-than-tablet}) {
+  .story-item {
+    float: left;
+    margin: 0 3rem 3rem 3rem;
+    width: calc(50% - 4.5rem);
+
+    &:nth-child(odd) {
+      margin-right: 0;
+      clear: both;
+    }
+
+    .image-container {
+      img {
+        filter: grayscale(100%);
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: inherit;
+        height: inherit;
+        background: $blue;
+        opacity: 0.8;
+      }
+    }
+
+    &:hover .image-container {
+      img {
+        filter: grayscale(0);
+        transform: scale(1.1);
+      }
+
+      &:after {
+        opacity: 0;
+      }
+    }
+
+    .summary-text {
+      height: 20rem;
+      overflow: hidden;
+    }
+  }
+}

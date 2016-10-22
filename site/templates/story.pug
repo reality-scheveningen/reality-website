@@ -5,17 +5,23 @@ block content
     .cover-full
       img(src=heroImage.file.url,class="u-full-width")
   .page-container
-    article
+    article.story
       header
-        h1= title
+        .story-title
+          a(href="/stories/")= "Stories"
         hr
-        if subtitle
-          .subtitle
-            | !{md(subtitle)}
+        h1= title
+
       .content
+        .info
+          time(datetime=moment(date, 'YYYY-MM-DD'),itemprop="datePublished")
+            | !{moment(date, 'D MMM \'YY')}
+          span(class="reading-time")= "Leestijd: " + readingTime + " min."
         if bodyText
           .body-text
             .text-container
+              h1= title
+              .author= "door: " + author
               | !{md(bodyText)}
 
 block scripts-extra

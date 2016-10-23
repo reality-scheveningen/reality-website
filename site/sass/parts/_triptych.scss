@@ -13,21 +13,29 @@
       text-align: center;
     }
 
+    .image-container {
+      display: none;
+    }
+
     h2 {
       font-family: $font-family-alternative-to;
       font-weight: normal;
-      font-size: 3rem;
+      font-size: 3.2rem;
       margin-bottom: 0;
       letter-spacing: .2rem;
     }
 
     hr {
-      margin: 1rem 45%;
+      margin: 1rem auto;
+      width: 3rem;
+      border: none;
+      height: 2px;
+      text-align: center;
     }
 
     &.activiteiten {
       hr {
-        border-color: $orange;
+        background-color: $orange;
       }
       article {
         background: linear-gradient(to bottom, rgba(182, 131, 101, .6) 0%, rgba(29, 44, 49, .6) 100%);
@@ -36,7 +44,7 @@
 
     &.over-ons {
       hr {
-        border-color: $green;
+        background-color: $green;
       }
       article {
         background: linear-gradient(to bottom, rgba(155, 181, 172, .6) 0%, rgba(29, 44, 49, .6) 100%);
@@ -45,7 +53,7 @@
 
     &.stories {
       hr {
-        border-color: $blue;
+        background-color: $blue;
       }
       article {
         background: linear-gradient(to bottom, rgba(95, 97, 107, .6) 0%, rgba(29, 44, 49, .6) 100%);
@@ -54,7 +62,7 @@
 
     p {
       font-family: $font-family-alternative;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 300;
     }
   }
@@ -65,38 +73,51 @@
     float: left;
     width: 33.333334%;
     overflow: hidden;
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 72rem;
+    max-height: 120rem;
+    position: relative;
 
     .article-container {
+      height: inherit;
       min-height: inherit;
-      transition: all 0.3s ease-in-out;
-
-      background: $white no-repeat center center;
-      background-size: cover;
-
-      &:hover {
-        transform: scale(1.1);
-
-        article {
-          background: none;
-        }
-      }
-
+      max-height: inherit;
     }
 
     article {
+      height: inherit;
       min-height: inherit;
-
+      max-height: inherit;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-  }
-}
 
-// hide images when we start wrapping (tablet or smaller)
-@media ("max-width: 750px") {
-  .triptych .article-container {
-    background-image: none !important;
+    .image-container {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 3s ease-in-out;
+      }
+    }
+
+    &:hover {
+      .article-container article {
+        background: none;
+      }
+      .image-container img {
+        transform: scale(1.1);
+      }
+    }
   }
 }

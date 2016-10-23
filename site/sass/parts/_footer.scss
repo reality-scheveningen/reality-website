@@ -20,7 +20,7 @@ footer {
   }
 
   .contact {
-    padding-top: 6rem;
+    padding: 6rem 1rem;
     margin-bottom: -1rem;
     background: $dark-grey;
 
@@ -28,13 +28,16 @@ footer {
       font-family: $font-family-alternative-to;
       text-align: center;
       margin-bottom: 1.5rem;
-      font-size: 3rem;
+      font-size: 3.2rem;
       letter-spacing: .2rem;
     }
 
     hr {
-      margin: 1rem 46%;
-      border-color: $orange;
+      margin: 1rem auto;
+      border: none;
+      width: 3rem;
+      height: 2px;
+      background-color: $orange;
     }
 
     p {
@@ -82,6 +85,7 @@ footer {
       p {
         font-size: 1.4rem;
         margin-bottom: 0;
+        font-weight: 400;
       }
 
       a {
@@ -150,6 +154,8 @@ footer {
 
 @media (#{$bp-larger-than-tablet}) {
   footer .contact {
+    padding: 6rem 2rem;
+
     .info-box {
       flex: 1 50%;
     }

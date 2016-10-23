@@ -9,13 +9,14 @@ block content
   .triptych
     each tych in triptych
       a(href="/" + tych.link.path,class=tych.link.path)
-        div(class="article-container",style="background-image: url('"+tych.image.file.url+"')")
+        .article-container
           article
             div
               h2= tych.title
               hr
               p= tych.summary
-
+        .image-container
+          img(src=tych.image.file.url,alt="")
 block footer
   footer
     include footer/contact

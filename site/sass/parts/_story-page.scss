@@ -29,9 +29,10 @@ article.story {
   }
 
   .body-text {
-    color: $dark-grey;
+    color: $darker-grey;
     background: $white svg-load('../images/triangle-down-lighter-grey.svg') no-repeat top center;
     background-size: 2rem 1rem;
+    margin-top: 0;
 
     h1:first-of-type {
       margin-bottom: 0;

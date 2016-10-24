@@ -49,20 +49,18 @@
   .article-content {
     box-sizing: border-box;
     padding: 2rem 3rem 3rem 3rem;
-    color: $dark-grey;
     background: svg-load('../images/triangle-down-lighter-grey.svg') no-repeat top center;
     background-size: 2rem 1rem;
 
     h1 {
-      color: $dark-grey;
+      color: $light-black;
+      margin-bottom: 0;
+      font-size: 3rem;
     }
   }
 
-  h1 {
-    margin-bottom: 0;
-  }
-
   .author {
+    color: $blue;
     font-weight: bold;
     margin-top: -0.5rem;
     margin-bottom: 1.5rem;
@@ -71,15 +69,17 @@
   .cta {
     margin-top: 3rem;
     text-align: right;
+    font-size: 1.6rem;
 
     a {
-      padding: .5rem 3rem;
-      color: $blue;
+      padding: .7rem 3rem;
+      color: $dark-grey;
       text-decoration: none;
       border: 2px solid $blue;
       border-radius: 2rem;
       display: inline-block;
       font-family: $font-family-alternative-to;
+      transition: background-color 0.3s ease;
 
       &:hover {
         background-color: $blue;
@@ -105,7 +105,7 @@
     .image-container {
       img {
         filter: grayscale(100%);
-        transition: all 0.3s ease-in-out;
+        transition: transform 3s ease-in-out;
       }
 
       &:after {

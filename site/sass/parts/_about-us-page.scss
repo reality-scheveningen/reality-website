@@ -16,6 +16,24 @@ body.over-ons article {
       color: $white;
     }
   }
+
+  #love-god-love-people {
+    background: transparent svg-load('../images/icon-heart.svg') no-repeat left top;
+  }
+
+  #advance-his-kingdom {
+    background: transparent svg-load('../images/icon-kingdom.svg') no-repeat left top;
+  }
+
+  #live-life {
+    background: transparent svg-load('../images/icon-life.svg') no-repeat left top;
+  }
+
+  #love-god-love-people, #advance-his-kingdom, #live-life {
+    box-sizing: border-box;
+    padding-left: 5.5rem;
+    background-size: 3.5rem 3.5rem;
+  }
 }
 
 @media (#{$bp-larger-than-tablet}) {
@@ -29,11 +47,17 @@ body.over-ons article {
     }
 
     #love-god-love-people {
-      width: 23rem;
+      width: calc(100% - 2rem);
+      background-position: left 2rem;
+    }
+
+    #advance-his-kingdom {
+      background-position: left 2rem;
     }
 
     #live-life {
       width: 3rem;
+      background-position: left 2rem;
     }
   }
 }

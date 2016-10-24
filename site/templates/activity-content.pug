@@ -20,11 +20,11 @@ block content
           .body-text
             each text, key in bodyText
               .body-text-row
-                .text-container
-                  | !{md(text)}
                 .media-container
                   if bodyTextMedia && bodyTextMedia[key]
                     img(src=bodyTextMedia[key].file.url)
+                .text-container
+                  | !{md(text)}
         if footerText
           .footer-text
             .text-container

@@ -53,6 +53,17 @@ article.story {
         }
       }
     }
+
+    img {
+      max-width: 100%;
+      display: block;
+
+      & + em {
+        font-size: 1.3rem;
+        text-align: center;
+        display: block;
+      }
+    }
   }
 }
 

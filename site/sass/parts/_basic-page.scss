@@ -90,6 +90,11 @@ article {
       margin: 0;
       -webkit-font-smoothing: antialiased;
 
+      & > * {
+        max-width: 120rem;
+        margin: 0 auto;
+      }
+
       h1 {
         font-family: $font-family-alternative-to;
         font-size: 6rem;

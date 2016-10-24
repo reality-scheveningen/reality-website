@@ -29,6 +29,10 @@ article {
     color: $grey;
   }
 
+  .body-text {
+    margin-top: 3rem;
+  }
+
   .footer-text {
     margin-top: 3rem;
     background: $light-black;
@@ -107,6 +111,7 @@ article {
         margin: 0 auto;
         width: 80%;
         max-width: 72rem;
+        font-size: 1.6rem;
       }
     }
 
@@ -148,6 +153,7 @@ article {
     }
 
     .body-text {
+      margin-top: 3rem;
       background: $white;
       column-count: 2;
 

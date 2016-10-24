@@ -4,6 +4,7 @@ body.activiteiten article {
   }
 
   .intro-text strong {
+    color: $grey;
     background: transparent svg-load('../images/icon-time-grey.svg') no-repeat;
     background-size: 3rem 3rem;
     padding-left: 3.5rem;

@@ -8,14 +8,11 @@ body {
   font-size: 2.0em;
   letter-spacing: 0.01em;
   background: $darker-grey;
+  font-weight: 300;
 }
 
 .no-touch a:hover {
   text-decoration: none;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: $font-family-alternative;
 }
 
 @media (#{$bp-larger-than-phablet}) {

@@ -46,7 +46,7 @@ body.stories {
     background-color: $lighter-grey;
     box-sizing: border-box;
     padding: .5rem 3rem;
-    font-family: $font-family-alternative-to;
+    font-family: $font-family-alternative;
     position: relative;
     overflow: hidden;
 
@@ -66,9 +66,9 @@ body.stories {
     background-size: 2rem 1rem;
 
     h1 {
-      color: $light-black;
       margin-bottom: 0;
       font-size: 3rem;
+      line-height: 1.2;
     }
   }
 
@@ -91,7 +91,7 @@ body.stories {
       border: 2px solid $blue;
       border-radius: 2rem;
       display: inline-block;
-      font-family: $font-family-alternative-to;
+      font-family: $font-family-alternative;
       transition: background-color 0.3s ease;
 
       &:hover {

@@ -6,10 +6,9 @@
 /* Base */
 @import "../../node_modules/skeleton-scss/scss/base/normalize";
 @import "../../node_modules/skeleton-scss/scss/base/variables";
-@import "../../node_modules/skeleton-scss/scss/base/functions";
 @import "../../node_modules/skeleton-scss/scss/base/base-styles";
 @import "../../node_modules/skeleton-scss/scss/base/utils";
-@import "../../node_modules/skeleton-scss/scss/base/typography";
+@import "typography";
 
 /* Modules */
 @import "../../node_modules/skeleton-scss/scss/modules/grid";

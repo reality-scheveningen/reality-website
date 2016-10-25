@@ -19,7 +19,6 @@
 }
 
 article {
-  font-family: $font-family-alternative;
   font-size: 1.5rem;
   font-weight: 300;
 
@@ -96,11 +95,12 @@ article {
       }
 
       h1 {
-        font-family: $font-family-alternative-to;
+        color: $white;
         font-size: 6rem;
         font-weight: normal;
         letter-spacing: .2rem;
         margin-bottom: 0.75rem;
+        line-height: 1.2;
       }
 
       hr {
@@ -120,18 +120,11 @@ article {
     }
 
     .content {
-      h1, h2, h3 {
-        font-family: $font-family-alternative-to;
-        font-size: 3rem;
-        font-weight: normal;
-        letter-spacing: .2rem;
-      }
-
       h1, h2 {
         font-size: 3.75rem;
       }
 
-      h1, h2, h3, h4, h5 {
+      h1, h2, h3, h4, h5, h6 {
         break-inside: avoid;
       }
     }
@@ -147,6 +140,7 @@ article {
       padding-top: 1rem;
 
       h1, h2, h3 {
+        // TODO check color
         color: $darker-grey;
       }
 

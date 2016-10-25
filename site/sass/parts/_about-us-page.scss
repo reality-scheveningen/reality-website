@@ -1,38 +1,44 @@
-body.over-ons article {
-  a {
-    color: $green;
+body.over-ons {
+  .cover-full {
+    background: linear-gradient(to bottom, rgba(155, 181, 172, .2) 50%, rgba(49, 49, 49, 1) 100%);
   }
 
-  header hr {
-    background-color: $green;
-  }
-
-  .body-text {
-    background: $green;
-    color: $white;
-    -webkit-font-smoothing: antialiased;
-
-    a, h1, h2, h3 {
-      color: $white;
+  article {
+    a {
+      color: $green;
     }
-  }
 
-  #love-god-love-people {
-    background: transparent svg-load('../images/icon-heart.svg') no-repeat left top;
-  }
+    header hr {
+      background-color: $green;
+    }
 
-  #advance-his-kingdom {
-    background: transparent svg-load('../images/icon-kingdom.svg') no-repeat left top;
-  }
+    .body-text {
+      background: $green;
+      color: $white;
+      -webkit-font-smoothing: antialiased;
 
-  #live-life {
-    background: transparent svg-load('../images/icon-life.svg') no-repeat left top;
-  }
+      a, h1, h2, h3 {
+        color: $white;
+      }
+    }
 
-  #love-god-love-people, #advance-his-kingdom, #live-life {
-    box-sizing: border-box;
-    padding-left: 5.5rem;
-    background-size: 3.5rem 3.5rem;
+    #love-god-love-people {
+      background: transparent svg-load('../images/icon-heart.svg') no-repeat left top;
+    }
+
+    #advance-his-kingdom {
+      background: transparent svg-load('../images/icon-kingdom.svg') no-repeat left top;
+    }
+
+    #live-life {
+      background: transparent svg-load('../images/icon-life.svg') no-repeat left top;
+    }
+
+    #love-god-love-people, #advance-his-kingdom, #live-life {
+      box-sizing: border-box;
+      padding-left: 5.5rem;
+      background-size: 3.5rem 3.5rem;
+    }
   }
 }
 

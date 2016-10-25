@@ -1,3 +1,16 @@
+body.stories {
+  .cover-full {
+    background: linear-gradient(to bottom, rgba(95, 97, 107, .6) 50%, rgba(49, 49, 49, 1) 100%);
+  }
+
+  article {
+    header hr {
+      background-color: $blue;
+    }
+
+  }
+}
+
 .story-list {
   margin: 0;
   padding: 0;

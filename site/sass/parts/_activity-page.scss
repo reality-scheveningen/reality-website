@@ -1,54 +1,60 @@
-body.activiteiten article {
-  header hr {
-    background-color: $orange;
+body.activiteiten {
+  .cover-full {
+    background: linear-gradient(to bottom, rgba(182, 131, 101, .2) 50%, rgba(49, 49, 49, 1) 100%);
   }
 
-  .intro-text strong {
-    color: $grey;
-    background: transparent svg-load('../images/icon-time-grey.svg') no-repeat;
-    background-size: 3rem 3rem;
-    padding-left: 3.5rem;
-    display: inline-block;
-    line-height: 2;
-  }
-
-  .body-text {
-    background: $orange;
-    color: $white;
-    -webkit-font-smoothing: antialiased;
-    column-count: 1;
-    padding: 0;
-
-    .text-container {
-      padding: 1rem 1.5rem;
+  article {
+    header hr {
+      background-color: $orange;
     }
 
-    .media-container {
-      position: relative;
-      
-      &:after {
-        content: "";
-        display: block;
-        width: 2rem;
-        height: 1rem;
-        background-size: 1rem 2rem;
-        position: absolute;
-        left: calc(50% - 1rem);
-        bottom: 0;
-        z-index: 2;
-        background: transparent svg-load('../images/triangle-orange-up.svg') no-repeat;
-      }
-
-      img {
-        display: block;
-        object-fit: cover;
-        height: 30rem;
-        width: 100%;
-      }
+    .intro-text strong {
+      color: $grey;
+      background: transparent svg-load('../images/icon-time-grey.svg') no-repeat;
+      background-size: 3rem 3rem;
+      padding-left: 3.5rem;
+      display: inline-block;
+      line-height: 2;
     }
 
-    a, h1, h2, h3 {
+    .body-text {
+      background: $orange;
       color: $white;
+      -webkit-font-smoothing: antialiased;
+      column-count: 1;
+      padding: 0;
+
+      .text-container {
+        padding: 1rem 1.5rem;
+      }
+
+      .media-container {
+        position: relative;
+
+        &:after {
+          content: "";
+          display: block;
+          width: 2rem;
+          height: 1rem;
+          background-size: 1rem 2rem;
+          position: absolute;
+          left: calc(50% - 1rem);
+          bottom: 0;
+          z-index: 2;
+          background: transparent svg-load('../images/triangle-orange-up.svg') no-repeat;
+        }
+
+        img {
+          display: block;
+          object-fit: cover;
+          height: 30rem;
+          width: 100%;
+        }
+      }
+
+      a, h1, h2, h3 {
+        color: $white;
+      }
     }
   }
 }

@@ -22,7 +22,7 @@ article {
   font-size: 1.5rem;
   font-weight: 300;
 
-  .intro-text, .body-text, .footer-text, header {
+  .intro-text, .body-text, .footer-text {
     padding: 1rem 1.5rem;
     background-color: $white;
   }
@@ -52,10 +52,20 @@ article {
 
   header {
     box-sizing: border-box;
+    color: $white;
+    text-align: center;
 
     hr {
       display: none;
       background-color: $brown;
+    }
+
+    h1 {
+      color: $white;
+    }
+
+    .subtitle {
+      margin: 0 1.5rem 3rem 1.5rem;
     }
   }
 
@@ -91,8 +101,6 @@ article {
       top: 42rem;
       position: absolute;
       width: 100%;
-      text-align: center;
-      color: $white;
       background: none;
       margin: 0;
       -webkit-font-smoothing: antialiased;
@@ -103,7 +111,6 @@ article {
       }
 
       h1 {
-        color: $white;
         font-size: 6rem;
         font-weight: normal;
         letter-spacing: .2rem;

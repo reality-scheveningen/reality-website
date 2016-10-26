@@ -11,15 +11,15 @@
   }
 
   nav {
-    padding: 0 3rem;
+    padding: 0;
 
     a, span {
       font-family: $font-family-alternative;
       text-decoration: none;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       letter-spacing: 0.15rem;
       display: inline-block;
-      margin: 0 1rem;
+      margin: 0 .9rem;
       line-height: 4.5rem;
       vertical-align: middle;
       box-sizing: border-box;
@@ -38,7 +38,7 @@
       &:after {
         content: "";
         position: absolute;
-        bottom: 0;
+        bottom: .5rem;
         left: 37.5%;
         width: 25%;
         height: 2px;
@@ -59,8 +59,10 @@
 
 @media (#{$bp-larger-than-phablet}) {
   .main-nav nav {
+    padding: 0 3rem;
     a, span {
       margin: 0 1.5rem;
+      font-size: 1.5rem;
     }
   }
 }

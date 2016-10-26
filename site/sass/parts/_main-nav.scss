@@ -18,7 +18,8 @@
       text-decoration: none;
       font-size: 1.5rem;
       letter-spacing: 0.15rem;
-      display: block;
+      display: inline-block;
+      margin: 0 1rem;
       line-height: 4.5rem;
       vertical-align: middle;
       box-sizing: border-box;
@@ -59,8 +60,7 @@
 @media (#{$bp-larger-than-phablet}) {
   .main-nav nav {
     a, span {
-      display: inline-block;
-      margin-right: 3rem;
+      margin: 0 1.5rem;
     }
   }
 }
@@ -78,11 +78,6 @@
       height: 3rem;
       left: 0;
       margin: .75rem;
-    }
-
-    nav a, nav span {
-      margin-right: 0;
-      margin-left: 3rem;
     }
   }
 }

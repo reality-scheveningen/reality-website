@@ -24,6 +24,14 @@ $darker-grey: #313131;
 //$link-color: #1eaedb !default;
 //$font-color: #222 !default;
 
+// Breakpoints
+//$bp-larger-than-mobile    : "min-width: 400px" !default;
+//$bp-larger-than-phablet   : "min-width: 550px" !default;
+//$bp-larger-than-tablet    : "min-width: 750px" !default;
+//$bp-larger-than-desktop   : "min-width: 1000px" !default;
+//$bp-larger-than-desktophd : "min-width: 1200px" !default;
+$bp-larger-than-desktophd-plus : "min-width: 1400px";
+
 // Typography
 $font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-alternative: "Archive", sans-serif;

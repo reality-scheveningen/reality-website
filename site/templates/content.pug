@@ -3,7 +3,7 @@ extends layout
 block content
   if heroImage && heroImage.file.url
     .cover-full
-      img(src=heroImage.file.url,class="u-full-width")
+      img(src=heroImage.file.url,class="u-full-width",alt=heroImage.title)
   .page-container
     article
       header
@@ -21,6 +21,9 @@ block content
           .body-text
             .text-container
               | !{md(bodyText)}
+        if bodyImage && bodyImage.file.url
+          .body-image
+            img(src=bodyImage.file.url,alt=bodyImage.title)
         if footerText
           .footer-text
             .text-container

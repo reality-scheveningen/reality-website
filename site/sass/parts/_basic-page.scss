@@ -31,6 +31,14 @@ article {
     margin-top: 3rem;
   }
 
+  .body-image {
+    margin: 3rem 1.5rem;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
   .footer-text {
     margin-top: 3rem;
     background: $light-black;
@@ -173,5 +181,12 @@ article {
   article .content {
     margin-top: -9rem;
     position: relative;
+  }
+}
+
+@media (#{$bp-larger-than-desktophd-plus}) {
+  article .body-image {
+    width: 110%;
+    margin-left: -5%;
   }
 }

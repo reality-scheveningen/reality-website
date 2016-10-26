@@ -70,6 +70,7 @@ footer {
       box-sizing: border-box;
       flex: 1 100%;
       padding: 3rem 3rem 1.5rem 3rem;
+      min-height: 15rem;
 
       i {
         margin-top: -1rem;
@@ -111,7 +112,8 @@ footer {
         background-color: $orange;
         background-image: linear-gradient(to bottom left, $orange, darken($orange, 10%));
         .facebook svg {
-          height: 6rem;
+          height: 3rem;
+          margin-top: 1rem;
           path {
             fill: $white;
           }

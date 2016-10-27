@@ -1,0 +1,159 @@
+footer .contact {
+  padding: 6rem 1rem;
+  margin-bottom: -1rem;
+  background: $darker-grey;
+
+  h1 {
+    color: $white;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 3.2rem;
+    letter-spacing: .2rem;
+  }
+
+  hr {
+    margin: 1rem auto;
+    border: none;
+    width: 3rem;
+    height: 2px;
+    background-color: $orange;
+  }
+
+  p {
+    text-align: center;
+    font-weight: 300;
+  }
+
+  .contact-leader {
+    margin: 0 3rem 6rem 3rem;
+  }
+
+  .map-container {
+    #contact-map {
+      width: 100%;
+      height: 33rem;
+    }
+    img {
+      width: 100%;
+    }
+  }
+
+  .info-box-container {
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .info-box {
+    box-sizing: border-box;
+    flex: 1 100%;
+    padding: 3rem 3rem 1.5rem 3rem;
+    min-height: 15rem;
+
+    i {
+      margin-top: -1rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+
+      svg {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+
+    p {
+      font-size: 1.4rem;
+      margin-bottom: 0;
+      font-weight: 400;
+    }
+
+    a {
+      color: white;
+    }
+
+    &.service {
+      background-color: $green;
+      background-image: linear-gradient(to bottom left, $green, darken($green, 10%));
+    }
+
+    &.events {
+      background-color: $blue;
+      background-image: linear-gradient(to bottom left, $blue, darken($blue, 10%));
+    }
+
+    &.contact-information {
+      background-color: $brown;
+      background-image: linear-gradient(to bottom left, $brown, darken($brown, 10%));
+    }
+
+    &.social-media {
+      background-color: $orange;
+      background-image: linear-gradient(to bottom left, $orange, darken($orange, 10%));
+      .facebook svg {
+        height: 3rem;
+        margin-top: 1rem;
+        path {
+          fill: $white;
+        }
+      }
+    }
+  }
+}
+
+@media (#{$bp-larger-than-tablet}) {
+  footer .contact {
+    padding: 6rem 2rem;
+
+    .info-box {
+      flex: 1 50%;
+    }
+  }
+}
+
+@media (#{$bp-larger-than-desktop}) {
+  footer .contact-container {
+    background-image: url('../images/bg-footer.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    .contact {
+      background: none;
+      max-width: 96rem;
+      margin: 0 auto;
+      overflow: hidden;
+      padding-bottom: 6rem;
+
+      .contact-leader {
+        margin-bottom: 0;
+      }
+    }
+
+    .contact-leader, .info-box-container {
+      width: 56.66667%;
+      margin-left: 44.33334%;
+    }
+
+    .map-container {
+      width: 46%;
+      max-width: 57rem;
+      position: absolute;
+      right: calc(50% + 4rem);
+      top: 6rem;
+    }
+  }
+}
+
+@media (#{$bp-larger-than-desktophd}) {
+  footer .contact-container {
+
+    .contact {
+      max-width: 120rem;
+    }
+
+    .map-container {
+      max-width: 63rem;
+    }
+  }
+}

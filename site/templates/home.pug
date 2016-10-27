@@ -17,7 +17,11 @@ block content
               p= tych.summary
         .image-container
           img(src=tych.image.file.url,alt="")
+
 block footer
   footer
     include footer/contact
     include footer/copyright
+
+block scripts-extra
+  script(src="https://maps.googleapis.com/maps/api/js?key=" + googleMapsApiKey + "&callback=initMap",async,defer)

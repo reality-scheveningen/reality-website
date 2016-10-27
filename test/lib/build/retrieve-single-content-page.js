@@ -11,9 +11,10 @@ test('retrieves single content page from database and creates page object', asse
   assert.same(
     {
       title: 'Example homepage title',
-      template: 'home'
+      template: 'home',
+      route: '/'
     },
-    e.pages['/'],
+    e.pages[0],
     'Has page with route / with transformed fields and template home'
   )
 

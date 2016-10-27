@@ -14,7 +14,7 @@ block content
             | !{md(subtitle)}
       .content
         ol.story-list
-          each story, path in stories
+          each story in stories
             li.story-item
               article
                 .image-container
@@ -29,4 +29,4 @@ block content
                   .summary-text
                     | !{md(story.summaryText)}
                   .cta
-                    a(href=path,class="read-more",title="Lees: " + story.title)= "Lees verder"
+                    a(href=story.route,class="read-more",title="Lees: " + story.title)= "Lees verder"

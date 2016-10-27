@@ -4,31 +4,36 @@ const addStoriesToStoriesPage = require('../../../lib/build/add-story-pages-to-s
 test('add story pages to the stories page', assert => {
   const e = {}
 
-  e.pages = {
-    '/stories/': {
-      'title': 'Stories list'
+  e.pages = [
+    {
+      'title': 'Stories list',
+      'route': '/stories/'
     },
-    '/stories/awesome-tale/': {
-      'title': 'Awesome tale'
+    {
+      'title': 'Awesome tale',
+      'route': '/stories/awesome-tale/'
     }
-  }
+  ]
 
   addStoriesToStoriesPage(e)
 
   assert.same(
-    {
-      '/stories/': {
+    [
+      {
         'title': 'Stories list',
-        'stories': {
-          '/stories/awesome-tale/': {
-            'title': 'Awesome tale'
+        'route': '/stories/',
+        'stories': [
+          {
+            'title': 'Awesome tale',
+            'route': '/stories/awesome-tale/'
           }
-        }
+        ]
       },
-      '/stories/awesome-tale/': {
-        'title': 'Awesome tale'
+      {
+        'title': 'Awesome tale',
+        'route': '/stories/awesome-tale/'
       }
-    },
+    ],
     e.pages,
     'Story pages has been added to stories page'
   )
@@ -39,26 +44,30 @@ test('add story pages to the stories page', assert => {
 test('when no stories page we will skip', assert => {
   const e = {}
 
-  e.pages = {
-    '/no-stories-page/': {
-      'title': 'Stories list'
+  e.pages = [
+    {
+      'title': 'Stories list',
+      'route': '/no-stories-page/'
     },
-    '/stories/awesome-tale/': {
-      'title': 'Awesome tale'
+    {
+      'title': 'Awesome tale',
+      'route': '/stories/awesome-tale/'
     }
-  }
+  ]
 
   addStoriesToStoriesPage(e)
 
   assert.same(
-    {
-      '/no-stories-page/': {
-        'title': 'Stories list'
+    [
+      {
+        'title': 'Stories list',
+        'route': '/no-stories-page/'
       },
-      '/stories/awesome-tale/': {
-        'title': 'Awesome tale'
+      {
+        'title': 'Awesome tale',
+        'route': '/stories/awesome-tale/'
       }
-    },
+    ],
     e.pages
   )
 

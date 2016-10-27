@@ -7,22 +7,24 @@ test('retrieve legacy redirects as pages', assert => {
       sitePath: __dirname,
       baseUrl: 'http://example.com'
     },
-    pages: {
-      existing: {}
-    }
+    pages: [
+      {'title': 'existing page'}
+    ]
   }
 
   const result = legacyRedirects(obj)
 
   assert.same(obj.config, result.config, 'Config should not be altered')
 
-  assert.equal('http://example.com/new-page', result.pages['/some-legacy-page-1/'].redirect, 'First page redirect should be set')
-  assert.equal('redirect', result.pages['/some-legacy-page-1/'].template, 'First page template should be set as redirect')
+  assert.equal('http://example.com/new-page', result.pages[1].redirect, 'First page redirect should be set')
+  assert.equal('redirect', result.pages[1].template, 'First page template should be set as redirect')
+  assert.equal('/some-legacy-page-1/', result.pages[1].route, 'First page route should be set')
 
-  assert.equal('http://example.com/new-page', result.pages['/some-legacy-page-2/'].redirect, 'Second page redirect should be set')
-  assert.equal('redirect', result.pages['/some-legacy-page-2/'].template, 'Second page template should be set as redirect')
+  assert.equal('http://example.com/new-page', result.pages[2].redirect, 'Second page redirect should be set')
+  assert.equal('redirect', result.pages[2].template, 'Second page template should be set as redirect')
+  assert.equal('/some-legacy-page-2/', result.pages[2].route, 'Second page route should be set')
 
-  assert.equal(true, obj.pages.hasOwnProperty('existing'), 'Other pages still exist')
+  assert.equal('existing page', obj.pages[0].title, 'Other pages still exist')
 
   assert.end()
 })

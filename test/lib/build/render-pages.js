@@ -8,12 +8,13 @@ test('rendering pages', assert => {
       env: 'test',
       example: 'jup'
     },
-    pages: {
-      '/': {
+    pages: [
+      {
         data: 'some data',
+        route: '/',
         jsonLd: {some: 'data'}
       }
-    }
+    ]
   }
 
   // create stubs
@@ -36,8 +37,9 @@ test('rendering pages', assert => {
 
   // check result
   result.then(res => {
-    const page = res.pages['/']
+    const page = res.pages[0]
 
+    assert.equal('/', page.route, 'Route is set')
     assert.equal('http://localhost/', page.canonicalUrl, 'Canonical url is set')
     assert.equal(false, page.pretty, 'Only pretty print in dev env')
     assert.equal(true, typeof page.debugData === 'string', 'There is some debug data')

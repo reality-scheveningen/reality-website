@@ -12,9 +12,10 @@ test('retrieves content pages from database and creates page objects', assert =>
     {
       title: 'Page 1',
       path: 'page-1',
-      template: 'content'
+      template: 'content',
+      route: '/page-1/'
     },
-    e.pages['/page-1/'],
+    e.pages[0],
     'Has page 1 with route, transformed fields and template content'
   )
 
@@ -22,9 +23,10 @@ test('retrieves content pages from database and creates page objects', assert =>
     {
       title: 'Page 2',
       path: 'page-2',
-      template: 'content'
+      template: 'content',
+      route: '/page-2/'
     },
-    e.pages['/page-2/'],
+    e.pages[1],
     'Has page 2 with route, transformed fields and template content'
   )
 

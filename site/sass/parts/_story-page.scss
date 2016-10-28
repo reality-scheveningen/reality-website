@@ -57,13 +57,19 @@ article.story {
     img {
       max-width: 100%;
       display: block;
+      box-sizing: border-box;
 
       & + em {
         font-size: 1.3rem;
         text-align: center;
         display: block;
+        box-sizing: border-box;
       }
     }
+  }
+
+  .content {
+    max-width: 90rem;
   }
 }
 
@@ -92,6 +98,14 @@ article.story {
 
     .body-text {
       column-count: 1;
+
+      img {
+        padding: 0 3rem;
+
+        & + em {
+          padding: 0 3rem;
+        }
+      }
     }
   }
 }

@@ -3,6 +3,13 @@ article.story {
     display: none;
   }
 
+  .nice {
+    height: 1rem;
+    width: calc(100% - 3rem);
+    background: linear-gradient(to right, #1d2c31 0%, #5f616b 25%, #b78463 50%, #b89765 75%, #9ab5ac 100%);
+    margin: 0 1.5rem;
+  }
+
   .info {
     color: $grey;
     background-color: $lighter-grey;
@@ -23,7 +30,7 @@ article.story {
 
   .author {
     font-weight: bold;
-    margin-top: -0.5rem;
+    margin-top: -0.2rem;
     margin-bottom: 1.5rem;
     color: $blue;
   }
@@ -83,6 +90,7 @@ article.story {
         font-family: $font-family-alternative;
         font-size: 3rem;
         line-height: 1.2;
+        margin-bottom: 1rem;
 
         a {
           text-decoration: none;

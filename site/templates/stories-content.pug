@@ -19,13 +19,14 @@ block content
               article
                 .image-container
                   img(src=story.summaryImage.file.url,alt=story.summaryImage.file.title)
+                .nice
                 .info
                   time(datetime=moment(story.date, 'YYYY-MM-DD'),itemprop="datePublished")
                     | !{moment(story.date, 'D MMM \'YY')}
                   span(class="reading-time")= "Leestijd: " + story.readingTime + " min."
                 .article-content
                   h1= story.title
-                  .author= "door: " + story.author
+                  .author= "Door: " + story.author
                   .summary-text
                     | !{md(story.summaryText)}
                   .cta

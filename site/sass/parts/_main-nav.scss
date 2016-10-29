@@ -59,7 +59,6 @@
 
 @media (#{$bp-larger-than-phablet}) {
   .main-nav nav {
-    padding: 0 3rem;
     a, span {
       margin: 0 1.5rem;
       font-size: 1.5rem;
@@ -91,7 +90,7 @@
     width: 100%;
     top: 0;
 
-    nav a {
+    nav a{
       color: rgba(255, 255, 255, 0.6);
     }
   }

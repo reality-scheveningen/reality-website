@@ -23,7 +23,7 @@ article {
   font-weight: 300;
 
   .intro-text, .body-text, .footer-text {
-    padding: 1rem 1.5rem;
+    padding: 2rem 1.5rem;
     background-color: $white;
   }
 
@@ -58,7 +58,7 @@ article {
     hr {
       display: block;
       width: 4.5rem;
-      margin: -1rem auto 3rem auto;
+      margin: -1rem auto 1.5rem auto;
       border: none;
       height: 2px;
       background-color: $yellow;
@@ -66,6 +66,8 @@ article {
 
     h1 {
       color: $white;
+      font-size: 3.75rem;
+      line-height: 1.25;
     }
 
     .subtitle {
@@ -123,8 +125,9 @@ article {
       }
 
       hr {
-        margin-top: 0;
+        margin: 0 auto 3rem auto;
       }
+
       .subtitle {
         margin: 0 auto;
         width: 80%;

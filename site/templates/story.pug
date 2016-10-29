@@ -13,6 +13,7 @@ block content
         h1= title
 
       .content
+        .nice
         .info
           time(datetime=moment(date, 'YYYY-MM-DD'),itemprop="datePublished")
             | !{moment(date, 'D MMM \'YY')}
@@ -21,7 +22,7 @@ block content
           .body-text
             .text-container
               h1= title
-              .author= "door: " + author
+              .author= "Door: " + author
               | !{md(bodyText)}
 
 block scripts-extra

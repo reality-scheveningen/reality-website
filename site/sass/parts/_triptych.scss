@@ -7,6 +7,7 @@
     text-decoration: none;
     color: $white;
     position: relative;
+    overflow: hidden;
 
     article {
       box-sizing: border-box;
@@ -92,7 +93,6 @@
   .triptych > a {
     float: left;
     width: 33.333334%;
-    overflow: hidden;
     height: 100vh;
     min-height: 72rem;
     max-height: 120rem;

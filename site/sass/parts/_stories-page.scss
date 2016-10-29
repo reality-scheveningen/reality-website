@@ -7,7 +7,6 @@ body.stories {
     header hr {
       background-color: $blue;
     }
-
   }
 }
 
@@ -21,6 +20,12 @@ body.stories {
 .story-item {
   background: $white;
   box-sizing: border-box;
+
+  .nice {
+    height: 1rem;
+    width: 100%;
+    background: linear-gradient(to right, #1d2c31 0%, #5f616b 25%, #b78463 50%, #b89765 75%, #9ab5ac 100%);
+  }
 
   article {
     margin: 0;
@@ -45,7 +50,7 @@ body.stories {
     color: $grey;
     background-color: $lighter-grey;
     box-sizing: border-box;
-    padding: .5rem 3rem;
+    padding: .5rem 1.5rem;
     font-family: $font-family-alternative;
     position: relative;
     overflow: hidden;
@@ -61,21 +66,21 @@ body.stories {
 
   .article-content {
     box-sizing: border-box;
-    padding: 2rem 3rem 3rem 3rem;
+    padding: 2rem 1.5rem;
     background: svg-load('../images/triangle-down-lighter-grey.svg') no-repeat top center;
     background-size: 2rem 1rem;
 
     h1 {
       margin-bottom: 0;
-      font-size: 3rem;
-      line-height: 1.2;
+      font-size: 2.5rem;
+      line-height: 1.15;
     }
   }
 
   .author {
     color: $blue;
     font-weight: bold;
-    margin-top: -0.5rem;
+    margin-top: -0.2rem;
     margin-bottom: 1.5rem;
   }
 
@@ -115,9 +120,22 @@ body.stories {
       clear: both;
     }
 
+    .info {
+      padding: .5rem 3rem;
+    }
+
+    .article-content {
+      padding: 2rem 3rem 3rem 3rem;
+
+      h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+      }
+    }
+
     .image-container {
       img {
-        filter: grayscale(100%);
+        //filter: grayscale(100%);
         transition: transform 3s ease-in-out;
       }
 
@@ -128,13 +146,13 @@ body.stories {
         width: inherit;
         height: inherit;
         background: $blue;
-        opacity: 0.8;
+        opacity: 0.5;
       }
     }
 
     &:hover .image-container {
       img {
-        filter: grayscale(0);
+        //filter: grayscale(0);
         transform: scale(1.1);
       }
 

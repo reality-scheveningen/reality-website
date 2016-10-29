@@ -1,6 +1,6 @@
 body.over-ons {
   .cover-full {
-    background: linear-gradient(to bottom, rgba(155, 181, 172, .6) 50%, rgba(49, 49, 49, 1) 100%);
+    background: linear-gradient(to bottom, rgba(155, 181, 172, .2) 50%, rgba(49, 49, 49, 1) 100%);
   }
 
   article {
@@ -36,10 +36,10 @@ body.over-ons {
 
     #love-god-love-people, #advance-his-kingdom, #live-life {
       box-sizing: border-box;
-      padding-left: 5.5rem;
-      background-size: 3.5rem 3.5rem;
-      font-size: 3rem;
-      line-height: 1.2;
+      padding-left: 4.5rem;
+      background-size: 3rem 3rem;
+      font-size: 2.5rem;
+      line-height: 1.15;
     }
   }
 }
@@ -52,6 +52,13 @@ body.over-ons {
 
     .body-text {
       column-count: 2;
+    }
+
+    #love-god-love-people, #advance-his-kingdom, #live-life {
+      padding-left: 5.5rem;
+      background-size: 3.5rem 3.5rem;
+      font-size: 3rem;
+      line-height: 1.2;
     }
 
     #love-god-love-people {

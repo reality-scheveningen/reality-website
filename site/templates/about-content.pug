@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  if heroImage && heroImage.file.url
+    .cover-full
+      img(src=heroImage.file.url,class="u-full-width",alt=heroImage.title)
+  .page-container
+    article
+      header
+        h1= title
+        hr
+        if subtitle
+          .subtitle
+            | !{md(subtitle)}
+      .content
+        if introText
+          .intro-text
+            if preIntroText
+              .pre-text-container
+                | !{md(preIntroText)}
+            .text-container
+              | !{md(introText)}
+        if bodyText
+          .body-text
+            .text-container
+              | !{md(bodyText)}
+        if bodyImage && bodyImage.file.url
+          .body-image
+            img(src=bodyImage.file.url,alt=bodyImage.title)
+        if footerText
+          .footer-text
+            .text-container
+              | !{md(footerText)}

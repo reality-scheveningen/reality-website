@@ -12,6 +12,14 @@ body.over-ons {
       background-color: $green;
     }
 
+    .pre-text-container {
+      background-color: $white;
+    }
+
+    .intro-text .text-container {
+      padding-top: 0;
+    }
+
     .body-text {
       background: $green;
       color: $white;
@@ -46,7 +54,13 @@ body.over-ons {
 
 @media (#{$bp-larger-than-tablet}) {
   body.over-ons article {
+    .pre-text-container {
+      padding: 4.5rem 4.5rem 0 4.5rem;
+      overflow: hidden;
+    }
+
     .intro-text .text-container {
+      padding-top: 1.5rem;
       column-count: 3;
     }
 

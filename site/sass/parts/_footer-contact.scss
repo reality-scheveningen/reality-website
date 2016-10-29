@@ -16,7 +16,7 @@ footer .contact {
     border: none;
     width: 3rem;
     height: 2px;
-    background-color: $orange;
+    background-color: $yellow;
   }
 
   p {
@@ -83,8 +83,8 @@ footer .contact {
     }
 
     &.contact-information {
-      background-color: $brown;
-      background-image: linear-gradient(to bottom left, $brown, darken($brown, 10%));
+      background-color: $yellow;
+      background-image: linear-gradient(to bottom left, $yellow, darken($yellow, 10%));
     }
 
     &.social-media {

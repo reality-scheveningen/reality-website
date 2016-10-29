@@ -5,9 +5,8 @@ article.story {
 
   .nice {
     height: 1rem;
-    width: calc(100% - 3rem);
+    width: 100%;
     background: linear-gradient(to right, #1d2c31 0%, #5f616b 25%, #b78463 50%, #b89765 75%, #9ab5ac 100%);
-    margin: 0 1.5rem;
   }
 
   .info {
@@ -97,6 +96,11 @@ article.story {
           color: $white;
         }
       }
+    }
+
+    .nice {
+      width: calc(100% - 3rem);
+      margin: 0 1.5rem;
     }
 
     .info {

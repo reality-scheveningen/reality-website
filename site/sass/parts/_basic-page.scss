@@ -56,7 +56,11 @@ article {
     text-align: center;
 
     hr {
-      display: none;
+      display: block;
+      width: 4.5rem;
+      margin: -1rem auto 3rem auto;
+      border: none;
+      height: 2px;
       background-color: $brown;
     }
 
@@ -119,13 +123,8 @@ article {
       }
 
       hr {
-        display: block;
-        width: 4.5rem;
-        margin: 0 auto 3rem auto;
-        border: none;
-        height: 2px;
+        margin-top: 0;
       }
-
       .subtitle {
         margin: 0 auto;
         width: 80%;

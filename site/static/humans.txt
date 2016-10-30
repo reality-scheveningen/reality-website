@@ -10,9 +10,10 @@
 # THANKS
 
     Martijn van Loon
+    Remmelt C Mastbebroek
     Reality Scheveningen
 
 # TECHNOLOGY COLOPHON
 
     CSS3, HTML5
-    Nodejs, Contentful, NPM, Skeleton css,
+    NodeJS, Contentful, Skeleton CSS, Gitlab, Letsencrypt

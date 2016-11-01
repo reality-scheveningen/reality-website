@@ -14,13 +14,3 @@ body {
 .no-touch a:hover {
   text-decoration: none;
 }
-
-@media (#{$bp-larger-than-phablet}) {
-  .container.squeezed {
-    max-width: 700px;
-  }
-
-  .container.squeezed-with-room-padding {
-    max-width: 760px;
-  }
-}

@@ -4,7 +4,7 @@
   background: $darker-grey;
   color: $white;
   text-align: center;
-  -webkit-font-smoothing: antialiased;
+  @include font-smoothing(on);
 
   .home-shortcut {
     display: none;

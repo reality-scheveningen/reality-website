@@ -43,7 +43,7 @@ article {
     margin-top: 3rem;
     background: $light-black;
     color: $grey;
-    -webkit-font-smoothing: antialiased;
+    @include font-smoothing(on);
 
     h1, h2, h3 {
       color: $white;
@@ -109,7 +109,7 @@ article {
       width: 100%;
       background: none;
       margin: 0;
-      -webkit-font-smoothing: antialiased;
+      @include font-smoothing(on);
 
       & > * {
         max-width: 120rem;

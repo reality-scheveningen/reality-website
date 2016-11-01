@@ -1,6 +1,6 @@
 .triptych {
   overflow: hidden;
-  -webkit-font-smoothing: antialiased;
+  @include font-smoothing(on);
 
   a {
     display: block;

@@ -23,7 +23,7 @@ body.over-ons {
     .body-text {
       background: $green;
       color: $white;
-      -webkit-font-smoothing: antialiased;
+      @include font-smoothing(on);
 
       a, h1, h2, h3 {
         color: $white;
@@ -73,20 +73,15 @@ body.over-ons {
       background-size: 3.5rem 3.5rem;
       font-size: 3rem;
       line-height: 1.2;
+      background-position: left 2rem;
     }
 
     #love-god-love-people {
       width: calc(100% - 2rem);
-      background-position: left 2rem;
-    }
-
-    #advance-his-kingdom {
-      background-position: left 2rem;
     }
 
     #live-life {
       width: 3rem;
-      background-position: left 2rem;
     }
   }
 }

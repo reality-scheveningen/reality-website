@@ -24,9 +24,9 @@ body.activiteiten {
     .body-text {
       background: $orange;
       color: $white;
-      -webkit-font-smoothing: antialiased;
       column-count: 1;
       padding: 0;
+      @include font-smoothing(on);
 
       .text-container {
         padding: 2rem 1.5rem;

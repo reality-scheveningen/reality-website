@@ -2,7 +2,7 @@ footer {
   color: $white;
   font-size: 1.5rem;
   text-align: center;
-  -webkit-font-smoothing: antialiased;
+  @include font-smoothing(on);
 
   .copyright-container {
     padding: 3rem 3rem 0 3rem;

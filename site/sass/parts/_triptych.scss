@@ -60,7 +60,7 @@
         background-color: $orange;
       }
       article {
-        background: linear-gradient(to bottom, rgba(182, 131, 101, .6) 0%, rgba(29, 44, 49, .6) 100%);
+        background: linear-gradient(to bottom, transparentize($orange, .4) 0%, transparentize($dark-blue, .4) 100%);
       }
     }
 
@@ -69,7 +69,7 @@
         background-color: $green;
       }
       article {
-        background: linear-gradient(to bottom, rgba(155, 181, 172, .6) 0%, rgba(29, 44, 49, .6) 100%);
+        background: linear-gradient(to bottom, transparentize($green, .4) 0%, transparentize($dark-blue, .4) 100%);
       }
     }
 
@@ -78,7 +78,7 @@
         background-color: $blue;
       }
       article {
-        background: linear-gradient(to bottom, rgba(95, 97, 107, .6) 0%, rgba(29, 44, 49, .6) 100%);
+        background: linear-gradient(to bottom, transparentize($blue, .4) 0%, transparentize($dark-blue, .4) 100%);
       }
     }
 

@@ -10,7 +10,7 @@
     height: 100%;
     box-sizing: border-box;
     padding: 3rem 0;
-    z-index: 20;
+    z-index: $z-index-modal;
     display: block;
   }
 

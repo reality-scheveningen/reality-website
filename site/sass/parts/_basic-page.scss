@@ -8,7 +8,7 @@
     height: 30rem;
     object-fit: cover;
     position: relative;
-    z-index: -1; // set image behind background gradient
+    z-index: $z-index-image-behind-background;
   }
 }
 

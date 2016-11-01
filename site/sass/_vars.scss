@@ -37,3 +37,9 @@ $font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, 
 $font-family-alternative: "Archive", sans-serif;
 $link-color: $yellow;
 $font-color: $dark-grey;
+
+// z-index
+$z-index-image-behind-background: -1;
+$z-index-triangle-over-background: 2;
+$z-index-header: 3;
+$z-index-modal: 4;

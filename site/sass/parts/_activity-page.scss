@@ -44,7 +44,7 @@ body.activiteiten {
           position: absolute;
           left: calc(50% - 1rem);
           bottom: 0;
-          z-index: 2;
+          z-index: $z-index-triangle-over-background;
           background: transparent svg-load('../images/triangle-orange-up.svg') no-repeat;
         }
 
@@ -86,7 +86,7 @@ body.activiteiten {
           height: 2rem;
           background-size: 1rem 2rem;
           top: calc(50% - 1rem);
-          z-index: 2;
+          z-index: $z-index-triangle-over-background;
         }
 
         img {

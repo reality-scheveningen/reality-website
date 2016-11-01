@@ -18,6 +18,7 @@ test('add story pages to the stories page', assert => {
   addStoriesToStoriesPage(e)
 
   assert.same(
+    e.pages,
     [
       {
         'title': 'Stories list',
@@ -34,7 +35,6 @@ test('add story pages to the stories page', assert => {
         'route': '/stories/awesome-tale/'
       }
     ],
-    e.pages,
     'Story pages has been added to stories page'
   )
 
@@ -58,6 +58,7 @@ test('when no stories page we will skip', assert => {
   addStoriesToStoriesPage(e)
 
   assert.same(
+    e.pages,
     [
       {
         'title': 'Stories list',
@@ -67,8 +68,7 @@ test('when no stories page we will skip', assert => {
         'title': 'Awesome tale',
         'route': '/stories/awesome-tale/'
       }
-    ],
-    e.pages
+    ]
   )
 
   assert.end()

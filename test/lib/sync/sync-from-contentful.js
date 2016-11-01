@@ -23,11 +23,11 @@ test('sync data from contentful', assert => {
   const syncFromContentFul = proxyquire('../../../lib/sync/sync-from-contentful', {
     'contentful': {
       'createClient': clientConfig => {
-        assert.same({space: e.config.contentfulSpace, accessToken: e.config.contentfulAccessToken}, clientConfig)
+        assert.same(clientConfig, {space: e.config.contentfulSpace, accessToken: e.config.contentfulAccessToken})
 
         return {
           sync: syncOptions => {
-            assert.same({initial: true}, syncOptions)
+            assert.same(syncOptions, {initial: true})
             called = true
 
             return Promise.resolve(contentfulSyncRequestResult)
@@ -40,8 +40,8 @@ test('sync data from contentful', assert => {
   const result = syncFromContentFul(e)
 
   result.then(res => {
-    assert.equal(true, called)
-    assert.same(contentfulSyncRequestResult, res.sync)
+    assert.equal(called, true)
+    assert.same(res.sync, contentfulSyncRequestResult)
 
     assert.end()
   }).catch(err => {

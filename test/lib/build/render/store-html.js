@@ -15,8 +15,8 @@ test('stores the rendered html', assert => {
   const storeHtml = proxyquire('../../../../lib/build/render/store-html', {
     'fs-extra': {
       outputFile: (path, data, cb) => {
-        assert.equal('public/path/some-where/index.html', path)
-        assert.equal('HTML5 Rocks!', data)
+        assert.equal(path, 'public/path/some-where/index.html')
+        assert.equal(data, 'HTML5 Rocks!')
 
         called = true
 
@@ -28,8 +28,8 @@ test('stores the rendered html', assert => {
   const result = storeHtml(e)
 
   result.then(res => {
-    assert.equal(true, called, 'Rendered HTML stored')
-    assert.equal('public/path/some-where/index.html', res.renderPath)
+    assert.equal(called, true, 'Rendered HTML stored')
+    assert.equal(res.renderPath, 'public/path/some-where/index.html')
 
     assert.end()
   }).catch(err => {

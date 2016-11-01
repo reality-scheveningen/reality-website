@@ -9,6 +9,6 @@ test('ensure full sync when no sync token', assert => {
 
   const result = determineSyncStrategy(e)
 
-  assert.equal(true, result.config.fullSync)
+  assert.equal(result.config.fullSync, true)
   assert.end()
 })

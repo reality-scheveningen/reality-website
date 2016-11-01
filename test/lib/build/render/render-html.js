@@ -13,7 +13,7 @@ test('renders the html templates', assert => {
   const renderHtml = proxyquire('../../../../lib/build/render/render-html', {
     'pug': {
       renderFile: (path, data, cb) => {
-        assert.equal('site/path/templates/some-template.pug', path)
+        assert.equal(path, 'site/path/templates/some-template.pug')
         assert.same(e.page, data)
 
         called = true
@@ -26,8 +26,8 @@ test('renders the html templates', assert => {
   const result = renderHtml(e)
 
   result.then(res => {
-    assert.equal(true, called, 'Pug render file has been called')
-    assert.equal(true, res.hasOwnProperty('html'), 'Html has been set')
+    assert.equal(called, true, 'Pug render file has been called')
+    assert.equal(res.hasOwnProperty('html'), true, 'Html has been set')
 
     assert.end()
   }).catch(err => {

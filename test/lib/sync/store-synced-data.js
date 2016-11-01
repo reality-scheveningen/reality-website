@@ -102,8 +102,8 @@ function testStoreSyncedData (description, fullSync, initialDb, sync, expectedDb
 
     const storeSyncedData = proxyquire('../../../lib/sync/store-synced-data', {
       'write-json-file': (path, db) => {
-        assert.equal(e.config.databasePath, path)
-        assert.same(expectedDb, db)
+        assert.equal(path, e.config.databasePath)
+        assert.same(db, expectedDb)
         called = true
         return Promise.resolve()
       }
@@ -112,8 +112,8 @@ function testStoreSyncedData (description, fullSync, initialDb, sync, expectedDb
     const result = storeSyncedData(e)
 
     result.then(res => {
-      assert.equal(true, called)
-      assert.same(expectedDb, res.db)
+      assert.equal(called, true)
+      assert.same(res.db, expectedDb)
 
       assert.end()
     }).catch(err => {

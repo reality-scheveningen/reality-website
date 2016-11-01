@@ -28,7 +28,7 @@ function testFilterHtml (description, template, input, output, assertDescription
 
     filterHtml(e)
 
-    assert.equal(output, e.html, assertDescription)
+    assert.equal(e.html, output, assertDescription)
     assert.end()
   })
 }

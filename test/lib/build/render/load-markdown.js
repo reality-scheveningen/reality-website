@@ -29,6 +29,6 @@ test('not load markdown on redirect pages', assert => {
 
   loadMarkdown(e)
 
-  assert.equal(undefined, e.page.md, 'Nope, no markdown loaded')
+  assert.equal(e.page.md, undefined, 'Nope, no markdown loaded')
   assert.end()
 })

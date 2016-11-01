@@ -21,6 +21,6 @@ test('filter images from downloaded assets', assert => {
 
   const result = filterImagesFromSyncedAssets(e)
 
-  assert.same([e.downloadedAssets[1]], result.images)
+  assert.same(result.images, [e.downloadedAssets[1]])
   assert.end()
 })

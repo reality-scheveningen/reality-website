@@ -10,7 +10,7 @@ test('loads database', assert => {
 
   loadDatabase(e)
 
-  assert.equal(true, e.db.entries instanceof Array, 'Database is loaded')
+  assert.equal(e.db.entries instanceof Array, true, 'Database is loaded')
 
   assert.end()
 })
@@ -24,7 +24,7 @@ test('empty object when database file not yet exists', assert => {
 
   loadDatabase(e)
 
-  assert.same({}, e.db, 'Empty database fallback')
+  assert.same(e.db, {}, 'Empty database fallback')
 
   assert.end()
 })

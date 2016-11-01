@@ -15,6 +15,7 @@ test('Map multi valued fields to arrays in page properties', assert => {
   pageMultiValuedFieldsToArray(e)
 
   assert.same(
+    e,
     {
       pages: {
         '/some-route/': {
@@ -27,8 +28,7 @@ test('Map multi valued fields to arrays in page properties', assert => {
           ]
         }
       }
-    },
-    e
+    }
   )
 
   assert.end()

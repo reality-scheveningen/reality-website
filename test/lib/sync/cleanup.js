@@ -13,7 +13,7 @@ test('cleans up on full sync', assert => {
 
   const cleanup = proxyquire('../../../lib/sync/cleanup', {
     rimraf: (path, cb) => {
-      assert.equal(e.config.assetPath, path)
+      assert.equal(path, e.config.assetPath)
       called = true
       cb()
     }
@@ -22,7 +22,7 @@ test('cleans up on full sync', assert => {
   const result = cleanup(e)
 
   result.then(res => {
-    assert.equal(true, called)
+    assert.equal(called, true)
 
     assert.end()
   }).catch(err => {
@@ -51,8 +51,8 @@ test('no cleanup when partial sync', assert => {
 
   const result = cleanup(e)
 
-  assert.equal(false, called)
-  assert.same(e, result)
+  assert.equal(called, false)
+  assert.same(result, e)
 
   assert.end()
 })

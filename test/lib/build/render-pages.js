@@ -39,16 +39,16 @@ test('rendering pages', assert => {
   result.then(res => {
     const page = res.pages[0]
 
-    assert.equal('/', page.route, 'Route is set')
-    assert.equal('http://localhost/', page.canonicalUrl, 'Canonical url is set')
-    assert.equal(false, page.pretty, 'Only pretty print in dev env')
-    assert.equal(true, typeof page.debugData === 'string', 'There is some debug data')
-    assert.same([{some: 'data'}], page.jsonLd, 'Ensure JSON+LD data to be collection (array)')
+    assert.equal(page.route, '/', 'Route is set')
+    assert.equal(page.canonicalUrl, 'http://localhost/', 'Canonical url is set')
+    assert.equal(page.pretty, false, 'Only pretty print in dev env')
+    assert.equal(typeof page.debugData === 'string', true, 'There is some debug data')
+    assert.same(page.jsonLd, [{some: 'data'}], 'Ensure JSON+LD data to be collection (array)')
 
-    assert.equal(true, called['load-markdown'], 'Markdown loaded')
-    assert.equal(true, called['render-html'], 'Html rendered')
-    assert.equal(true, called['filter-html'], 'Html filtered')
-    assert.equal(true, called['store-html'], 'Html stored')
+    assert.equal(called['load-markdown'], true, 'Markdown loaded')
+    assert.equal(called['render-html'], true, 'Html rendered')
+    assert.equal(called['filter-html'], true, 'Html filtered')
+    assert.equal(called['store-html'], true, 'Html stored')
 
     assert.end()
   }).catch(err => {

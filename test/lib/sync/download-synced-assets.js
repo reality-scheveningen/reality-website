@@ -26,8 +26,8 @@ test('download synced assets', assert => {
 
   const donwloadSyncedAssets = proxyquire('../../../lib/sync/download-synced-assets', {
     download: (remotePath, targetFolder) => {
-      assert.equal(expectedDownloadedAssets[0].remotePath, remotePath)
-      assert.equal(expectedDownloadedAssets[0].targetFolder, targetFolder)
+      assert.equal(remotePath, expectedDownloadedAssets[0].remotePath)
+      assert.equal(targetFolder, expectedDownloadedAssets[0].targetFolder)
 
       downloaded = true
 
@@ -38,8 +38,8 @@ test('download synced assets', assert => {
   const result = donwloadSyncedAssets(e)
 
   result.then(res => {
-    assert.equal(true, downloaded)
-    assert.same(expectedDownloadedAssets, res.downloadedAssets)
+    assert.equal(downloaded, true)
+    assert.same(res.downloadedAssets, expectedDownloadedAssets)
 
     assert.end()
   }).catch(err => {

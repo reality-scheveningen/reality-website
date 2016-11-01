@@ -29,6 +29,6 @@ test('not load moment on redirect pages', assert => {
 
   loadMoment(e)
 
-  assert.equal(undefined, e.page.moment, 'Nope, no moment loaded')
+  assert.equal(e.page.moment, undefined, 'Nope, no moment loaded')
   assert.end()
 })

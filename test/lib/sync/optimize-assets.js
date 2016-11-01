@@ -17,10 +17,10 @@ test('optimize downloaded assets', assert => {
 
   const optimizeAssets = proxyquire('../../../lib/sync/optimize-assets', {
     imagemin: (input, output, options) => {
-      assert.same(['/local/assets/some/path/some-asset.jpg'], input)
-      assert.equal('/local/assets/some/path', output)
-      assert.equal(true, options.plugins instanceof Array)
-      assert.equal(true, options.plugins.length > 0)
+      assert.same(input, ['/local/assets/some/path/some-asset.jpg'])
+      assert.equal(output, '/local/assets/some/path')
+      assert.equal(options.plugins instanceof Array, true)
+      assert.equal(options.plugins.length > 0, true)
 
       called = true
 
@@ -31,7 +31,7 @@ test('optimize downloaded assets', assert => {
   const result = optimizeAssets(e)
 
   result.then(res => {
-    assert.equal(true, called)
+    assert.equal(called, true)
 
     assert.end()
   }).catch(err => {

@@ -46,8 +46,7 @@ body.over-ons {
       box-sizing: border-box;
       padding-left: 4.5rem;
       background-size: 3rem 3rem;
-      font-size: 2.5rem;
-      line-height: 1.15;
+      @include heading-3;
     }
   }
 }
@@ -71,8 +70,6 @@ body.over-ons {
     #love-god-love-people, #advance-his-kingdom, #live-life {
       padding-left: 5.5rem;
       background-size: 3.5rem 3.5rem;
-      font-size: 3rem;
-      line-height: 1.2;
       background-position: left 2rem;
     }
 

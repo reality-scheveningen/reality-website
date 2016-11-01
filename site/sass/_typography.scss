@@ -1,21 +1,51 @@
+@mixin heading-1 {
+  font-size: 2.75rem;
+  line-height: 1.2;
+  letter-spacing: .2rem;
+
+  @include bp-larger-than-tablet {
+    font-size: 3.75rem;
+    line-height: 1.25;
+  }
+}
+
+@mixin heading-2 {
+  font-weight: normal;
+  font-size: 3.2rem;
+  letter-spacing: .2rem;
+}
+
+@mixin heading-3 {
+  font-size: 2.5rem;
+  line-height: 1.15;
+
+  @include bp-larger-than-tablet {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+}
+
+@mixin heading-page-title {
+  font-size: 3.75rem;
+  line-height: 1.25;
+
+  @include bp-larger-than-tablet {
+    font-size: 6rem;
+    font-weight: normal;
+    letter-spacing: .2rem;
+    line-height: 1.2;
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-alternative;
   color: $light-black;
   margin-top: 0;
   margin-bottom: 2rem;
   font-weight: 300;
-  font-size: 2.75rem;
-  line-height: 1.2;
-  letter-spacing: .2rem;
+  @include heading-1;
 }
 
 p {
   margin-top: 0;
-}
-
-@media (#{$bp-larger-than-tablet}) {
-  h1, h2, h3, h4, h5, h6 {
-    font-size: 3.75rem;
-    line-height: 1.25;
-  }
 }

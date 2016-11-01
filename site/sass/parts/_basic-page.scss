@@ -66,8 +66,7 @@ article {
 
     h1 {
       color: $white;
-      font-size: 3.75rem;
-      line-height: 1.25;
+      @include heading-page-title;
     }
 
     .subtitle {
@@ -117,11 +116,7 @@ article {
       }
 
       h1 {
-        font-size: 6rem;
-        font-weight: normal;
-        letter-spacing: .2rem;
         margin-bottom: 0.75rem;
-        line-height: 1.2;
       }
 
       hr {
@@ -137,10 +132,6 @@ article {
     }
 
     .content {
-      h1, h2 {
-        font-size: 3.75rem;
-      }
-
       h1, h2, h3, h4, h5, h6 {
         break-inside: avoid;
       }

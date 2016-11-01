@@ -1,0 +1,35 @@
+@mixin bp-larger-than-mobile {
+  @media (#{$bp-larger-than-mobile}) {
+    @content;
+  }
+}
+
+@mixin bp-larger-than-phablet {
+  @media (#{$bp-larger-than-phablet}) {
+    @content;
+  }
+}
+
+@mixin bp-larger-than-tablet {
+  @media (#{$bp-larger-than-tablet}) {
+    @content;
+  }
+}
+
+@mixin bp-larger-than-desktop {
+  @media (#{$bp-larger-than-desktop}) {
+    @content;
+  }
+}
+
+@mixin bp-larger-than-desktophd {
+  @media (#{$bp-larger-than-desktophd}) {
+    @content;
+  }
+}
+
+@mixin bp-larger-than-desktophd-plus {
+  @media (#{$bp-larger-than-desktophd-plus}) {
+    @content;
+  }
+}

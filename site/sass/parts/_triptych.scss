@@ -41,10 +41,8 @@
 
     h2 {
       color: $white;
-      font-weight: normal;
-      font-size: 3.2rem;
       margin-bottom: 0;
-      letter-spacing: .2rem;
+      @include heading-2;
     }
 
     hr {

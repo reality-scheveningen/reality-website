@@ -7,8 +7,7 @@ footer .contact {
     color: $white;
     text-align: center;
     margin-bottom: 1.25rem;
-    font-size: 2.75rem;
-    letter-spacing: .2rem;
+    @include heading-3;
   }
 
   hr {

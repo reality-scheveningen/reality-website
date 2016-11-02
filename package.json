@@ -18,7 +18,6 @@
     "imagemin-jpegtran": "^5.0.2",
     "imagemin-optipng": "^5.2.1",
     "imagemin-svgo": "^5.2.0",
-    "jimp": "^0.2.27",
     "linkify-it": "^2.0.2",
     "lodash": "^4.16.4",
     "markdown-it": "^8.0.1",

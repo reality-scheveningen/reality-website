@@ -10,7 +10,6 @@ const syncFromContentFul = require('../lib/sync/sync-from-contentful')
 const storeSyncedData = require('../lib/sync/store-synced-data')
 const downloadSyncedAssets = require('../lib/sync/download-synced-assets')
 const filterImagesFromSyncedAssetsList = require('../lib/sync/filter-images-from-synced-assets-list')
-// const makeNoneRetinaImages = require('../lib/sync/make-none-retina-images')
 const optimizeAssets = require('../lib/sync/optimize-assets')
 
 function initConfig () {
@@ -54,7 +53,6 @@ function sync () {
     .then(storeSyncedData)
     .then(downloadSyncedAssets)
     .then(filterImagesFromSyncedAssetsList)
-    // .then(makeNoneRetinaImages)
     .then(optimizeAssets)
     .then(report)
     .catch(err => { console.log(err); process.exit(1) })

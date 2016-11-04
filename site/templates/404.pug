@@ -39,12 +39,12 @@ html(lang="nl")
   body
     .container
       h1 Pagina niet gevonden!
-      a(href="/",class="logo")
+      a(href=baseUrl,class="logo")
         include ../static/assets/images/logo-reality-scheveningen.svg
       p
-        a(href="/") Homepage proberen
+        a(href=baseUrl) Homepage proberen
         | &nbsp;of&nbsp;
-        a(href="/doe-maar-iets",onclick="var routes=['/stories','/activiteiten','/over-ons']; window.location=routes[Math.floor(Math.random() * routes.length)]; return false;") doe maar iets ;-)
+        a(href="/doe-maar-iets",onclick="var baseUrl='" + baseUrl + "'; var routes=['/stories','/activiteiten','/over-ons']; window.location=baseUrl+routes[Math.floor(Math.random() * routes.length)]; return false;") doe maar iets ;-)
 
     script.
       window.ga = function() {

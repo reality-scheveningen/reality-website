@@ -8,6 +8,10 @@ html(lang="nl")
     link(rel="preconnect",href="https://www.google-analytics.com")
     link(rel="preconnect",href="https://maps.googleapis.com")
 
+    script
+      include ../static/assets/js/redirect-to-canonical-origin.js
+      | redirectToCanonicalOrigin('!{baseUrl}', window)
+
     title #{title}
     meta(name="description",content=metaDescription)
     meta(name="viewport",content="width=device-width, initial-scale=1")
@@ -77,8 +81,6 @@ html(lang="nl")
           console.log(!{debugData})
 
       script
-        include ../static/assets/js/redirect-to-canonical-origin.js
-        | redirectToCanonicalOrigin('!{baseUrl}', window)
         include ../static/assets/js/no-touch.js
         include ../static/assets/js/calendar-modal.js
         include ../static/assets/js/contact-google-maps.js

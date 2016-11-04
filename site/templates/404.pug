@@ -1,0 +1,55 @@
+doctype html
+html(lang="nl")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="x-ua-compatible",content="ie=edge")
+    title Pagina niet gevonden! (404)
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,300",rel="stylesheet",type="text/css")
+    style.
+      @font-face {
+        font-family: 'Archive';
+        src: url('/assets/fonts/Archive.woff2') format('woff2'),
+        url('/assets/fonts/Archive.woff') format('woff');
+      }
+      body {
+        font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        color: #313131;
+      }
+      h1 {
+        font-size: 3rem;
+        font-family: "Archive", sans-serif;
+        font-weight: 300;
+      }
+      a {
+        color: #b89765;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 3rem;
+      }
+      .logo {
+        display: inline-block;
+        padding: 1.5rem 3rem;
+        width: calc(100% - 6rem);
+      }
+
+  body
+    .container
+      h1 Pagina niet gevonden!
+      a(href="/",class="logo")
+        include ../static/assets/images/logo-reality-scheveningen.svg
+      p
+        a(href="/") Homepage proberen
+        | &nbsp;of&nbsp;
+        a(href="/doe-maar-iets",onclick="var routes=['/stories','/activiteiten','/over-ons']; window.location=routes[Math.floor(Math.random() * routes.length)]; return false;") doe maar iets ;-)
+
+    script.
+      window.ga = function() {
+        ga.q.push(arguments)
+      };ga.q = [];ga.l = +new Date;
+      ga('create', '!{gaTrackingCode}', 'auto');ga('send', 'pageview')
+
+    script(src="https://www.google-analytics.com/analytics.js",async,defer)

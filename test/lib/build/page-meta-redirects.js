@@ -1,7 +1,7 @@
 const test = require('tape')
-const legacyRedirects = require('../../../lib/build/retrieve-legacy-redirects')
+const pageMetaRedirects = require('../../../lib/build/page-meta-redirects')
 
-test('retrieve legacy redirects as pages', assert => {
+test('add redirects as html pages (meta redirects)', assert => {
   const obj = {
     config: {
       sitePath: __dirname,
@@ -9,10 +9,11 @@ test('retrieve legacy redirects as pages', assert => {
     },
     pages: [
       {'title': 'existing page'}
-    ]
+    ],
+    redirects: require('./legacy.json').redirects
   }
 
-  const result = legacyRedirects(obj)
+  const result = pageMetaRedirects(obj)
 
   assert.same(result.config, obj.config, 'Config should not be altered')
 

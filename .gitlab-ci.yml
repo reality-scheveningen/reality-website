@@ -5,19 +5,26 @@ cache:
     - node_modules/
     - public/content
 
+stages:
+  - test
+  - deploy
+
 test:
+  stage: test
   script:
     - npm install
     - npm run test-with-coverage
 
-pages:
+deploy_production:
+  stage: deploy
   script:
     - npm install
     - npm run sync-content
     - npm run build
     - npm run build:minify
-  artifacts:
-    paths:
-      - public
+    - npm run gitlab:deploy:production
+  environment:
+    name: production
+    url: https://realityscheveningen.nl
   only:
     - master

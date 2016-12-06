@@ -26,6 +26,7 @@
     "markdown-it-external-links": "^0.0.6",
     "markdown-it-footnote": "^3.0.1",
     "moment": "^2.15.2",
+    "netlify-cli": "^1.1.0",
     "node-sass": "^3.10.1",
     "nyc": "^8.3.2",
     "postcss": "^5.2.5",
@@ -66,7 +67,8 @@
     "live-reload": "live-reload --port 9091 public/",
     "dev": "parallelshell \"npm run live-reload -s\" \"npm run serve -s\" \"npm run watch -s\"",
     "lint": "standard \"bin/*\" \"lib/**/*.js\" \"test/**/*.js\" \"site/static/assets/js/**/*.js\"",
-    "deploy:test": "NODE_ENV=prod BASE_URL='https://reality-new.surge.sh' npm run build && npm run build:minify && echo \"User-agent: *\nDisallow: /\n\" > public/robots.txt && surge public reality-new.surge.sh"
+    "deploy:test": "NODE_ENV=prod BASE_URL='https://reality-new.surge.sh' npm run build && npm run build:minify && echo \"User-agent: *\nDisallow: /\n\" > public/robots.txt && surge public reality-new.surge.sh",
+    "gitlab:deploy:production": "npm run build && npm run build:minify && netlify deploy -p public -s $NETLIFY_SITE_ID -t $NETLIFY_API_KEY"
   },
   "nyc": {
     "include": [

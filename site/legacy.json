@@ -2,63 +2,63 @@
   "redirects": [
     {
       "source": "/church-of-the-nations",
-      "target": "/over-ons"
+      "target": "/over-ons/"
     },
     {
       "source": "/love-kingdom-life",
-      "target": "/over-ons"
+      "target": "/over-ons/"
     },
     {
       "source": "/geloof",
-      "target": "/over-ons"
+      "target": "/over-ons/"
     },
     {
       "source": "/waarden",
-      "target": "/over-ons"
+      "target": "/over-ons/"
     },
     {
       "source": "/content/visie",
-      "target": "/over-ons"
+      "target": "/over-ons/"
     },
     {
       "source": "/serve",
-      "target": "/over-ons"
+      "target": "/over-ons/"
     },
     {
       "source": "/missie",
-      "target": "/over-ons"
+      "target": "/over-ons/"
     },
     {
       "source": "/connect",
-      "target": "/activiteiten"
+      "target": "/activiteiten/"
     },
     {
       "source": "/connect/zondagse-diensten",
-      "target": "/activiteiten"
+      "target": "/activiteiten/"
     },
     {
       "source": "/connect/home",
-      "target": "/activiteiten"
+      "target": "/activiteiten/"
     },
     {
       "source": "/connect/linkup",
-      "target": "/activiteiten"
+      "target": "/activiteiten/"
     },
     {
       "source": "/content/reality-kids",
-      "target": "/activiteiten"
+      "target": "/activiteiten/"
     },
     {
       "source": "/grow",
-      "target": "/activiteiten"
+      "target": "/activiteiten/"
     },
     {
       "source": "/training-for-life",
-      "target": "/activiteiten"
+      "target": "/activiteiten/"
     },
     {
       "source": "/agenda",
-      "target": "/activiteiten"
+      "target": "/activiteiten/"
     },
     {
       "source": "/contact",
@@ -66,7 +66,7 @@
     },
     {
       "source": "/weblog",
-      "target": "/stories"
+      "target": "/stories/"
     }
   ]
 }

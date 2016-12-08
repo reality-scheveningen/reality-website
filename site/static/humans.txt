@@ -16,4 +16,4 @@
 # TECHNOLOGY COLOPHON
 
     CSS3, HTML5
-    NodeJS, Contentful, Skeleton CSS, Gitlab, Letsencrypt
+    NodeJS, Contentful, Netlify, Skeleton CSS, Gitlab, Letsencrypt

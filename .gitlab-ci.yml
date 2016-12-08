@@ -1,9 +1,10 @@
-image: node:6
+image: kkarczmarczyk/node-yarn:7.2
 
 cache:
   paths:
     - node_modules/
     - public/content
+    - ~/.yarn-cache
 
 stages:
   - test
@@ -12,19 +13,16 @@ stages:
 test:
   stage: test
   script:
-    - npm install
+    - yarn install
     - npm run test-with-coverage
 
 deploy_production:
   stage: deploy
   script:
-    - npm install
+    - yarn install
     - npm run sync-content
     - npm run build
     - npm run build:minify
     - npm run gitlab:deploy:production
-  environment:
-    name: production
-    url: https://realityscheveningen.nl
   only:
     - master

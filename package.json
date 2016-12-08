@@ -28,7 +28,6 @@
     "moment": "^2.15.2",
     "netlify-cli": "^1.1.0",
     "node-sass": "^3.10.1",
-    "nyc": "^8.3.2",
     "postcss": "^5.2.5",
     "postcss-cli": "^2.6.0",
     "postcss-inline-svg": "^2.2.0",
@@ -37,14 +36,13 @@
     "reading-time": "^1.1.0",
     "rimraf": "^2.5.4",
     "skeleton-scss": "^2.0.4",
-    "standard": "^8.5.0",
     "write-json-file": "^2.0.0"
   },
   "devDependencies": {
     "debug": "^2.2.0",
     "http-server": "^0.9.0",
     "live-reload": "^1.1.0",
-    "nyc": "^8.1.0",
+    "nyc": "^8.3.2",
     "parallelshell": "^2.0.0",
     "standard": "^8.4.0",
     "tap-spec": "^4.1.1",

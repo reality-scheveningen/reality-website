@@ -8,10 +8,6 @@ html(lang="nl")
     link(rel="preconnect",href="https://www.google-analytics.com")
     link(rel="preconnect",href="https://maps.googleapis.com")
 
-    script
-      include ../static/assets/js/redirect-to-canonical-origin.js
-      | redirectToCanonicalOrigin('!{baseUrl}', window)
-
     title #{title}
     meta(name="description",content=metaDescription)
     meta(name="viewport",content="width=device-width, initial-scale=1")

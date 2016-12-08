@@ -24,7 +24,9 @@ Static site generators are safe, cheap, fast, portable and developer friendly. B
 not very user friendly (yet) with static site generators.
 We wanted to build on [shoulders of giants](https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants).
 We found a very user and developer friendly headless CMS [Contentful](https://contentful.com). It offers a very nice 
-free tier (enough for us).
+free tier (enough for us). [Netlify](https://www.netlify.com) offers an awesome service for static website hosting
+with auto renewed [lets encrypt](https://letsencrypt.com) https certificate, custom domain support and lot of other cool 
+stuff in their free tier.
 Since we are making a fairly simple website, javascript was the most obvious language to choose.
 It offers a wide range of frontend libs and tools in [npm](https://npmjs.com). 
 
@@ -38,16 +40,16 @@ make an issue or even better make a pull request.
 Content and digital assets are managed with Contentful. 
 Code is hosted on [Gitlab](https://gitlab.com) and open sourced on 
 [Github](https://github.com/reality-scheveningen/reality-website)
-Hosting of the website itself on [Gitlab Pages](https://pages.gitlab.com).
+CI and deployment also done by Gitlab and hosting on [Netlify](https://www.netlify.com).
 
 To build the website there are 2 steps:
 
 1. Download content and digital assets (images, pdf's, etc) from contentful api's
 2. Generate the html pages, javascript, css, etc.
 
-After code gets pushed to master branch, it will automatically test, build and deploy the website to gitlab pages.
+After code gets pushed to master branch, it will automatically test, build and deploy the website to Netlify.
 Hooks are configured in Contentful when something gets published the build process will automatically be triggered on 
-gitlab ci. Which will deploy to gitlab pages.
+[Gitlab CI](https://about.gitlab.com/gitlab-ci/). Which will deploy to Netlify.
 
 In short, developers can deploy with a push to master and content editors can deploy by publishing content.
 

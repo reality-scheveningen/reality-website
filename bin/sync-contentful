@@ -9,7 +9,6 @@ const determineSyncStrategy = require('../lib/sync/determine-sync-strategy')
 const syncFromContentFul = require('../lib/sync/sync-from-contentful')
 const storeSyncedData = require('../lib/sync/store-synced-data')
 const downloadSyncedAssets = require('../lib/sync/download-synced-assets')
-const filterImagesFromSyncedAssetsList = require('../lib/sync/filter-images-from-synced-assets-list')
 const scaledImageVersions = require('../lib/sync/scaled-image-versions')
 const optimizeAssets = require('../lib/sync/optimize-assets')
 
@@ -39,7 +38,8 @@ function report (e) {
   console.log(`Synced ${e.sync.assets.length} assets`)
   console.log(`Removed ${e.sync.deletedEntries.length} entries`)
   console.log(`Removed ${e.sync.deletedAssets.length} assets`)
-  console.log(`Optimized ${e.images.length} images`)
+  console.log(`Scaled ${e.scaledImages.length} images`)
+  console.log(`Optimized ${e.optimizedImages.length} images`)
 
   return e
 }
@@ -53,8 +53,7 @@ function sync () {
     .then(syncFromContentFul)
     .then(storeSyncedData)
     .then(downloadSyncedAssets)
-    .then(filterImagesFromSyncedAssetsList)
-    .then(scaledImageVersions)
+    .then(scaledImageVersions([2000, 1000, 640, 320]))
     .then(optimizeAssets)
     .then(report)
     .catch(err => { console.log(err); process.exit(1) })

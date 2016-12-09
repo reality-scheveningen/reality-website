@@ -3,19 +3,19 @@ const proxyquire = require('proxyquire')
 
 test('optimize downloaded assets', assert => {
   const e = {
-    images: [
-      {
-        remotePath: 'https://some-cdn/some/path/some-asset.jpg',
-        localPath: '/some/path/some-asset.jpg',
-        targetFolder: '/local/assets/some/path',
-        absolutePath: '/local/assets/some/path/some-asset.jpg'
-      }
-    ]
+    config: {
+      assetPath: '/local'
+    }
   }
 
   let called = false
 
   const optimizeAssets = proxyquire('../../../lib/sync/optimize-assets', {
+    glob: {
+      sync: (pattern, options) => {
+        return ['/local/assets/some/path/some-asset.jpg']
+      }
+    },
     imagemin: (input, output, options) => {
       assert.same(input, ['/local/assets/some/path/some-asset.jpg'])
       assert.equal(output, '/local/assets/some/path')

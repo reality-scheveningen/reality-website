@@ -1,0 +1,4 @@
+mixin img-srcset(src, ...srcset)
+  img(
+    src=src
+    srcset=srcset.filter(String).join(', '))&attributes(attributes)

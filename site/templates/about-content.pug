@@ -3,7 +3,7 @@ extends layout
 block content
   if heroImage && heroImage.file.url
     .cover-full
-      img(src=heroImage.file.url,class="u-full-width",alt=heroImage.title)
+      +cover-image(heroImage.file.url)(class="u-full-width",alt=heroImage.title)
   .page-container
     article
       header

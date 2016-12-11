@@ -1,5 +1,7 @@
 extends layout
 
+include mixins/triptych-image
+
 block styles
   link(rel="stylesheet",href="/assets/styles/home.css")
 
@@ -16,7 +18,7 @@ block content
               hr
               p= tych.summary
         .image-container
-          img(src=tych.image.file.url,alt="")
+          +triptych-image(tych.image.file.url)(alt="")
 
 block footer
   footer

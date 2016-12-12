@@ -1,5 +1,7 @@
 extends layout
 
+include mixins/stories-list-image
+
 block content
   if heroImage && heroImage.file.url
     .cover-full
@@ -18,7 +20,7 @@ block content
             li.story-item
               article
                 .image-container
-                  img(src=story.summaryImage.file.url,alt=story.summaryImage.file.title)
+                  +stories-list-image(story.summaryImage.file.url)(alt=story.summaryImage.file.title)
                 .nice
                 .info
                   time(datetime=moment(story.date, 'YYYY-MM-DD'),itemprop="datePublished")

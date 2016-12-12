@@ -1,0 +1,9 @@
+include img-srcset
+
+mixin stories-list-image(src)
+  +img-srcset(
+    imageSizeSelector(src, 320) || src,
+    imageSizeSelector(src, 320, ' 640w'),
+    imageSizeSelector(src, 640, ' 1000w'),
+    imageSizeSelector(src, 1000, ' 2x')
+    )(sizes="100vw")&attributes(attributes)

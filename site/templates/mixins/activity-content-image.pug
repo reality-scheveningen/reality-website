@@ -1,0 +1,9 @@
+include img-srcset
+
+mixin activity-content-image(src)
+  +img-srcset(
+    imageSizeSelector(src, 320) || src,
+    imageSizeSelector(src, 640, ' 640w'),
+    imageSizeSelector(src, 1000, ' 1000w'),
+    imageSizeSelector(src, 2000, ' 2000w')
+    )(sizes="100vw")&attributes(attributes)

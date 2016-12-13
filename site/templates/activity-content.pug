@@ -1,5 +1,7 @@
 extends layout
 
+include mixins/activity-content-image
+
 block content
   if heroImage && heroImage.file.url
     .cover-full
@@ -22,7 +24,7 @@ block content
               .body-text-row
                 .media-container
                   if bodyTextMedia && bodyTextMedia[key]
-                    img(src=bodyTextMedia[key].file.url)
+                    +activity-content-image(bodyTextMedia[key].file.url)(alt="")
                 .text-container
                   | !{md(text)}
         if footerText

@@ -1,6 +1,4 @@
 if (console && console.log) {
-  var style = 'font: 1.3rem "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #333'
-
   console.log(
     '%c🎉 Howdy! Feel free to peek around! 🎉',
     'font: 1.3rem "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #333'

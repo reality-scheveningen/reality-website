@@ -3,22 +3,22 @@ const pageMultiValuedFieldsToArray = require('../../../lib/build/page-multi-valu
 
 test('Map multi valued fields to arrays in page properties', assert => {
   let e = {
-    pages: {}
+    pages: []
   }
 
-  e.pages['/some-route/'] = {
+  e.pages.push({
     'Key1': 'some val',
     'Key2': 'some other val',
     'someKey': 'Some val'
-  }
+  })
 
   pageMultiValuedFieldsToArray(e)
 
   assert.same(
     e,
     {
-      pages: {
-        '/some-route/': {
+      pages: [
+        {
           'Key1': 'some val',
           'Key2': 'some other val',
           'someKey': 'Some val',
@@ -27,7 +27,7 @@ test('Map multi valued fields to arrays in page properties', assert => {
             'some other val'
           ]
         }
-      }
+      ]
     }
   )
 

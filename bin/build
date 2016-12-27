@@ -33,7 +33,8 @@ function initConfig () {
       publicPath: `${basePath}/public`,
       sitePath: `${basePath}/site`,
       databasePath: databasePath
-    }
+    },
+    pages: []
   }
 }
 

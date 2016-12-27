@@ -2,7 +2,9 @@ const test = require('tape')
 const retrieveSingleContentPage = require('../../../lib/build/retrieve-single-content-page')
 
 test('retrieves single content page from database and creates page object', assert => {
-  const e = {}
+  const e = {
+    pages: []
+  }
 
   e.db = require('../database.json')
 

@@ -15,6 +15,9 @@ html(lang="nl")
     meta(name="viewport",content="width=device-width, initial-scale=1")
     meta(name="google-site-verification",content=googleSiteVerification)
     meta(name="msapplication-config",content="/ieconfig.xml")
+    meta(name="theme-color",content="#313131")
+
+    link(rel="manifest",href="/manifest.json")
 
     link(rel="canonical",href=canonicalUrl)
 
@@ -51,7 +54,7 @@ html(lang="nl")
             a(href="/",class="home-shortcut",title="Home")
               include ../static/assets/images/logo-reality-icon-simple.svg
             nav
-              each menuTitle, menuPath in {'activiteiten':'Activiteiten', 'over-ons': 'Over ons', 'stories': 'Stories'}
+              each menuTitle, menuPath in {'activiteiten': 'Activiteiten', 'over-ons': 'Over ons', 'stories': 'Stories'}
                 if menuPath == path
                   span(class=menuPath)= menuTitle + " "
                 else
@@ -80,6 +83,7 @@ html(lang="nl")
 
       script
         include ../static/assets/js/no-touch.js
+        include ../static/assets/js/register-service-worker.js
         include ../static/assets/js/calendar-modal.js
         include ../static/assets/js/contact-google-maps.js
 

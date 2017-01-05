@@ -16,6 +16,7 @@ const addStoryPagesToStoriesPage = require('../lib/build/add-story-pages-to-stor
 const mapPageMultiValuedFieldsToArrays = require('../lib/build/page-multi-valued-fields-to-array')
 const renderPages = require('../lib/build/render-pages')
 const render404Page = require('../lib/build/render-404-page')
+const renderOfflinePage = require('../lib/build/render-offline-page')
 
 function initConfig () {
   const basePath = fs.realpathSync('./')
@@ -60,6 +61,7 @@ function build () {
     .then(netlifyRedirects)
     .then(renderPages)
     .then(render404Page)
+    .then(renderOfflinePage)
     .then(report)
     .catch(err => { console.log(err); process.exit(1) })
 }

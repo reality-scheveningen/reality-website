@@ -69,7 +69,7 @@
     "dev": "parallelshell \"npm run live-reload -s\" \"npm run serve -s\" \"npm run watch -s\"",
     "lint": "standard \"bin/*\" \"lib/**/*.js\" \"test/**/*.js\" \"site/static/assets/js/**/*.js\" \"site/static/service-worker.js\"",
     "deploy:test": "NODE_ENV=prod BASE_URL='https://reality-new.surge.sh' npm run build && npm run build:minify && echo \"User-agent: *\nDisallow: /\n\" > public/robots.txt && surge public reality-new.surge.sh",
-    "gitlab:deploy:production": "npm run build && npm run build:critical-css && npm run build:minify && netlify deploy -p public -s $NETLIFY_SITE_ID -t $NETLIFY_API_KEY"
+    "deploy:production": "npm run build && npm run build:critical-css && npm run build:minify && netlify deploy -p public -s $NETLIFY_SITE_ID -t $NETLIFY_API_KEY"
   },
   "nyc": {
     "include": [

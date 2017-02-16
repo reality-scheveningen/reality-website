@@ -23,6 +23,6 @@ deploy_production:
     - npm run sync-content
     - npm run build
     - npm run build:minify
-    - npm run gitlab:deploy:production
+    - npm run deploy:production
   only:
     - master

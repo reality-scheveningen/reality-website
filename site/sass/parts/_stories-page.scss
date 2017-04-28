@@ -138,7 +138,7 @@ body.stories {
     }
 
     .article-content {
-      padding: 2rem 3rem 3rem 3rem;
+      padding: 2rem 3rem 6rem 3rem;
     }
 
     .image-container {
@@ -171,7 +171,9 @@ body.stories {
     .cta {
       position: absolute;
       bottom: 0;
-      right: 0rem;
+      right: 0;
+      padding-bottom: 3rem;
+      margin-right: 3rem;
     }
   }
 }

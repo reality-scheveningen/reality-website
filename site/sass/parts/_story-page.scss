@@ -32,12 +32,21 @@ article.story {
     }
   }
 
-  .author {
+  .heading-info {
     font-weight: bold;
     margin-top: -0.2rem;
     margin-bottom: 1.5rem;
     color: $blue;
+
+    .category {
+      display: inline-block;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
   }
+
+
 
   .body-text {
     color: $darker-grey;

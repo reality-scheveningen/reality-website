@@ -22,7 +22,10 @@ block content
           .body-text
             .text-container
               h1= title
-              .author= "Door: " + author
+              .heading-info
+                span.category= category
+                |  | 
+                span.author="Door: " + author
               | !{md(bodyText)}
 
 block scripts-extra

@@ -28,7 +28,10 @@ block content
                   span(class="reading-time")= "Leestijd: " + story.readingTime + " min."
                 .article-content
                   h1= story.title
-                  .author= "Door: " + story.author
+                  .heading-info
+                    span.category= story.category
+                    |  | 
+                    span.author= "Door: " + story.author
                   .summary-text
                     | !{md(story.summaryText)}
                   .cta

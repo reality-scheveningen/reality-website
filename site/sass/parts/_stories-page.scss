@@ -91,7 +91,8 @@ body.stories {
   }
 
   .cta {
-    margin-top: 3rem;
+    padding-bottom: 1.5rem;
+    margin-right: 1.5rem;
     text-align: right;
     font-size: 1.6rem;
 
@@ -116,10 +117,16 @@ body.stories {
 
 
 @media (#{$bp-larger-than-tablet}) {
+  .story-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
   .story-item {
-    float: left;
     margin: 0 3rem 3rem 3rem;
+    padding-bottom: 3rem;
     width: calc(50% - 4.5rem);
+    position: relative;
 
     &:nth-child(odd) {
       margin-right: 0;
@@ -161,9 +168,10 @@ body.stories {
       }
     }
 
-    .summary-text {
-      height: 20rem;
-      overflow: hidden;
+    .cta {
+      position: absolute;
+      bottom: 0;
+      right: 0rem;
     }
   }
 }

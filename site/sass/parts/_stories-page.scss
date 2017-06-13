@@ -37,6 +37,7 @@ body.stories {
     overflow: hidden;
     position: relative;
     background: $blue;
+    display: block;
 
     img {
       object-fit: cover;

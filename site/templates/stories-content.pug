@@ -19,7 +19,7 @@ block content
           each story in stories
             li.story-item
               article
-                .image-container
+                a.image-container(href=story.route)
                   +stories-list-image(story.summaryImage.file.url)(alt=story.summaryImage.file.title)
                 .nice
                 .info

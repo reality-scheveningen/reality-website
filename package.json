@@ -42,11 +42,11 @@
     "write-json-file": "^2.0.0"
   },
   "devDependencies": {
+    "concurrently": "^3.4.0",
     "debug": "^2.2.0",
     "http-server": "^0.9.0",
     "live-reload": "^1.1.0",
     "nyc": "^10.0.0",
-    "parallelshell": "^2.0.0",
     "standard": "^8.4.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.0",
@@ -66,7 +66,7 @@
     "watch": "watch 'npm run build' site",
     "serve": "http-server -p 9090 public/",
     "live-reload": "live-reload --port 9091 public/",
-    "dev": "parallelshell \"npm run live-reload -s\" \"npm run serve -s\" \"npm run watch -s\"",
+    "dev": "concurrently \"npm run live-reload\" \"npm run serve\" \"npm run watch\"",
     "lint": "standard \"bin/*\" \"lib/**/*.js\" \"test/**/*.js\" \"site/static/assets/js/**/*.js\" \"site/static/service-worker.js\"",
     "deploy:test": "NODE_ENV=prod BASE_URL='https://reality-new.surge.sh' npm run build && npm run build:minify && echo \"User-agent: *\nDisallow: /\n\" > public/robots.txt && surge public reality-new.surge.sh",
     "deploy:production": "npm run build && npm run build:critical-css && npm run build:minify && netlify deploy -p public -s $NETLIFY_SITE_ID -t $NETLIFY_API_KEY"

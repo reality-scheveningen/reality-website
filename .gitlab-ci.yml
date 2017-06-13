@@ -13,14 +13,12 @@ stages:
 test:
   stage: test
   script:
-    - rm -rf node_modules
     - yarn install
     - npm run test-with-coverage
 
 deploy_production:
   stage: deploy
   script:
-    - rm -rf node_modules
     - yarn install
     - npm run sync-content
     - npm run build

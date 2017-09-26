@@ -39,13 +39,17 @@ html(lang="nl")
 
   body
     .container
-      h1 Pagina niet gevonden!
+      h1 Zoekt en gij zult vinden... 
+        br
+        | Maar niet hier
       a(href=baseUrl,class="logo")
         include ../static/assets/images/logo-reality-scheveningen.svg
       p
-        a(href=baseUrl) Homepage proberen
-        | &nbsp;of&nbsp;
-        a(href="/doe-maar-iets",onclick="var baseUrl='" + baseUrl + "'; var routes=['/stories','/activiteiten','/over-ons']; window.location=baseUrl+routes[Math.floor(Math.random() * routes.length)]; return false;") doe maar iets ;-)
+        | Deze pagina bestaat niet (meer). We helpen je graag weer op weg. Naar de 
+        a(href=baseUrl) homepage
+        |  bijvoorbeeld. Of laat je 
+        a(href="/doe-maar-iets",onclick="var baseUrl='" + baseUrl + "'; var routes=['/stories','/activiteiten','/over-ons']; window.location=baseUrl+routes[Math.floor(Math.random() * routes.length)]; return false;") verrassen
+        | .
 
     script.
       window.ga = function() {

@@ -58,7 +58,7 @@
     "clean": "rimraf public",
     "build:static": "copyfiles -u 2 'site/static/**/*' public",
     "build:site": "./bin/build",
-    "build:css": "node-sass site/sass -o public/assets/styles && postcss public/assets/styles/*.css -r --no-map --use autoprefixer --use postcss-inline-svg",
+    "build:css": "node-sass site/sass -o public/assets/styles && find public/assets/styles -type f -name '*.css' -exec postcss '{}' -r --no-map --use autoprefixer --use postcss-inline-svg \\;",
     "build:critical-css": "find public -type f -name '*.html' -not -name '404.html' | xargs  -I '{}' bash -c \"node_modules/.bin/critical '{}' -b public -i -m > public/tmp.html && mv public/tmp.html '{}'\"",
     "build:minify": "postcss public/assets/styles/*.css -r --no-map --use cssnano && html-minifier --input-dir public --output-dir public --minify-css --minify-js --case-sensitive --file-ext html",
     "build": "npm run build:static && npm run build:site && npm run build:css",

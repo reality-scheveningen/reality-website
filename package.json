@@ -22,7 +22,7 @@
     "imagemin-optipng": "^5.2.1",
     "imagemin-svgo": "^6.0.0",
     "linkify-it": "^2.0.2",
-    "lodash": "^4.16.4",
+    "lodash": "^4.17.13",
     "markdown-it": "^8.0.1",
     "markdown-it-anchor": "^4.0.0",
     "markdown-it-emoji": "^1.3.0",

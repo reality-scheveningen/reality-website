@@ -67,6 +67,10 @@
     {
       "source": "/weblog",
       "target": "/stories/"
+    },
+    {
+      "source": "/live-stream",
+      "target": "https://youtu.be/RvOTIzbYvJA"
     }
   ]
 }

@@ -77,7 +77,7 @@ function initMap() { // eslint-disable-line
       anchor: new google.maps.Point(32, 32)
     },
     title: 'Reality Scheveningen',
-    url: 'https://www.google.nl/maps/place/Kranenburgweg+203,+2583+ER+Den+Haag/@52.0957914,4.2606684,17z/data=!3m1!4b1!4m2!3m1!1s0x47c5b092fe85fe99:0x1384c908ba3f7c8d'
+    url: 'https://www.google.nl/maps/place/Rode+Kruislaan,+2565+HE+Den+Haag/@52.0803677,4.260659,17z/data=!3m1!4b1!4m5!3m4!1s0x47c5b0e67a3fd6b7:0xb9b14c36ec042ca7!8m2!3d52.0803677!4d4.2628477'
   })
 
   google.maps.event.addListener(marker, 'click', function () {

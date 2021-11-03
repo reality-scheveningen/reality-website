@@ -26,5 +26,5 @@ block footer
     include footer/copyright
 
 //- Disable live google maps, big pageload hit for not a whole lot of functionality
-//- block scripts-extra
-//-  script(src="https://maps.googleapis.com/maps/api/js?key=" + googleMapsApiKey + "&callback=initMap",async,defer)
+  block scripts-extra
+    script(src="https://maps.googleapis.com/maps/api/js?key=" + googleMapsApiKey + "&callback=initMap",async,defer)

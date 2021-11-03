@@ -10,7 +10,7 @@ function initMap() { // eslint-disable-line
     disableDefaultUI: true,
     scrollwheel: false,
     draggable: !('ontouchend' in document),
-    center: {lat: 52.0957914, lng: 4.2584797},
+    center: {lat: 52.0841096, lng: 4.2512202},
     zoom: 14,
     backgroundColor: 'none',
     styles: [{
@@ -65,7 +65,7 @@ function initMap() { // eslint-disable-line
   })
 
   var marker = new google.maps.Marker({
-    position: {lat: 52.0957914, lng: 4.2606684},
+    position: {lat: 52.0801096, lng: 4.2612202},
     map: map,
     icon: {
       path: 'M42.9 29v-3c0-.6.4-1 1-1h6.6l-18-17.9L14.6 25h6.6c.6 0 1 .4 1 1v3c0 .6-.4 1-1 1H4.5c-1.1 0-1.4-.6-.6-1.4L31.1 1.4c.8-.8 2-.8 2.8 0L61 28.5c.8.8.5 1.4-.6 1.4H43.9c-.6.1-1-.3-1-.9zM4.5 35h16.6c.6 0 1 .4 1 1v3c0 .6-.4 1-1 1h-6.6l17.9 17.9 18-17.9h-6.6c-.6 0-1-.4-1-1v-3c0-.6.4-1 1-1h16.6c1.1 0 1.4.6.6 1.4L33.9 63.6c-.8.8-2 .8-2.8 0L3.9 36.4c-.7-.8-.5-1.4.6-1.4z',
@@ -77,7 +77,7 @@ function initMap() { // eslint-disable-line
       anchor: new google.maps.Point(32, 32)
     },
     title: 'Reality Scheveningen',
-    url: 'https://www.google.nl/maps/place/Rode+Kruislaan,+2565+HE+Den+Haag/@52.0803677,4.260659,17z/data=!3m1!4b1!4m5!3m4!1s0x47c5b0e67a3fd6b7:0xb9b14c36ec042ca7!8m2!3d52.0803677!4d4.2628477'
+    url: 'https://www.google.nl/maps/place/Rode+Kruislaan,+2565+HE+Den+Haag/@52.08046,4.2617185,18z/data=!4m13!1m7!3m6!1s0x47c5b0e67a3fd6b7:0xb9b14c36ec042ca7!2sRode+Kruislaan,+2565+HE+Den+Haag!3b1!8m2!3d52.0803677!4d4.2628477!3m4!1s0x47c5b0e67a3fd6b7:0xb9b14c36ec042ca7!8m2!3d52.0803677!4d4.2628477'
   })
 
   google.maps.event.addListener(marker, 'click', function () {

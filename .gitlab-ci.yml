@@ -13,12 +13,14 @@ stages:
 test:
   stage: test
   script:
+    - 'git config --global url."https://github.com/".insteadOf git@github.com:'
     - yarn install
     - npm run test-with-coverage
 
 deploy_production:
   stage: deploy
   script:
+    - 'git config --global url."https://github.com/".insteadOf git@github.com:'
     - yarn install
     - npm run sync-content
     - npm run build
